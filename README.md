@@ -2,7 +2,7 @@
 
 A tool I am creating to make editing these files a less of a strain on the eyes that I want to share with others.
 
-This is a very WIP tool and I am only one person who is learning how to code as I make this tool. I use books I bought, internet tutorials as well as help from ChatGPT, it helped me work out the exact math required to properly assign version numbers from the int64 that will show correctly in bg3 mod manager.
+This is a very WIP tool and I am only one person who is learning how to code as I make this tool. I use books I bought, internet tutorials as well as help from ChatGPT, it helped me work out the exact math required to properly assign version numbers from the int64 that will show correctly in bg3 mod manager. I have autism and social phobia so asking a bot what I might have done wrong or for maths is very much an accessibility thing for me.
 
 It may also be slow going as the game is being released 3rd of August. If we don't get an official tool to edit these files I will continue my work on it, but please bare in mind I will need to update my own mods, and time to play the game. So there could also be slow updates in between versions, as I have more than a few hobbies. However I hope each version will help someone.
 
