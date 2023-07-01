@@ -15,7 +15,7 @@ Things already included:
 - Colour wheel that shows Hex and converts it also to sRGB 0 to 1.0 converter
 - separate version number generator in the tools tab with the colour wheel
 
-Things I plan to include:
+Things I hope to include:
 - New Hairs slots
 - New Beards slots
 - New Hair Colours (Main, Greying and Highlights)
