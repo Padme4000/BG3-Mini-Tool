@@ -44,7 +44,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxVersion = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.Button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -194,15 +194,15 @@
             this.label11.TabIndex = 105;
             this.label11.Text = "Version Number";
             // 
-            // button7
+            // Button7
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(349, 182);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(118, 31);
-            this.button7.TabIndex = 106;
-            this.button7.Text = "Save to";
-            this.button7.UseVisualStyleBackColor = true;
+            this.Button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Button7.Location = new System.Drawing.Point(349, 182);
+            this.Button7.Name = "Button7";
+            this.Button7.Size = new System.Drawing.Size(118, 31);
+            this.Button7.TabIndex = 106;
+            this.Button7.Text = "Save to";
+            this.Button7.UseVisualStyleBackColor = true;
             // 
             // Tools
             // 
@@ -216,7 +216,7 @@
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBoxVersion);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.Button7);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -258,6 +258,6 @@
         private Label label13;
         private TextBox textBoxVersion;
         private Label label11;
-        private Button button7;
+        private Button Button7;
     }
 }

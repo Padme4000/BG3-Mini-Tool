@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
-using System.IO;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Data.SqlTypes;
-using System.ComponentModel;
-using System.Xml.Linq;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace BG3_Mod_Templates
 {
@@ -17,7 +7,7 @@ namespace BG3_Mod_Templates
         public Form3()
         {
             InitializeComponent();
-                       
+
             numericUpDown1.Value = 1;
             numericUpDown3.Value = 0;
             numericUpDown3.Enabled = false;
@@ -27,7 +17,7 @@ namespace BG3_Mod_Templates
             FolderMods.ReadOnly = true;
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void Button6_Click(object sender, EventArgs e)
         {
             {
                 Guid guid = Guid.NewGuid();
@@ -35,7 +25,7 @@ namespace BG3_Mod_Templates
             }
         }
 
-        private void button5_Click(object sender, EventArgs e) //Mod Creator
+        private void Button5_Click(object sender, EventArgs e) //Mod Creator
         {
             string filePath = "LSX Files\\meta.lsx";
             string newValue = textBox_creator.Text;
@@ -60,7 +50,7 @@ namespace BG3_Mod_Templates
             File.WriteAllLines(filePath, lines);
         }
 
-        private void button1_Click(object sender, EventArgs e) //Mod Name
+        private void Button1_Click(object sender, EventArgs e) //Mod Name
         {
             string filePath = "LSX Files\\meta.lsx";
             string newValue = textBoxName.Text;
@@ -85,7 +75,7 @@ namespace BG3_Mod_Templates
             File.WriteAllLines(filePath, lines);
         }
 
-        private void button2_Click(object sender, EventArgs e) //Mod Description
+        private void Button2_Click(object sender, EventArgs e) //Mod Description
         {
             string filePath = "LSX Files\\meta.lsx";
             string newValue = textBoxDesc.Text;
@@ -110,7 +100,7 @@ namespace BG3_Mod_Templates
             File.WriteAllLines(filePath, lines);
         }
 
-        private void button3_Click(object sender, EventArgs e) //Shared Folder
+        private void Button3_Click(object sender, EventArgs e) //Shared Folder
         {
             string filePath = "LSX Files\\meta.lsx";
             string newValue = textBoxShared2.Text;
@@ -135,7 +125,7 @@ namespace BG3_Mod_Templates
             File.WriteAllLines(filePath, lines);
         }
 
-        private void button4_Click(object sender, EventArgs e) //Unique UUID
+        private void Button4_Click(object sender, EventArgs e) //Unique UUID
         {
             string filePath = "LSX Files\\meta.lsx";
             string newValue = textBoxUniqueUUID.Text;
@@ -159,7 +149,7 @@ namespace BG3_Mod_Templates
 
             File.WriteAllLines(filePath, lines);
         }
-        private void button7_Click(object sender, EventArgs e) //Version Number
+        private void Button7_Click(object sender, EventArgs e) //Version Number
         {
             string filePath = "LSX Files\\meta.lsx";
             string newValue = textBoxVersion.Text;
@@ -196,7 +186,7 @@ namespace BG3_Mod_Templates
             (int)numericUpDown3.Value,
             (int)numericUpDown4.Value
            };
-        
+
             long int64Value = 0;
 
             for (int i = 0; i < versionNumbers.Length; i++)
@@ -222,7 +212,7 @@ namespace BG3_Mod_Templates
                 textBoxVersion.Text = currentValue.ToString("D17");
             }
         }
-        private void buttonSelectFolder_Click(object sender, EventArgs e)
+        private void ButtonSelectFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
             DialogResult result = folderDialog.ShowDialog();
@@ -234,9 +224,11 @@ namespace BG3_Mod_Templates
 
                 if (Directory.Exists(modsFolder))
                 {
-                    string parentFolder = Directory.GetParent(modsFolder).FullName;
-
-                    FolderModName.Text = Path.GetFileName(parentFolder);
+                    string? parentFolder = Directory.GetParent(modsFolder)?.FullName;
+                    if (!string.IsNullOrEmpty(parentFolder))
+                    {
+                        FolderModName.Text = Path.GetFileName(parentFolder);
+                    }
 
                     string[] subFolders = Directory.GetDirectories(modsFolder);
                     if (subFolders.Length > 0)
@@ -254,7 +246,9 @@ namespace BG3_Mod_Templates
                 }
             }
         }
-        private void buttonCreateFolders_Click(object sender, EventArgs e)
+
+
+        private void ButtonCreateFolders_Click(object sender, EventArgs e)
         {
             string exeLocation = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             string modsFolderPath = Path.Combine("\"", "Mods" + 1);
@@ -264,9 +258,16 @@ namespace BG3_Mod_Templates
                 Directory.CreateDirectory(modsFolderPath);
             }
 
-            string folderModName = Path.Combine(modsFolderPath, FolderModName.Text);
+            string folderModName = Path.Combine(modsFolderPath, FolderModName.Text ?? string.Empty);
             string publicFolderPath = Path.Combine(modsFolderPath, folderModName, "Mods");
-            string sharedFolderPath = Path.Combine(publicFolderPath, FolderYourShared.Text);
+            string sharedFolderPath = Path.Combine(publicFolderPath, FolderYourShared.Text ?? string.Empty);
+
+            if (folderModName is null || publicFolderPath is null || sharedFolderPath is null)
+            {
+                // Handle the case when any of the paths are null
+                MessageBox.Show("Invalid folder paths.");
+                return;
+            }
 
             // Check if the folders already exist, and create them if they don't
             if (!Directory.Exists(folderModName))
@@ -286,30 +287,55 @@ namespace BG3_Mod_Templates
 
             MessageBox.Show("Folders created successfully!");
         }
-        private void button8_Click(object sender, EventArgs e)
-        {
 
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            // Get the current directory and the original file path
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string originalFilePath = Path.Combine(currentDirectory, "LSX Files\\meta.lsx");
+
+            // Show the save file dialog
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "LSX Files (*.lsx)|*.lsx";
+            saveFileDialog.FileName = "meta.lsx";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Check if the file already exists
+                if (File.Exists(saveFileDialog.FileName))
+                {
+                    DialogResult result = MessageBox.Show("The file already exists. Do you want to overwrite it?", "File Exists", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+
+                // Save the file to the new location
+                File.Copy(originalFilePath, saveFileDialog.FileName, true);
+                MessageBox.Show("File saved successfully!", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
             this.FormClosing += new FormClosingEventHandler(Form3_FormClosing);
 
-            // Set tooltip text for buttons
+            // Set tooltip text for Buttons
             System.Windows.Forms.ToolTip toolTip1 = new System.Windows.Forms.ToolTip();
-            toolTip1.SetToolTip(buttonSelectFolder, "Select your main mod folder");
-            toolTip1.SetToolTip(buttonCreateFolders, "Create Folders");
+            toolTip1.SetToolTip(ButtonSelectFolder, "Select your main mod folder");
+            toolTip1.SetToolTip(ButtonCreateFolders, "Create Folders");
             toolTip1.SetToolTip(textBoxName, "Name of your mod folder. Auto filled in if you located your mod folder.");
             toolTip1.SetToolTip(textBox_creator, "Your Username on Nexus for example. Or if you want the name you want to go by for your BG3 mods");
             toolTip1.SetToolTip(textBoxDesc, "The description of your mod. In BG3 mod manager it shows up when hovering over the mod name");
             toolTip1.SetToolTip(textBoxShared2, "This is the name of your Shared folder in a similar structure to the above folder structure");
-            toolTip1.SetToolTip(textBoxUniqueUUID, "This is your unique uuid. click update when you are happy");
-            toolTip1.SetToolTip(button6, "Generate a Unique UUID. Your mod must have a unique UUID");
+            toolTip1.SetToolTip(textBoxUniqueUUID, "This is your unique uuid. click Update when you are happy");
+            toolTip1.SetToolTip(Button6, "Generate a Unique UUID. Your mod must have a unique UUID");
             toolTip1.SetToolTip(textBoxVersion, "This is how the number shows in the meta.lsx, in bg3 mod manager it will show as the number below");
-            toolTip1.SetToolTip(button8, "Save your file to a location of your choice.");
+            toolTip1.SetToolTip(Button8, "Save your file to a location of your choice.");
         }
 
-        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form3_FormClosing(object? sender, FormClosingEventArgs e)
         {
             e.Cancel = true; // Cancel the form closing event
             this.Hide(); // Hide the form instead of closing it
@@ -319,6 +345,7 @@ namespace BG3_Mod_Templates
         {
             this.FormClosing += new FormClosingEventHandler(Form3_FormClosing);
         }
+
 
         private void textBoxUniqueUUID_TextChanged(object sender, EventArgs e)
         {
@@ -336,6 +363,11 @@ namespace BG3_Mod_Templates
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FolderModName_TextChanged(object sender, EventArgs e)
         {
 
         }

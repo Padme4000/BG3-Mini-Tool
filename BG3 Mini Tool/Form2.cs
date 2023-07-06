@@ -24,7 +24,7 @@ namespace BG3_Mini_Tool
             FolderCharacterCreation.ReadOnly = true;
         }
 
-        private void update_name_Click(object sender, EventArgs e) //NewName
+        private void Update_name_Click(object sender, EventArgs e) //NewName
         {
             {
                 string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
@@ -43,7 +43,7 @@ namespace BG3_Mini_Tool
             }
         }
 
-        private void update_UniqueUUID_Click(object sender, EventArgs e) //Unique UUID
+        private void Update_UniqueUUID_Click(object sender, EventArgs e) //Unique UUID
         {
             {
                 string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
@@ -61,7 +61,7 @@ namespace BG3_Mini_Tool
             }
         }
 
-        private void update_VisualResource_Click(object sender, EventArgs e) //Visual Resource UUID
+        private void Update_VisualResource_Click(object sender, EventArgs e) //Visual Resource UUID
         {
             {
                 string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
@@ -80,7 +80,7 @@ namespace BG3_Mini_Tool
             }
         }
 
-        private void button2_Click(object sender, EventArgs e) //Bodytype Masc
+        private void Button2_Click(object sender, EventArgs e) //Bodytype Masc
         {
             {
                 string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
@@ -101,7 +101,7 @@ namespace BG3_Mini_Tool
             }
         }
 
-        private void button8_Click(object sender, EventArgs e) //Bodytype Feminine
+        private void Button8_Click(object sender, EventArgs e) //Bodytype Feminine
         {
             {
                 string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
@@ -121,7 +121,7 @@ namespace BG3_Mini_Tool
 
             }
         }
-        private void button9_Click(object sender, EventArgs e) //Slotname Horns
+        private void Button9_Click(object sender, EventArgs e) //Slotname Horns
         {
 
             string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
@@ -144,7 +144,7 @@ namespace BG3_Mini_Tool
             File.WriteAllLines(filePath, lines);
 
         }
-        private void button3_Click(object sender, EventArgs e) //Slotname Head
+        private void Button3_Click(object sender, EventArgs e) //Slotname Head
         {
 
             string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
@@ -169,14 +169,14 @@ namespace BG3_Mini_Tool
         }
         //Add new head/horns to existing CharacterCreationAppearanceVisuals
         //Save to existing file
-        private void button_add_Click(object sender, EventArgs e)
+        private void Button_add_Click(object sender, EventArgs e)
         {
             // Get the path of the file to add lines to
             string filePath = textBoxpath.Text;
 
             if (string.IsNullOrEmpty(filePath))
             {
-                MessageBox.Show("Path cannot be empty. Please use Locate lsx button");
+                MessageBox.Show("Path cannot be empty. Please use Locate lsx Button");
                 return; // End the code execution here
             }
 
@@ -217,7 +217,7 @@ namespace BG3_Mini_Tool
             File.WriteAllLines(filePath, newLines.ToArray());
         }
         //Determine file path and then add to text box
-        private void button_locateLSX_Click(object sender, EventArgs e)
+        private void Button_locateLSX_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text Files (*.lsx)|*.lsx|All Files (*.*)|*.*";
@@ -247,7 +247,7 @@ namespace BG3_Mini_Tool
             float newSize = textBox.Font.Size * ratio;
             textBox.Font = new Font(textBox.Font.FontFamily, newSize, textBox.Font.Style);
         }
-        private void button_saveas_Click(object sender, EventArgs e)
+        private void Button_saveas_Click(object sender, EventArgs e)
         {
             // Get the current directory and the original file path
             string currentDirectory = Directory.GetCurrentDirectory();
@@ -274,7 +274,7 @@ namespace BG3_Mini_Tool
                 MessageBox.Show("File saved successfully!", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        private string raceValue;
+        private string? raceValue;
 
         private void comboBoxRaceUUID_Click(object sender, EventArgs e)
         {
@@ -299,6 +299,12 @@ namespace BG3_Mini_Tool
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBoxRaceUUID.SelectedItem is null)
+            {
+                // Handle the case when no item is selected
+                return;
+            }
+
             string selectedItem = comboBoxRaceUUID.SelectedItem.ToString();
             string filePath = "LSX Files\\Races.txt";
             string[] lines = File.ReadAllLines(filePath);
@@ -318,7 +324,8 @@ namespace BG3_Mini_Tool
             }
         }
 
-        private void update_RaceUUID_Click(object sender, EventArgs e)
+
+        private void Update_RaceUUID_Click(object sender, EventArgs e)
         {
             string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
 
@@ -352,17 +359,17 @@ namespace BG3_Mini_Tool
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // Set tooltip text for buttons
+            // Set tooltip text for Buttons
             System.Windows.Forms.ToolTip toolTip1 = new System.Windows.Forms.ToolTip();
             toolTip1.SetToolTip(comboBoxRaceUUID, "Select the race you are making the head/horns for. Then click Update");
             toolTip1.SetToolTip(textBoxName, "Can be anything you want.");
-            toolTip1.SetToolTip(button_saveas, "Save as a new file.");
-            toolTip1.SetToolTip(button_add, "Adds the information filled above from Display Name to VisualResource to the CharacterCreationAppearanceVisuals.lsx you define with Locate button");
+            toolTip1.SetToolTip(Button_saveas, "Save as a new file.");
+            toolTip1.SetToolTip(Button_add, "Adds the information filled above from Display Name to VisualResource to the CharacterCreationAppearanceVisuals.lsx you define with Locate Button");
             toolTip1.SetToolTip(textBoxUniqueUUID, "Must be a unique UUID");
             toolTip1.SetToolTip(textBoxVisualResource, "Unique UUID must match your head/horns ID in their_merged");
             toolTip1.SetToolTip(textBoxpath, "Path to your mod file including the name of the lsx. This is so when you click \"Add to your mod file\" your new entry is added to your existing CharacterCreationAppearanceVisuals");
         }
-        private void buttonSelectFolder_Click(object sender, EventArgs e)
+        private void ButtonSelectFolder_Click(object sender, EventArgs e)
         {
             using (var dialog = new FolderBrowserDialog())
             {
@@ -401,19 +408,19 @@ namespace BG3_Mini_Tool
             }
         }
 
-        private void buttonCreateFolders_Click(object sender, EventArgs e)
+        private void ButtonCreateFolders_Click(object sender, EventArgs e)
         {
             string exeLocation = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            string modsFolderPath = Path.Combine(exeLocation, "Mods");
+            string modsFolderPath = Path.Combine(exeLocation ?? throw new InvalidOperationException(), "Mods");
 
             if (!Directory.Exists(modsFolderPath))
             {
                 Directory.CreateDirectory(modsFolderPath);
             }
 
-            string folderModName = Path.Combine(modsFolderPath, FolderModName.Text);
+            string folderModName = Path.Combine(modsFolderPath, FolderModName.Text ?? string.Empty);
             string publicFolderPath = Path.Combine(modsFolderPath, folderModName, "Public");
-            string sharedFolderPath = Path.Combine(publicFolderPath, textboxYourShared.Text);
+            string sharedFolderPath = Path.Combine(publicFolderPath, textboxYourShared.Text ?? string.Empty);
             string characterCreationFolderPath = Path.Combine(sharedFolderPath, "CharacterCreation");
 
             // Check if the folders already exist, and create them if they don't
@@ -443,32 +450,54 @@ namespace BG3_Mini_Tool
         private void FolderModName_TextChanged(object sender, EventArgs e)
         {
             var textBox = (System.Windows.Forms.TextBox)sender;
-            var g = textBox.CreateGraphics();
-            var size = g.MeasureString(textBox.Text, textBox.Font);
 
-            float widthRatio = textBox.Width / size.Width;
-            float heightRatio = textBox.Height / size.Height;
-            float ratio = Math.Min(widthRatio, heightRatio);
+            using (Graphics g = textBox.CreateGraphics())
+            {
+                SizeF textSize = g.MeasureString(textBox.Text, textBox.Font);
 
-            float newSize = textBox.Font.Size * ratio;
-            textBox.Font = new Font(textBox.Font.FontFamily, newSize, textBox.Font.Style);
+                float widthRatio = textBox.Width / textSize.Width;
+                float heightRatio = textBox.Height / textSize.Height;
+                float ratio = Math.Min(widthRatio, heightRatio);
+
+                const float maxFontSize = 12f; 
+                float newSize = textBox.Font.Size * ratio;
+
+                if (newSize > maxFontSize)
+                {
+                    newSize = maxFontSize;
+                }
+
+                textBox.Font = new Font(textBox.Font.FontFamily, newSize, textBox.Font.Style);
+            }
         }
+
+
 
         private void textboxYourShared_TextChanged(object sender, EventArgs e)
         {
             var textBox = (System.Windows.Forms.TextBox)sender;
-            var g = textBox.CreateGraphics();
-            var size = g.MeasureString(textBox.Text, textBox.Font);
 
-            float widthRatio = textBox.Width / size.Width;
-            float heightRatio = textBox.Height / size.Height;
-            float ratio = Math.Min(widthRatio, heightRatio);
+            using (Graphics g = textBox.CreateGraphics())
+            {
+                SizeF textSize = g.MeasureString(textBox.Text, textBox.Font);
 
-            float newSize = textBox.Font.Size * ratio;
-            textBox.Font = new Font(textBox.Font.FontFamily, newSize, textBox.Font.Style);
+                float widthRatio = textBox.Width / textSize.Width;
+                float heightRatio = textBox.Height / textSize.Height;
+                float ratio = Math.Min(widthRatio, heightRatio);
+
+                const float maxFontSize = 12f;
+                float newSize = textBox.Font.Size * ratio;
+
+                if (newSize > maxFontSize)
+                {
+                    newSize = maxFontSize;
+                }
+
+                textBox.Font = new Font(textBox.Font.FontFamily, newSize, textBox.Font.Style);
+            }
         }
 
-        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form2_FormClosing(object? sender, FormClosingEventArgs e)
         {
             e.Cancel = true; // Cancel the form closing event
             this.Hide(); // Hide the form instead of closing it

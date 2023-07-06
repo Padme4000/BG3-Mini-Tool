@@ -31,12 +31,12 @@ namespace BG3_Mini_Tool
         {
             this.label1 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Button16 = new System.Windows.Forms.Button();
+            this.Button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -50,25 +50,25 @@ namespace BG3_Mini_Tool
             this.label1.TabIndex = 5;
             this.label1.Text = "Character Customisation";
             // 
-            // button16
+            // Button16
             // 
-            this.button16.Location = new System.Drawing.Point(77, 152);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(121, 41);
-            this.button16.TabIndex = 18;
-            this.button16.Text = "Meta";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
+            this.Button16.Location = new System.Drawing.Point(77, 152);
+            this.Button16.Name = "Button16";
+            this.Button16.Size = new System.Drawing.Size(121, 41);
+            this.Button16.TabIndex = 18;
+            this.Button16.Text = "Meta";
+            this.Button16.UseVisualStyleBackColor = true;
+            this.Button16.Click += new System.EventHandler(this.Button16_Click);
             // 
-            // button1
+            // Button1
             // 
-            this.button1.Location = new System.Drawing.Point(24, 229);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(232, 59);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Character Creation Appearance Visuals";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Button1.Location = new System.Drawing.Point(24, 229);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(232, 59);
+            this.Button1.TabIndex = 25;
+            this.Button1.Text = "Character Creation Appearance Visuals";
+            this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label2
             // 
@@ -100,15 +100,15 @@ namespace BG3_Mini_Tool
             this.label4.TabIndex = 28;
             this.label4.Text = "Home Page";
             // 
-            // button4
+            // Button4
             // 
-            this.button4.Location = new System.Drawing.Point(77, 411);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(121, 41);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "Tools";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.Button4.Location = new System.Drawing.Point(77, 411);
+            this.Button4.Name = "Button4";
+            this.Button4.Size = new System.Drawing.Size(121, 41);
+            this.Button4.TabIndex = 29;
+            this.Button4.Text = "Tools";
+            this.Button4.UseVisualStyleBackColor = true;
+            this.Button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // label5
             // 
@@ -127,11 +127,11 @@ namespace BG3_Mini_Tool
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(286, 474);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.Button4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button16);
+            this.Controls.Add(this.Button1);
+            this.Controls.Add(this.Button16);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -147,12 +147,12 @@ namespace BG3_Mini_Tool
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Button16;
+        private System.Windows.Forms.Button Button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Button4;
         private System.Windows.Forms.Label label5;
     }
 }

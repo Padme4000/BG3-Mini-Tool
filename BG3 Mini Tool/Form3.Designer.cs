@@ -29,25 +29,25 @@ namespace BG3_Mod_Templates
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
+            this.Button4 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxUniqueUUID = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Button3 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxShared2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxDesc = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.Button5 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_creator = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.Button6 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.Button7 = new System.Windows.Forms.Button();
             this.textBoxVersion = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -60,26 +60,26 @@ namespace BG3_Mod_Templates
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.buttonSelectFolder = new System.Windows.Forms.Button();
-            this.buttonCreateFolders = new System.Windows.Forms.Button();
+            this.ButtonSelectFolder = new System.Windows.Forms.Button();
+            this.ButtonCreateFolders = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
+            this.Button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
-            // button4
+            // Button4
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(502, 263);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(69, 31);
-            this.button4.TabIndex = 90;
-            this.button4.Text = "Update";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Button4.Location = new System.Drawing.Point(502, 263);
+            this.Button4.Name = "Button4";
+            this.Button4.Size = new System.Drawing.Size(69, 31);
+            this.Button4.TabIndex = 90;
+            this.Button4.Text = "Update";
+            this.Button4.UseVisualStyleBackColor = true;
+            this.Button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // label12
             // 
@@ -101,16 +101,16 @@ namespace BG3_Mod_Templates
             this.textBoxUniqueUUID.Text = "Use the Generate Unique UUID Button";
             this.textBoxUniqueUUID.TextChanged += new System.EventHandler(this.textBoxUniqueUUID_TextChanged);
             // 
-            // button3
+            // Button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(502, 227);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(69, 31);
-            this.button3.TabIndex = 87;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Button3.Location = new System.Drawing.Point(502, 227);
+            this.Button3.Name = "Button3";
+            this.Button3.Size = new System.Drawing.Size(69, 31);
+            this.Button3.TabIndex = 87;
+            this.Button3.Text = "Update";
+            this.Button3.UseVisualStyleBackColor = true;
+            this.Button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // label10
             // 
@@ -131,16 +131,16 @@ namespace BG3_Mod_Templates
             this.textBoxShared2.TabIndex = 85;
             this.textBoxShared2.Text = "Custom Name";
             // 
-            // button2
+            // Button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(502, 191);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(69, 31);
-            this.button2.TabIndex = 82;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Button2.Location = new System.Drawing.Point(502, 191);
+            this.Button2.Name = "Button2";
+            this.Button2.Size = new System.Drawing.Size(69, 31);
+            this.Button2.TabIndex = 82;
+            this.Button2.Text = "Update";
+            this.Button2.UseVisualStyleBackColor = true;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label6
             // 
@@ -161,16 +161,16 @@ namespace BG3_Mod_Templates
             this.textBoxDesc.TabIndex = 80;
             this.textBoxDesc.Text = "describe your mod a little";
             // 
-            // button1
+            // Button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(502, 154);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 31);
-            this.button1.TabIndex = 78;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Button1.Location = new System.Drawing.Point(502, 154);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(69, 31);
+            this.Button1.TabIndex = 78;
+            this.Button1.Text = "Update";
+            this.Button1.UseVisualStyleBackColor = true;
+            this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label3
             // 
@@ -191,16 +191,16 @@ namespace BG3_Mod_Templates
             this.textBoxName.TabIndex = 76;
             this.textBoxName.Text = "Name of your mod";
             // 
-            // button5
+            // Button5
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(502, 117);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(69, 31);
-            this.button5.TabIndex = 74;
-            this.button5.Text = "Update";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.Button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Button5.Location = new System.Drawing.Point(502, 117);
+            this.Button5.Name = "Button5";
+            this.Button5.Size = new System.Drawing.Size(69, 31);
+            this.Button5.TabIndex = 74;
+            this.Button5.Text = "Update";
+            this.Button5.UseVisualStyleBackColor = true;
+            this.Button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // label4
             // 
@@ -231,16 +231,16 @@ namespace BG3_Mod_Templates
             this.label2.TabIndex = 71;
             this.label2.Text = "meta";
             // 
-            // button6
+            // Button6
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(151, 298);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(219, 31);
-            this.button6.TabIndex = 93;
-            this.button6.Text = "Generate Unique UUID";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.Button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Button6.Location = new System.Drawing.Point(151, 298);
+            this.Button6.Name = "Button6";
+            this.Button6.Size = new System.Drawing.Size(219, 31);
+            this.Button6.TabIndex = 93;
+            this.Button6.Text = "Generate Unique UUID";
+            this.Button6.UseVisualStyleBackColor = true;
+            this.Button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // label11
             // 
@@ -252,16 +252,16 @@ namespace BG3_Mod_Templates
             this.label11.TabIndex = 96;
             this.label11.Text = "Version Number";
             // 
-            // button7
+            // Button7
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(332, 335);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(69, 31);
-            this.button7.TabIndex = 98;
-            this.button7.Text = "Update";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.Button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Button7.Location = new System.Drawing.Point(332, 335);
+            this.Button7.Name = "Button7";
+            this.Button7.Size = new System.Drawing.Size(69, 31);
+            this.Button7.TabIndex = 98;
+            this.Button7.Text = "Update";
+            this.Button7.UseVisualStyleBackColor = true;
+            this.Button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // textBoxVersion
             // 
@@ -328,6 +328,7 @@ namespace BG3_Mod_Templates
             this.FolderModName.TabIndex = 105;
             this.FolderModName.Text = "ModName";
             this.FolderModName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.FolderModName.TextChanged += new System.EventHandler(this.FolderModName_TextChanged);
             // 
             // FolderMods
             // 
@@ -379,48 +380,48 @@ namespace BG3_Mod_Templates
             this.label16.TabIndex = 110;
             this.label16.Text = "Meta Folder Path";
             // 
-            // buttonSelectFolder
+            // ButtonSelectFolder
             // 
-            this.buttonSelectFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonSelectFolder.Location = new System.Drawing.Point(502, 47);
-            this.buttonSelectFolder.Name = "buttonSelectFolder";
-            this.buttonSelectFolder.Size = new System.Drawing.Size(97, 44);
-            this.buttonSelectFolder.TabIndex = 111;
-            this.buttonSelectFolder.Text = "Check Mod Folder";
-            this.buttonSelectFolder.UseVisualStyleBackColor = true;
-            this.buttonSelectFolder.Click += new System.EventHandler(this.buttonSelectFolder_Click);
+            this.ButtonSelectFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ButtonSelectFolder.Location = new System.Drawing.Point(502, 47);
+            this.ButtonSelectFolder.Name = "ButtonSelectFolder";
+            this.ButtonSelectFolder.Size = new System.Drawing.Size(97, 44);
+            this.ButtonSelectFolder.TabIndex = 111;
+            this.ButtonSelectFolder.Text = "Check Mod Folder";
+            this.ButtonSelectFolder.UseVisualStyleBackColor = true;
+            this.ButtonSelectFolder.Click += new System.EventHandler(this.ButtonSelectFolder_Click);
             // 
-            // buttonCreateFolders
+            // ButtonCreateFolders
             // 
-            this.buttonCreateFolders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCreateFolders.Location = new System.Drawing.Point(605, 47);
-            this.buttonCreateFolders.Name = "buttonCreateFolders";
-            this.buttonCreateFolders.Size = new System.Drawing.Size(105, 44);
-            this.buttonCreateFolders.TabIndex = 112;
-            this.buttonCreateFolders.Text = "Create Folders";
-            this.buttonCreateFolders.UseVisualStyleBackColor = true;
-            this.buttonCreateFolders.Click += new System.EventHandler(this.buttonCreateFolders_Click);
+            this.ButtonCreateFolders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ButtonCreateFolders.Location = new System.Drawing.Point(605, 47);
+            this.ButtonCreateFolders.Name = "ButtonCreateFolders";
+            this.ButtonCreateFolders.Size = new System.Drawing.Size(105, 44);
+            this.ButtonCreateFolders.TabIndex = 112;
+            this.ButtonCreateFolders.Text = "Create Folders";
+            this.ButtonCreateFolders.UseVisualStyleBackColor = true;
+            this.ButtonCreateFolders.Click += new System.EventHandler(this.ButtonCreateFolders_Click);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(12, 94);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(736, 20);
+            this.label17.Size = new System.Drawing.Size(738, 20);
             this.label17.TabIndex = 113;
-            this.label17.Text = "Fill in or use the Check Mod Folder button to check if your mod folder includes t" +
+            this.label17.Text = "Fill in or use the Check Mod Folder Button to check if your mod folder includes t" +
     "he folder for the meta.lsx";
             // 
-            // button8
+            // Button8
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button8.Location = new System.Drawing.Point(151, 423);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(140, 31);
-            this.button8.TabIndex = 114;
-            this.button8.Text = "Save as";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.Button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Button8.Location = new System.Drawing.Point(151, 423);
+            this.Button8.Name = "Button8";
+            this.Button8.Size = new System.Drawing.Size(140, 31);
+            this.Button8.TabIndex = 114;
+            this.Button8.Text = "Save as";
+            this.Button8.UseVisualStyleBackColor = true;
+            this.Button8.Click += new System.EventHandler(this.Button8_Click);
             // 
             // Form3
             // 
@@ -428,10 +429,10 @@ namespace BG3_Mod_Templates
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(758, 478);
-            this.Controls.Add(this.button8);
+            this.Controls.Add(this.Button8);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.buttonCreateFolders);
-            this.Controls.Add(this.buttonSelectFolder);
+            this.Controls.Add(this.ButtonCreateFolders);
+            this.Controls.Add(this.ButtonSelectFolder);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -444,22 +445,22 @@ namespace BG3_Mod_Templates
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBoxVersion);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.Button7);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.Button6);
+            this.Controls.Add(this.Button4);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBoxUniqueUUID);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Button3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBoxShared2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Button2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxDesc);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxName);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.Button5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox_creator);
             this.Controls.Add(this.label2);
@@ -479,25 +480,25 @@ namespace BG3_Mod_Templates
         }
 
         #endregion
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Button4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxUniqueUUID;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Button3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxShared2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxDesc;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button Button5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox_creator;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button Button6;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button Button7;
         private System.Windows.Forms.TextBox textBoxVersion;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
@@ -510,9 +511,9 @@ namespace BG3_Mod_Templates
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button buttonSelectFolder;
-        private System.Windows.Forms.Button buttonCreateFolders;
+        private System.Windows.Forms.Button ButtonSelectFolder;
+        private System.Windows.Forms.Button ButtonCreateFolders;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button Button8;
     }
 }

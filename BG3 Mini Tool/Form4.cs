@@ -44,7 +44,7 @@ namespace BG3_Mod_Templates
                 textBoxSRGB.Text = srgbColor;
             }
         }
-        private void button7_Click(object sender, EventArgs e) //Version Number
+        private void Button7_Click(object sender, EventArgs e) //Version Number
         {
             string filePath = "LSX Files\\meta.lsx";
             string newValue = textBoxVersion.Text;

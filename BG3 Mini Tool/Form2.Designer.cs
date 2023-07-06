@@ -39,30 +39,30 @@ namespace BG3_Mini_Tool
             this.textBoxVisualResource = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.update_name = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.update_VisualResource = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.update_UniqueUUID = new System.Windows.Forms.Button();
+            this.Update_name = new System.Windows.Forms.Button();
+            this.Button2 = new System.Windows.Forms.Button();
+            this.Button3 = new System.Windows.Forms.Button();
+            this.Update_VisualResource = new System.Windows.Forms.Button();
+            this.Button8 = new System.Windows.Forms.Button();
+            this.Button9 = new System.Windows.Forms.Button();
+            this.Update_UniqueUUID = new System.Windows.Forms.Button();
             this.textBoxUniqueUUID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.button_add = new System.Windows.Forms.Button();
+            this.Button_add = new System.Windows.Forms.Button();
             this.textBoxpath = new System.Windows.Forms.TextBox();
-            this.button_locateLSX = new System.Windows.Forms.Button();
+            this.Button_locateLSX = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.update_RaceUUID = new System.Windows.Forms.Button();
+            this.Update_RaceUUID = new System.Windows.Forms.Button();
             this.comboBoxRaceUUID = new System.Windows.Forms.ComboBox();
-            this.button_saveas = new System.Windows.Forms.Button();
+            this.Button_saveas = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.UUIDGen_Unique = new System.Windows.Forms.Button();
             this.UUIDGen_VisualResource = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.buttonCreateFolders = new System.Windows.Forms.Button();
-            this.buttonSelectFolder = new System.Windows.Forms.Button();
+            this.ButtonCreateFolders = new System.Windows.Forms.Button();
+            this.ButtonSelectFolder = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -152,82 +152,82 @@ namespace BG3_Mini_Tool
             this.label6.TabIndex = 7;
             this.label6.Text = "SlotName";
             // 
-            // update_name
+            // Update_name
             // 
-            this.update_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_name.Location = new System.Drawing.Point(516, 114);
-            this.update_name.Name = "update_name";
-            this.update_name.Size = new System.Drawing.Size(69, 31);
-            this.update_name.TabIndex = 12;
-            this.update_name.Text = "Update";
-            this.update_name.UseVisualStyleBackColor = true;
-            this.update_name.Click += new System.EventHandler(this.update_name_Click);
+            this.Update_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_name.Location = new System.Drawing.Point(516, 114);
+            this.Update_name.Name = "Update_name";
+            this.Update_name.Size = new System.Drawing.Size(69, 31);
+            this.Update_name.TabIndex = 12;
+            this.Update_name.Text = "Update";
+            this.Update_name.UseVisualStyleBackColor = true;
+            this.Update_name.Click += new System.EventHandler(this.Update_name_Click);
             // 
-            // button2
+            // Button2
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(161, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(69, 31);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Masc";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button2.Location = new System.Drawing.Point(161, 149);
+            this.Button2.Name = "Button2";
+            this.Button2.Size = new System.Drawing.Size(69, 31);
+            this.Button2.TabIndex = 13;
+            this.Button2.Text = "Masc";
+            this.Button2.UseVisualStyleBackColor = true;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // button3
+            // Button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(161, 220);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(69, 31);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Head";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button3.Location = new System.Drawing.Point(161, 220);
+            this.Button3.Name = "Button3";
+            this.Button3.Size = new System.Drawing.Size(69, 31);
+            this.Button3.TabIndex = 15;
+            this.Button3.Text = "Head";
+            this.Button3.UseVisualStyleBackColor = true;
+            this.Button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // update_VisualResource
+            // Update_VisualResource
             // 
-            this.update_VisualResource.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_VisualResource.Location = new System.Drawing.Point(516, 295);
-            this.update_VisualResource.Name = "update_VisualResource";
-            this.update_VisualResource.Size = new System.Drawing.Size(69, 31);
-            this.update_VisualResource.TabIndex = 17;
-            this.update_VisualResource.Text = "Update";
-            this.update_VisualResource.UseVisualStyleBackColor = true;
-            this.update_VisualResource.Click += new System.EventHandler(this.update_VisualResource_Click);
+            this.Update_VisualResource.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_VisualResource.Location = new System.Drawing.Point(516, 295);
+            this.Update_VisualResource.Name = "Update_VisualResource";
+            this.Update_VisualResource.Size = new System.Drawing.Size(69, 31);
+            this.Update_VisualResource.TabIndex = 17;
+            this.Update_VisualResource.Text = "Update";
+            this.Update_VisualResource.UseVisualStyleBackColor = true;
+            this.Update_VisualResource.Click += new System.EventHandler(this.Update_VisualResource_Click);
             // 
-            // button8
+            // Button8
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(236, 149);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(92, 31);
-            this.button8.TabIndex = 19;
-            this.button8.Text = "Feminine";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.Button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button8.Location = new System.Drawing.Point(236, 149);
+            this.Button8.Name = "Button8";
+            this.Button8.Size = new System.Drawing.Size(92, 31);
+            this.Button8.TabIndex = 19;
+            this.Button8.Text = "Feminine";
+            this.Button8.UseVisualStyleBackColor = true;
+            this.Button8.Click += new System.EventHandler(this.Button8_Click);
             // 
-            // button9
+            // Button9
             // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(236, 220);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(69, 31);
-            this.button9.TabIndex = 20;
-            this.button9.Text = "Horns";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.Button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button9.Location = new System.Drawing.Point(236, 220);
+            this.Button9.Name = "Button9";
+            this.Button9.Size = new System.Drawing.Size(69, 31);
+            this.Button9.TabIndex = 20;
+            this.Button9.Text = "Horns";
+            this.Button9.UseVisualStyleBackColor = true;
+            this.Button9.Click += new System.EventHandler(this.Button9_Click);
             // 
-            // update_UniqueUUID
+            // Update_UniqueUUID
             // 
-            this.update_UniqueUUID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_UniqueUUID.Location = new System.Drawing.Point(516, 258);
-            this.update_UniqueUUID.Name = "update_UniqueUUID";
-            this.update_UniqueUUID.Size = new System.Drawing.Size(69, 31);
-            this.update_UniqueUUID.TabIndex = 23;
-            this.update_UniqueUUID.Text = "Update";
-            this.update_UniqueUUID.UseVisualStyleBackColor = true;
-            this.update_UniqueUUID.Click += new System.EventHandler(this.update_UniqueUUID_Click);
+            this.Update_UniqueUUID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_UniqueUUID.Location = new System.Drawing.Point(516, 258);
+            this.Update_UniqueUUID.Name = "Update_UniqueUUID";
+            this.Update_UniqueUUID.Size = new System.Drawing.Size(69, 31);
+            this.Update_UniqueUUID.TabIndex = 23;
+            this.Update_UniqueUUID.Text = "Update";
+            this.Update_UniqueUUID.UseVisualStyleBackColor = true;
+            this.Update_UniqueUUID.Click += new System.EventHandler(this.Update_UniqueUUID_Click);
             // 
             // textBoxUniqueUUID
             // 
@@ -266,16 +266,16 @@ namespace BG3_Mini_Tool
             this.label13.TabIndex = 49;
             this.label13.Text = "CharacterCreationAppearanceVisuals";
             // 
-            // button_add
+            // Button_add
             // 
-            this.button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_add.Location = new System.Drawing.Point(36, 366);
-            this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(173, 31);
-            this.button_add.TabIndex = 51;
-            this.button_add.Text = "Add to your mod file";
-            this.button_add.UseVisualStyleBackColor = true;
-            this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            this.Button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_add.Location = new System.Drawing.Point(36, 366);
+            this.Button_add.Name = "Button_add";
+            this.Button_add.Size = new System.Drawing.Size(173, 31);
+            this.Button_add.TabIndex = 51;
+            this.Button_add.Text = "Add to your mod file";
+            this.Button_add.UseVisualStyleBackColor = true;
+            this.Button_add.Click += new System.EventHandler(this.Button_add_Click);
             // 
             // textBoxpath
             // 
@@ -288,16 +288,16 @@ namespace BG3_Mini_Tool
     "dd to your mod file\" your new entry is added to your file";
             this.textBoxpath.TextChanged += new System.EventHandler(this.textBoxpath_TextChanged);
             // 
-            // button_locateLSX
+            // Button_locateLSX
             // 
-            this.button_locateLSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_locateLSX.Location = new System.Drawing.Point(36, 403);
-            this.button_locateLSX.Name = "button_locateLSX";
-            this.button_locateLSX.Size = new System.Drawing.Size(458, 31);
-            this.button_locateLSX.TabIndex = 54;
-            this.button_locateLSX.Text = "Locate your CharacterCreationAppearanceVisuals.lsx";
-            this.button_locateLSX.UseVisualStyleBackColor = true;
-            this.button_locateLSX.Click += new System.EventHandler(this.button_locateLSX_Click);
+            this.Button_locateLSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_locateLSX.Location = new System.Drawing.Point(36, 403);
+            this.Button_locateLSX.Name = "Button_locateLSX";
+            this.Button_locateLSX.Size = new System.Drawing.Size(458, 31);
+            this.Button_locateLSX.TabIndex = 54;
+            this.Button_locateLSX.Text = "Locate your CharacterCreationAppearanceVisuals.lsx";
+            this.Button_locateLSX.UseVisualStyleBackColor = true;
+            this.Button_locateLSX.Click += new System.EventHandler(this.Button_locateLSX_Click);
             // 
             // label15
             // 
@@ -308,16 +308,16 @@ namespace BG3_Mini_Tool
             this.label15.TabIndex = 55;
             this.label15.Text = "Add the slot to an existing file";
             // 
-            // update_RaceUUID
+            // Update_RaceUUID
             // 
-            this.update_RaceUUID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_RaceUUID.Location = new System.Drawing.Point(516, 185);
-            this.update_RaceUUID.Name = "update_RaceUUID";
-            this.update_RaceUUID.Size = new System.Drawing.Size(69, 31);
-            this.update_RaceUUID.TabIndex = 59;
-            this.update_RaceUUID.Text = "Update";
-            this.update_RaceUUID.UseVisualStyleBackColor = true;
-            this.update_RaceUUID.Click += new System.EventHandler(this.update_RaceUUID_Click);
+            this.Update_RaceUUID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_RaceUUID.Location = new System.Drawing.Point(516, 185);
+            this.Update_RaceUUID.Name = "Update_RaceUUID";
+            this.Update_RaceUUID.Size = new System.Drawing.Size(69, 31);
+            this.Update_RaceUUID.TabIndex = 59;
+            this.Update_RaceUUID.Text = "Update";
+            this.Update_RaceUUID.UseVisualStyleBackColor = true;
+            this.Update_RaceUUID.Click += new System.EventHandler(this.Update_RaceUUID_Click);
             // 
             // comboBoxRaceUUID
             // 
@@ -330,16 +330,16 @@ namespace BG3_Mini_Tool
             this.comboBoxRaceUUID.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.comboBoxRaceUUID.Click += new System.EventHandler(this.comboBoxRaceUUID_Click);
             // 
-            // button_saveas
+            // Button_saveas
             // 
-            this.button_saveas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_saveas.Location = new System.Drawing.Point(36, 329);
-            this.button_saveas.Name = "button_saveas";
-            this.button_saveas.Size = new System.Drawing.Size(140, 31);
-            this.button_saveas.TabIndex = 64;
-            this.button_saveas.Text = "Save as";
-            this.button_saveas.UseVisualStyleBackColor = true;
-            this.button_saveas.Click += new System.EventHandler(this.button_saveas_Click);
+            this.Button_saveas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_saveas.Location = new System.Drawing.Point(36, 329);
+            this.Button_saveas.Name = "Button_saveas";
+            this.Button_saveas.Size = new System.Drawing.Size(140, 31);
+            this.Button_saveas.TabIndex = 64;
+            this.Button_saveas.Text = "Save as";
+            this.Button_saveas.UseVisualStyleBackColor = true;
+            this.Button_saveas.Click += new System.EventHandler(this.Button_saveas_Click);
             // 
             // label17
             // 
@@ -379,30 +379,30 @@ namespace BG3_Mini_Tool
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(736, 20);
             this.label8.TabIndex = 122;
-            this.label8.Text = "Fill in or use the Check Mod Folder button to check if your mod folder includes t" +
+            this.label8.Text = "Fill in or use the Check Mod Folder Button to check if your mod folder includes t" +
     "he folder for the meta.lsx";
             // 
-            // buttonCreateFolders
+            // ButtonCreateFolders
             // 
-            this.buttonCreateFolders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreateFolders.Location = new System.Drawing.Point(947, 43);
-            this.buttonCreateFolders.Name = "buttonCreateFolders";
-            this.buttonCreateFolders.Size = new System.Drawing.Size(105, 44);
-            this.buttonCreateFolders.TabIndex = 121;
-            this.buttonCreateFolders.Text = "Create Folders";
-            this.buttonCreateFolders.UseVisualStyleBackColor = true;
-            this.buttonCreateFolders.Click += new System.EventHandler(this.buttonCreateFolders_Click);
+            this.ButtonCreateFolders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCreateFolders.Location = new System.Drawing.Point(947, 43);
+            this.ButtonCreateFolders.Name = "ButtonCreateFolders";
+            this.ButtonCreateFolders.Size = new System.Drawing.Size(105, 44);
+            this.ButtonCreateFolders.TabIndex = 121;
+            this.ButtonCreateFolders.Text = "Create Folders";
+            this.ButtonCreateFolders.UseVisualStyleBackColor = true;
+            this.ButtonCreateFolders.Click += new System.EventHandler(this.ButtonCreateFolders_Click);
             // 
-            // buttonSelectFolder
+            // ButtonSelectFolder
             // 
-            this.buttonSelectFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSelectFolder.Location = new System.Drawing.Point(844, 43);
-            this.buttonSelectFolder.Name = "buttonSelectFolder";
-            this.buttonSelectFolder.Size = new System.Drawing.Size(97, 44);
-            this.buttonSelectFolder.TabIndex = 120;
-            this.buttonSelectFolder.Text = "Check Mod Folder";
-            this.buttonSelectFolder.UseVisualStyleBackColor = true;
-            this.buttonSelectFolder.Click += new System.EventHandler(this.buttonSelectFolder_Click);
+            this.ButtonSelectFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSelectFolder.Location = new System.Drawing.Point(844, 43);
+            this.ButtonSelectFolder.Name = "ButtonSelectFolder";
+            this.ButtonSelectFolder.Size = new System.Drawing.Size(97, 44);
+            this.ButtonSelectFolder.TabIndex = 120;
+            this.ButtonSelectFolder.Text = "Check Mod Folder";
+            this.ButtonSelectFolder.UseVisualStyleBackColor = true;
+            this.ButtonSelectFolder.Click += new System.EventHandler(this.ButtonSelectFolder_Click);
             // 
             // label16
             // 
@@ -496,8 +496,8 @@ namespace BG3_Mini_Tool
             this.Controls.Add(this.label20);
             this.Controls.Add(this.FolderCharacterCreation);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.buttonCreateFolders);
-            this.Controls.Add(this.buttonSelectFolder);
+            this.Controls.Add(this.ButtonCreateFolders);
+            this.Controls.Add(this.ButtonSelectFolder);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label19);
@@ -507,24 +507,24 @@ namespace BG3_Mini_Tool
             this.Controls.Add(this.UUIDGen_VisualResource);
             this.Controls.Add(this.UUIDGen_Unique);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.button_saveas);
+            this.Controls.Add(this.Button_saveas);
             this.Controls.Add(this.comboBoxRaceUUID);
-            this.Controls.Add(this.update_RaceUUID);
+            this.Controls.Add(this.Update_RaceUUID);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.button_locateLSX);
+            this.Controls.Add(this.Button_locateLSX);
             this.Controls.Add(this.textBoxpath);
-            this.Controls.Add(this.button_add);
+            this.Controls.Add(this.Button_add);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.update_UniqueUUID);
+            this.Controls.Add(this.Update_UniqueUUID);
             this.Controls.Add(this.textBoxUniqueUUID);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.update_VisualResource);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.update_name);
+            this.Controls.Add(this.Button9);
+            this.Controls.Add(this.Button8);
+            this.Controls.Add(this.Update_VisualResource);
+            this.Controls.Add(this.Button3);
+            this.Controls.Add(this.Button2);
+            this.Controls.Add(this.Update_name);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxVisualResource);
             this.Controls.Add(this.label5);
@@ -554,30 +554,30 @@ namespace BG3_Mini_Tool
         private System.Windows.Forms.TextBox textBoxVisualResource;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button update_name;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button update_VisualResource;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button update_UniqueUUID;
+        private System.Windows.Forms.Button Update_name;
+        private System.Windows.Forms.Button Button2;
+        private System.Windows.Forms.Button Button3;
+        private System.Windows.Forms.Button Update_VisualResource;
+        private System.Windows.Forms.Button Button8;
+        private System.Windows.Forms.Button Button9;
+        private System.Windows.Forms.Button Update_UniqueUUID;
         private System.Windows.Forms.TextBox textBoxUniqueUUID;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button_add;
+        private System.Windows.Forms.Button Button_add;
         private System.Windows.Forms.TextBox textBoxpath;
-        private System.Windows.Forms.Button button_locateLSX;
+        private System.Windows.Forms.Button Button_locateLSX;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button update_RaceUUID;
+        private System.Windows.Forms.Button Update_RaceUUID;
         private System.Windows.Forms.ComboBox comboBoxRaceUUID;
-        private System.Windows.Forms.Button button_saveas;
+        private System.Windows.Forms.Button Button_saveas;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button UUIDGen_Unique;
         private System.Windows.Forms.Button UUIDGen_VisualResource;
         private Label label8;
-        private Button buttonCreateFolders;
-        private Button buttonSelectFolder;
+        private Button ButtonCreateFolders;
+        private Button ButtonSelectFolder;
         private Label label16;
         private Label label18;
         private Label label19;

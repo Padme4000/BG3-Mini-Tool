@@ -13,12 +13,12 @@ namespace BG3_Mini_Tool
 {
     public partial class Form1 : Form
     {
+        private Form3? form3Instance;
         public Form1()
         {
             InitializeComponent();
         }
-        private Form3 form3Instance;
-        private void button16_Click(object sender, EventArgs e)
+        private void Button16_Click(object sender, EventArgs e)
         {
             if (form3Instance == null)
             {
@@ -30,18 +30,23 @@ namespace BG3_Mini_Tool
                 form3Instance.Show();
                 form3Instance.BringToFront();
             }
+
+            foreach (Control control in Controls)
+            {
+                control.Enabled = false;
+            }
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
 
         }
-        private Form2 Form2Instance;
-        private void button1_Click(object sender, EventArgs e)
+        private Form2? Form2Instance;
+        private void Button1_Click(object sender, EventArgs e)
         {
             if (Form2Instance == null)
             {
@@ -55,8 +60,8 @@ namespace BG3_Mini_Tool
             }
         }
 
-        private Tools form4Instance;
-        private void button4_Click(object sender, EventArgs e)
+        private Tools? form4Instance;
+        private void Button4_Click(object sender, EventArgs e)
         {
             if (form4Instance == null)
             {
