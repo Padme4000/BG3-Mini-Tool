@@ -15,6 +15,20 @@ namespace BG3_Mod_Templates
             numericUpDown2.Value = 0;
             numericUpDown2.Enabled = false;
             FolderMods.ReadOnly = true;
+
+            foreach (Control control in Controls)
+            {
+                if (control is System.Windows.Forms.TextBox)
+                {
+                    // Enable user input in text boxes
+                    ((System.Windows.Forms.TextBox)control).ReadOnly = false;
+                }
+                else
+                {
+                    // Disable other controls to prevent interaction
+                    control.Enabled = false;
+                }
+            }
         }
 
         private void Button6_Click(object sender, EventArgs e)

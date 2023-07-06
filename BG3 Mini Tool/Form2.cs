@@ -22,6 +22,20 @@ namespace BG3_Mini_Tool
             InitializeComponent();
             FolderPublic.ReadOnly = true;
             FolderCharacterCreation.ReadOnly = true;
+            
+            foreach (Control control in Controls)
+            {
+                if (control is System.Windows.Forms.TextBox)
+                {
+                    // Enable user input in text boxes
+                    ((System.Windows.Forms.TextBox)control).ReadOnly = false;
+                }
+                else
+                {
+                    // Disable other controls to prevent interaction
+                    control.Enabled = false;
+                }
+            }
         }
 
         private void Update_name_Click(object sender, EventArgs e) //NewName

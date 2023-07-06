@@ -30,11 +30,6 @@ namespace BG3_Mini_Tool
                 form3Instance.Show();
                 form3Instance.BringToFront();
             }
-
-            foreach (Control control in Controls)
-            {
-                control.Enabled = false;
-            }
         }
         private void Button2_Click(object sender, EventArgs e)
         {
