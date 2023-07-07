@@ -8,12 +8,6 @@ namespace BG3_Mod_Templates
         {
             InitializeComponent();
 
-            numericUpDown1.Value = 1;
-            numericUpDown3.Value = 0;
-            numericUpDown3.Enabled = false;
-
-            numericUpDown2.Value = 0;
-            numericUpDown2.Enabled = false;
             FolderMods.ReadOnly = true;
 
             foreach (Control control in Controls)
@@ -22,6 +16,24 @@ namespace BG3_Mod_Templates
                 {
                     // Enable user input in text boxes
                     ((System.Windows.Forms.TextBox)control).ReadOnly = false;
+                }
+                else if (control is System.Windows.Forms.Button)
+                {
+                    // Enable Buttons for interaction
+                    control.Enabled = true;
+                }
+                else if (control is System.Windows.Forms.NumericUpDown)
+                {
+
+                    ((NumericUpDown)control).Enabled = true;
+
+                    numericUpDown1.Value = 1;
+                    numericUpDown3.Value = 0;
+                    numericUpDown3.Enabled = false;
+
+                    numericUpDown2.Value = 0;
+                    numericUpDown2.Enabled = false;
+
                 }
                 else
                 {
@@ -193,6 +205,8 @@ namespace BG3_Mod_Templates
             {
                 numericUpDown1.Value = 1;
             }
+
+            numericUpDown4.Value = 0;
 
             int[] versionNumbers = new int[] {
             (int)numericUpDown1.Value,

@@ -38,6 +38,7 @@ namespace BG3_Mini_Tool
             this.label4 = new System.Windows.Forms.Label();
             this.Button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.Button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -62,11 +63,11 @@ namespace BG3_Mini_Tool
             // 
             // Button1
             // 
-            this.Button1.Location = new System.Drawing.Point(24, 229);
+            this.Button1.Location = new System.Drawing.Point(53, 229);
             this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(232, 59);
+            this.Button1.Size = new System.Drawing.Size(174, 42);
             this.Button1.TabIndex = 25;
-            this.Button1.Text = "Character Creation Appearance Visuals";
+            this.Button1.Text = "Character Creation";
             this.Button1.UseVisualStyleBackColor = true;
             this.Button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -120,12 +121,22 @@ namespace BG3_Mini_Tool
             this.label5.TabIndex = 30;
             this.label5.Text = "Tools Separated";
             // 
+            // Button2
+            // 
+            this.Button2.Location = new System.Drawing.Point(53, 277);
+            this.Button2.Name = "Button2";
+            this.Button2.Size = new System.Drawing.Size(174, 42);
+            this.Button2.TabIndex = 31;
+            this.Button2.Text = "NPC";
+            this.Button2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(286, 474);
+            this.Controls.Add(this.Button2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Button4);
             this.Controls.Add(this.label4);
@@ -154,5 +165,6 @@ namespace BG3_Mini_Tool
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Button4;
         private System.Windows.Forms.Label label5;
+        private Button Button2;
     }
 }

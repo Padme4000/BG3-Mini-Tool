@@ -40,18 +40,18 @@ namespace BG3_Mini_Tool
         {
 
         }
-        private Form2? Form2Instance;
+        private Form6? Form6Instance;
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (Form2Instance == null)
+            if (Form6Instance == null)
             {
-                Form2Instance = new Form2();
-                Form2Instance.Show();
+                Form6Instance = new Form6();
+                Form6Instance.Show();
             }
             else
             {
-                Form2Instance.Show();
-                Form2Instance.BringToFront();
+                Form6Instance.Show();
+                Form6Instance.BringToFront();
             }
         }
 

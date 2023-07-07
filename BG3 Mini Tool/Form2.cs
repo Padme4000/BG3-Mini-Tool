@@ -19,16 +19,22 @@ namespace BG3_Mini_Tool
     {
         public Form2()
         {
-            InitializeComponent();
-            FolderPublic.ReadOnly = true;
-            FolderCharacterCreation.ReadOnly = true;
+            InitializeComponent(); 
             
+            FolderPublic.Enabled = false;
+            FolderCharacterCreation.Enabled = false;
+
             foreach (Control control in Controls)
             {
                 if (control is System.Windows.Forms.TextBox)
                 {
                     // Enable user input in text boxes
                     ((System.Windows.Forms.TextBox)control).ReadOnly = false;
+                }
+                else if (control is System.Windows.Forms.Button)
+                {
+                    // Enable Buttons for interaction
+                    control.Enabled = true;
                 }
                 else
                 {

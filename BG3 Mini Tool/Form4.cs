@@ -15,6 +15,38 @@ namespace BG3_Mod_Templates
         public Tools()
         {
             InitializeComponent();
+
+            foreach (Control control in Controls)
+            {
+                if (control is System.Windows.Forms.TextBox)
+                {
+                    // Enable user input in text boxes
+                    ((System.Windows.Forms.TextBox)control).ReadOnly = false;
+                }
+                else if (control is System.Windows.Forms.Button)
+                {
+                    // Enable Buttons for interaction
+                    control.Enabled = true;
+                }
+                else if (control is System.Windows.Forms.NumericUpDown)
+                {
+
+                    ((NumericUpDown)control).Enabled = true;
+
+                    numericUpDown1.Value = 1;
+                    numericUpDown3.Value = 0;
+                    numericUpDown3.Enabled = false;
+
+                    numericUpDown2.Value = 0;
+                    numericUpDown2.Enabled = false;
+
+                }
+                else
+                {
+                    // Disable other controls to prevent interaction
+                    control.Enabled = false;
+                }
+            }
         }
 
         private void Form8_FormClosing(object sender, FormClosingEventArgs e)
@@ -111,6 +143,49 @@ namespace BG3_Mod_Templates
         private void textBoxVersion_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void numericUpDown4_ValueChanged_1(object sender, EventArgs e)
+        {
+            if (numericUpDown4.Value > 0)
+            {
+                long currentValue = long.Parse(textBoxVersion.Text);
+                currentValue += 1;
+                textBoxVersion.Text = currentValue.ToString("D17");
+            }
+            else
+            {
+                long currentValue = long.Parse(textBoxVersion.Text);
+                currentValue -= 1;
+                textBoxVersion.Text = currentValue.ToString("D17");
+            }
+        }
+
+        private void numericUpDown1_ValueChanged_1(object sender, EventArgs e)
+        {
+            if (numericUpDown1.Value < 1)
+            {
+                numericUpDown1.Value = 1;
+            }
+
+            numericUpDown4.Value = 0;
+
+            int[] versionNumbers = new int[] {
+            (int)numericUpDown1.Value,
+            (int) numericUpDown2.Value,
+            (int)numericUpDown3.Value,
+            (int)numericUpDown4.Value
+           };
+
+            long int64Value = 0;
+
+            for (int i = 0; i < versionNumbers.Length; i++)
+            {
+                int64Value += (long)versionNumbers[i] << (55 - 15 * i);
+            }
+
+            // Set the value of textBoxVersion to the int64Value as a 17-character string
+            textBoxVersion.Text = int64Value.ToString("D17");
         }
     }
 }
