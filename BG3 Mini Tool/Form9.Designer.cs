@@ -81,7 +81,7 @@ namespace BG3_Mod_Templates
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(422, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(217, 25);
@@ -90,7 +90,7 @@ namespace BG3_Mod_Templates
             // 
             // Button5
             // 
-            this.Button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button5.Location = new System.Drawing.Point(495, 170);
             this.Button5.Name = "Button5";
             this.Button5.Size = new System.Drawing.Size(69, 31);
@@ -120,7 +120,7 @@ namespace BG3_Mod_Templates
             // 
             // Button1
             // 
-            this.Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button1.Location = new System.Drawing.Point(828, 134);
             this.Button1.Name = "Button1";
             this.Button1.Size = new System.Drawing.Size(69, 31);
@@ -151,7 +151,7 @@ namespace BG3_Mod_Templates
             // 
             // Button2
             // 
-            this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button2.Location = new System.Drawing.Point(495, 207);
             this.Button2.Name = "Button2";
             this.Button2.Size = new System.Drawing.Size(69, 31);
@@ -182,7 +182,7 @@ namespace BG3_Mod_Templates
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(16, 242);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
@@ -192,7 +192,7 @@ namespace BG3_Mod_Templates
             // 
             // Button3
             // 
-            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button3.Location = new System.Drawing.Point(495, 272);
             this.Button3.Name = "Button3";
             this.Button3.Size = new System.Drawing.Size(69, 31);
@@ -213,7 +213,7 @@ namespace BG3_Mod_Templates
             // 
             // Button4
             // 
-            this.Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button4.Location = new System.Drawing.Point(495, 309);
             this.Button4.Name = "Button4";
             this.Button4.Size = new System.Drawing.Size(69, 31);
@@ -273,7 +273,7 @@ namespace BG3_Mod_Templates
             // 
             // ButtonCreateFolders
             // 
-            this.ButtonCreateFolders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCreateFolders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ButtonCreateFolders.Location = new System.Drawing.Point(247, 83);
             this.ButtonCreateFolders.Name = "ButtonCreateFolders";
             this.ButtonCreateFolders.Size = new System.Drawing.Size(105, 44);
@@ -284,7 +284,7 @@ namespace BG3_Mod_Templates
             // 
             // ButtonSelectFolder
             // 
-            this.ButtonSelectFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSelectFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ButtonSelectFolder.Location = new System.Drawing.Point(144, 83);
             this.ButtonSelectFolder.Name = "ButtonSelectFolder";
             this.ButtonSelectFolder.Size = new System.Drawing.Size(97, 44);
@@ -355,7 +355,7 @@ namespace BG3_Mod_Templates
             // 
             // UUIDGen_Unique
             // 
-            this.UUIDGen_Unique.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UUIDGen_Unique.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.UUIDGen_Unique.Location = new System.Drawing.Point(570, 170);
             this.UUIDGen_Unique.Name = "UUIDGen_Unique";
             this.UUIDGen_Unique.Size = new System.Drawing.Size(219, 31);
@@ -366,7 +366,7 @@ namespace BG3_Mod_Templates
             // 
             // Button6
             // 
-            this.Button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button6.Location = new System.Drawing.Point(903, 134);
             this.Button6.Name = "Button6";
             this.Button6.Size = new System.Drawing.Size(219, 31);
@@ -504,7 +504,7 @@ namespace BG3_Mod_Templates
             // 
             // Button_saveas
             // 
-            this.Button_saveas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_saveas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button_saveas.Location = new System.Drawing.Point(143, 365);
             this.Button_saveas.Name = "Button_saveas";
             this.Button_saveas.Size = new System.Drawing.Size(140, 31);
@@ -515,7 +515,7 @@ namespace BG3_Mod_Templates
             // 
             // Button_locateLSX
             // 
-            this.Button_locateLSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_locateLSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button_locateLSX.Location = new System.Drawing.Point(143, 439);
             this.Button_locateLSX.Name = "Button_locateLSX";
             this.Button_locateLSX.Size = new System.Drawing.Size(287, 31);
@@ -536,7 +536,7 @@ namespace BG3_Mod_Templates
             // 
             // ButtonAddRegion
             // 
-            this.ButtonAddRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonAddRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ButtonAddRegion.Location = new System.Drawing.Point(143, 402);
             this.ButtonAddRegion.Name = "ButtonAddRegion";
             this.ButtonAddRegion.Size = new System.Drawing.Size(173, 31);
@@ -563,7 +563,7 @@ namespace BG3_Mod_Templates
             this.label15.TabIndex = 155;
             this.label15.Text = "Add the slot to an existing file";
             // 
-            // Form3
+            // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -616,12 +616,13 @@ namespace BG3_Mod_Templates
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label2);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form3";
+            this.Name = "Form9";
             this.Text = "New Head _merged";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form9_FormClosing);
             this.Load += new System.EventHandler(this.Form9_Load);
+            this.Resize += new System.EventHandler(this.Form9_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 

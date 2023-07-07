@@ -39,7 +39,6 @@ namespace BG3_Mod_Templates
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            this.FormClosing += new FormClosingEventHandler(Form6_FormClosing);
         }
 
         private Form2? Form2Instance;
@@ -80,5 +79,10 @@ namespace BG3_Mod_Templates
             this.Hide(); // Hide the form instead of closing it
         }
 
+        private void Form6_Resize(object sender, EventArgs e)
+        {
+            // Set the desired size of the form
+            this.Size = new Size(730, 620);
+        }
     }
 }

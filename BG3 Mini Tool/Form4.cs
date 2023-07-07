@@ -187,5 +187,11 @@ namespace BG3_Mod_Templates
             // Set the value of textBoxVersion to the int64Value as a 17-character string
             textBoxVersion.Text = int64Value.ToString("D17");
         }
+
+        private void Tools_Resize(object sender, EventArgs e)
+        {
+            // Set the desired size of the form
+            this.Size = new Size(600, 315);
+        }
     }
 }

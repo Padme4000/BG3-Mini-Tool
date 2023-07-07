@@ -55,7 +55,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(296, 9);
+            this.label2.Location = new System.Drawing.Point(265, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 25);
             this.label2.TabIndex = 16;
@@ -65,7 +65,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(107, 34);
+            this.label7.Location = new System.Drawing.Point(76, 34);
             this.label7.MaximumSize = new System.Drawing.Size(450, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(433, 40);
@@ -77,7 +77,7 @@
             // panelColorBox
             // 
             this.panelColorBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panelColorBox.Location = new System.Drawing.Point(417, 92);
+            this.panelColorBox.Location = new System.Drawing.Point(386, 92);
             this.panelColorBox.Name = "panelColorBox";
             this.panelColorBox.Size = new System.Drawing.Size(50, 50);
             this.panelColorBox.TabIndex = 98;
@@ -86,7 +86,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 89);
+            this.label1.Location = new System.Drawing.Point(76, 89);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 20);
@@ -95,7 +95,7 @@
             // 
             // textBoxHex
             // 
-            this.textBoxHex.Location = new System.Drawing.Point(168, 114);
+            this.textBoxHex.Location = new System.Drawing.Point(137, 114);
             this.textBoxHex.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxHex.Name = "textBoxHex";
             this.textBoxHex.Size = new System.Drawing.Size(242, 26);
@@ -105,7 +105,7 @@
             // textBoxSRGB
             // 
             this.textBoxSRGB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxSRGB.Location = new System.Drawing.Point(168, 150);
+            this.textBoxSRGB.Location = new System.Drawing.Point(137, 150);
             this.textBoxSRGB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxSRGB.Name = "textBoxSRGB";
             this.textBoxSRGB.Size = new System.Drawing.Size(299, 24);
@@ -115,7 +115,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(123, 117);
+            this.label3.Location = new System.Drawing.Point(92, 117);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 20);
@@ -125,7 +125,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(107, 153);
+            this.label4.Location = new System.Drawing.Point(76, 153);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 20);
@@ -134,7 +134,7 @@
             // 
             // numericUpDown4
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(303, 219);
+            this.numericUpDown4.Location = new System.Drawing.Point(272, 219);
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(39, 26);
             this.numericUpDown4.TabIndex = 112;
@@ -142,21 +142,21 @@
             // 
             // numericUpDown3
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(258, 218);
+            this.numericUpDown3.Location = new System.Drawing.Point(227, 218);
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(39, 26);
             this.numericUpDown3.TabIndex = 111;
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(213, 218);
+            this.numericUpDown2.Location = new System.Drawing.Point(182, 218);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(39, 26);
             this.numericUpDown2.TabIndex = 110;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(168, 218);
+            this.numericUpDown1.Location = new System.Drawing.Point(137, 218);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(39, 26);
             this.numericUpDown1.TabIndex = 109;
@@ -170,7 +170,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(348, 221);
+            this.label13.Location = new System.Drawing.Point(317, 221);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(207, 20);
             this.label13.TabIndex = 108;
@@ -178,7 +178,7 @@
             // 
             // textBoxVersion
             // 
-            this.textBoxVersion.Location = new System.Drawing.Point(168, 184);
+            this.textBoxVersion.Location = new System.Drawing.Point(137, 184);
             this.textBoxVersion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxVersion.Name = "textBoxVersion";
             this.textBoxVersion.Size = new System.Drawing.Size(174, 26);
@@ -189,7 +189,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(37, 187);
+            this.label11.Location = new System.Drawing.Point(6, 187);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(123, 20);
@@ -199,7 +199,7 @@
             // Button7
             // 
             this.Button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Button7.Location = new System.Drawing.Point(349, 182);
+            this.Button7.Location = new System.Drawing.Point(318, 182);
             this.Button7.Name = "Button7";
             this.Button7.Size = new System.Drawing.Size(118, 31);
             this.Button7.TabIndex = 106;
@@ -211,7 +211,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(682, 310);
+            this.ClientSize = new System.Drawing.Size(584, 276);
             this.Controls.Add(this.numericUpDown4);
             this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.numericUpDown2);
@@ -233,6 +233,7 @@
             this.Name = "Tools";
             this.Text = "Form8";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form8_FormClosing);
+            this.Resize += new System.EventHandler(this.Tools_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();

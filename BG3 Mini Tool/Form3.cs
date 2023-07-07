@@ -399,5 +399,11 @@ namespace BG3_Mod_Templates
         {
 
         }
+
+        private void numericUpDown1_Resize(object sender, EventArgs e)
+        {
+            // Set the desired size of the form
+            this.Size = new Size(774, 517);
+        }
     }
 }

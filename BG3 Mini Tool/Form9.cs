@@ -76,7 +76,6 @@ namespace BG3_Mod_Templates
 
         private void Form9_Load(object sender, EventArgs e)
         {
-            this.FormClosing += new FormClosingEventHandler(Form9_FormClosing);
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
@@ -150,24 +149,28 @@ namespace BG3_Mod_Templates
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedItem = comboBox1.SelectedItem.ToString();
-            string filePath = "LSX Files\\Head Materials.txt";
-            string[] lines = File.ReadAllLines(filePath);
-            foreach (string line in lines)
+            if (comboBox1.SelectedItem != null)
             {
-                int colonIndex = line.IndexOf(':');
-                if (colonIndex != -1)
+                string selectedItem = comboBox1.SelectedItem.ToString();
+                string filePath = "LSX Files\\Head Materials.txt";
+                string[] lines = File.ReadAllLines(filePath);
+                foreach (string line in lines)
                 {
-                    string item = line.Substring(0, colonIndex).Trim();
-                    if (item == selectedItem)
+                    int colonIndex = line.IndexOf(':');
+                    if (colonIndex != -1)
                     {
-                        string value = line.Substring(colonIndex + 1).Trim();
-                        HeadMaterialValue = value;
-                        break;
+                        string item = line.Substring(0, colonIndex).Trim();
+                        if (item == selectedItem)
+                        {
+                            string value = line.Substring(colonIndex + 1).Trim();
+                            HeadMaterialValue = value;
+                            break;
+                        }
                     }
                 }
             }
         }
+
 
         private void UUIDGen_Unique_Click(object sender, EventArgs e)
         {
@@ -391,7 +394,7 @@ namespace BG3_Mod_Templates
             }
         }
 
-        private string FindSubfolder(string[] folders, string subfolderName)
+        private static string FindSubfolder(string[] folders, string subfolderName)
         {
             foreach (string folder in folders)
             {
@@ -532,6 +535,13 @@ namespace BG3_Mod_Templates
 
         private void Form9_Load_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void Form9_Resize(object sender, EventArgs e)
+        {
+            // Set the desired size of the form
+            this.Size = new Size(1256, 556);
 
         }
     }

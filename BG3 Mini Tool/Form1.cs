@@ -75,5 +75,27 @@ namespace BG3_Mini_Tool
         {
 
         }
+
+        private Form7? Form7Instance;
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+            if (Form7Instance== null)
+            {
+                Form7Instance = new Form7();
+                Form7Instance.Show();
+            }
+            else
+            { 
+                Form7Instance.Show();
+                Form7Instance.BringToFront();            
+            }
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            // Set the desired size of the form
+            this.Size = new Size(302, 460);
+        }
     }
 }

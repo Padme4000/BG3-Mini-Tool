@@ -103,7 +103,7 @@ namespace BG3_Mini_Tool
             // 
             // Button4
             // 
-            this.Button4.Location = new System.Drawing.Point(77, 411);
+            this.Button4.Location = new System.Drawing.Point(77, 361);
             this.Button4.Name = "Button4";
             this.Button4.Size = new System.Drawing.Size(121, 41);
             this.Button4.TabIndex = 29;
@@ -115,7 +115,7 @@ namespace BG3_Mini_Tool
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(42, 383);
+            this.label5.Location = new System.Drawing.Point(42, 333);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(185, 25);
             this.label5.TabIndex = 30;
@@ -129,13 +129,14 @@ namespace BG3_Mini_Tool
             this.Button2.TabIndex = 31;
             this.Button2.Text = "NPC";
             this.Button2.UseVisualStyleBackColor = true;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(286, 474);
+            this.ClientSize = new System.Drawing.Size(286, 421);
             this.Controls.Add(this.Button2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Button4);
@@ -150,6 +151,7 @@ namespace BG3_Mini_Tool
             this.Name = "Form1";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 

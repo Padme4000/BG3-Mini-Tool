@@ -154,7 +154,7 @@ namespace BG3_Mini_Tool
             // 
             // Update_name
             // 
-            this.Update_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Update_name.Location = new System.Drawing.Point(516, 114);
             this.Update_name.Name = "Update_name";
             this.Update_name.Size = new System.Drawing.Size(69, 31);
@@ -165,7 +165,7 @@ namespace BG3_Mini_Tool
             // 
             // Button2
             // 
-            this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button2.Location = new System.Drawing.Point(161, 149);
             this.Button2.Name = "Button2";
             this.Button2.Size = new System.Drawing.Size(69, 31);
@@ -176,7 +176,7 @@ namespace BG3_Mini_Tool
             // 
             // Button3
             // 
-            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button3.Location = new System.Drawing.Point(161, 220);
             this.Button3.Name = "Button3";
             this.Button3.Size = new System.Drawing.Size(69, 31);
@@ -187,7 +187,7 @@ namespace BG3_Mini_Tool
             // 
             // Update_VisualResource
             // 
-            this.Update_VisualResource.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_VisualResource.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Update_VisualResource.Location = new System.Drawing.Point(516, 295);
             this.Update_VisualResource.Name = "Update_VisualResource";
             this.Update_VisualResource.Size = new System.Drawing.Size(69, 31);
@@ -198,7 +198,7 @@ namespace BG3_Mini_Tool
             // 
             // Button8
             // 
-            this.Button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button8.Location = new System.Drawing.Point(236, 149);
             this.Button8.Name = "Button8";
             this.Button8.Size = new System.Drawing.Size(92, 31);
@@ -209,7 +209,7 @@ namespace BG3_Mini_Tool
             // 
             // Button9
             // 
-            this.Button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button9.Location = new System.Drawing.Point(236, 220);
             this.Button9.Name = "Button9";
             this.Button9.Size = new System.Drawing.Size(69, 31);
@@ -220,7 +220,7 @@ namespace BG3_Mini_Tool
             // 
             // Update_UniqueUUID
             // 
-            this.Update_UniqueUUID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_UniqueUUID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Update_UniqueUUID.Location = new System.Drawing.Point(516, 258);
             this.Update_UniqueUUID.Name = "Update_UniqueUUID";
             this.Update_UniqueUUID.Size = new System.Drawing.Size(69, 31);
@@ -259,7 +259,7 @@ namespace BG3_Mini_Tool
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(263, 9);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(407, 25);
@@ -268,7 +268,7 @@ namespace BG3_Mini_Tool
             // 
             // Button_add
             // 
-            this.Button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button_add.Location = new System.Drawing.Point(36, 366);
             this.Button_add.Name = "Button_add";
             this.Button_add.Size = new System.Drawing.Size(173, 31);
@@ -290,7 +290,7 @@ namespace BG3_Mini_Tool
             // 
             // Button_locateLSX
             // 
-            this.Button_locateLSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_locateLSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button_locateLSX.Location = new System.Drawing.Point(36, 403);
             this.Button_locateLSX.Name = "Button_locateLSX";
             this.Button_locateLSX.Size = new System.Drawing.Size(458, 31);
@@ -310,7 +310,7 @@ namespace BG3_Mini_Tool
             // 
             // Update_RaceUUID
             // 
-            this.Update_RaceUUID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update_RaceUUID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Update_RaceUUID.Location = new System.Drawing.Point(516, 185);
             this.Update_RaceUUID.Name = "Update_RaceUUID";
             this.Update_RaceUUID.Size = new System.Drawing.Size(69, 31);
@@ -332,7 +332,7 @@ namespace BG3_Mini_Tool
             // 
             // Button_saveas
             // 
-            this.Button_saveas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_saveas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Button_saveas.Location = new System.Drawing.Point(36, 329);
             this.Button_saveas.Name = "Button_saveas";
             this.Button_saveas.Size = new System.Drawing.Size(140, 31);
@@ -352,7 +352,7 @@ namespace BG3_Mini_Tool
             // 
             // UUIDGen_Unique
             // 
-            this.UUIDGen_Unique.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UUIDGen_Unique.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.UUIDGen_Unique.Location = new System.Drawing.Point(591, 259);
             this.UUIDGen_Unique.Name = "UUIDGen_Unique";
             this.UUIDGen_Unique.Size = new System.Drawing.Size(219, 31);
@@ -363,7 +363,7 @@ namespace BG3_Mini_Tool
             // 
             // UUIDGen_VisualResource
             // 
-            this.UUIDGen_VisualResource.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UUIDGen_VisualResource.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.UUIDGen_VisualResource.Location = new System.Drawing.Point(591, 296);
             this.UUIDGen_VisualResource.Name = "UUIDGen_VisualResource";
             this.UUIDGen_VisualResource.Size = new System.Drawing.Size(219, 31);
@@ -377,14 +377,14 @@ namespace BG3_Mini_Tool
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(157, 90);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(736, 20);
+            this.label8.Size = new System.Drawing.Size(738, 20);
             this.label8.TabIndex = 122;
             this.label8.Text = "Fill in or use the Check Mod Folder Button to check if your mod folder includes t" +
     "he folder for the meta.lsx";
             // 
             // ButtonCreateFolders
             // 
-            this.ButtonCreateFolders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCreateFolders.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ButtonCreateFolders.Location = new System.Drawing.Point(947, 43);
             this.ButtonCreateFolders.Name = "ButtonCreateFolders";
             this.ButtonCreateFolders.Size = new System.Drawing.Size(105, 44);
@@ -395,7 +395,7 @@ namespace BG3_Mini_Tool
             // 
             // ButtonSelectFolder
             // 
-            this.ButtonSelectFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonSelectFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ButtonSelectFolder.Location = new System.Drawing.Point(844, 43);
             this.ButtonSelectFolder.Name = "ButtonSelectFolder";
             this.ButtonSelectFolder.Size = new System.Drawing.Size(97, 44);
@@ -533,12 +533,13 @@ namespace BG3_Mini_Tool
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxName);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form2";
             this.Text = "CharacterCreationAppearanceValues";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load_1);
+            this.Resize += new System.EventHandler(this.Form2_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 

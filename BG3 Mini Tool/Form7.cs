@@ -46,5 +46,11 @@ namespace BG3_Mod_Templates
         {
 
         }
+
+        private void Form7_Resize(object sender, EventArgs e)
+        {
+            // Set the desired size of the form
+            this.Size = new Size(400, 180);
+        }
     }
 }

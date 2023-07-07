@@ -527,6 +527,12 @@ namespace BG3_Mini_Tool
         {
             this.FormClosing += new FormClosingEventHandler(Form2_FormClosing);
         }
+
+        private void Form2_Resize(object sender, EventArgs e)
+        {
+            // Set the desired size of the form
+            this.Size = new Size(1091, 525);
+        }
     }
 }
 
