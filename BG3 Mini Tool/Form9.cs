@@ -47,6 +47,10 @@ namespace BG3_Mod_Templates
                     // Disable other controls to prevent interaction
                     control.Enabled = false;
                 }
+                if (control is System.Windows.Forms.ComboBox)
+                {
+                    control.Enabled = true;
+                }
             }
         }
 
@@ -542,6 +546,68 @@ namespace BG3_Mod_Templates
         {
             // Set the desired size of the form
             this.Size = new Size(1256, 556);
+
+        }
+
+        private string EyeMaterialValue;
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox4.SelectedItem != null)
+            {
+                string selectedItem = comboBox4.SelectedItem.ToString();
+                string filePath = "LSX Files\\Eye Materials.txt";
+                string[] lines = File.ReadAllLines(filePath);
+                foreach (string line in lines)
+                {
+                    int colonIndex = line.IndexOf(':');
+                    if (colonIndex != -1)
+                    {
+                        string item = line.Substring(0, colonIndex).Trim();
+                        if (item == selectedItem)
+                        {
+                            string value = line.Substring(colonIndex + 1).Trim();
+                            EyeMaterialValue = value;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            string filePath = "LSX Files\\Head_Merged.lsx";
+
+            string[] lines = File.ReadAllLines(filePath);
+            if (lines.Length >= 15)
+            {
+                string pattern = "\".+\""; // Matches any value within quotation marks
+                string currentLine = lines[63]; // Line 63 is index 64 in the array
+                string replacedLine = Regex.Replace(currentLine, pattern, "\"MaterialID\" type=\"FixedString\" value=\"" + EyeMaterialValue + "\"");
+                lines[63] = replacedLine;
+                File.WriteAllLines(filePath, lines);
+            }
+        }
+        private void comboBox4_Click(object sender, EventArgs e)
+        {
+            string filePath = "LSX Files\\Eye Materials.txt";
+            List<string> comboBoxItems = new List<string>();
+            string[] lines = File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                int colonIndex = line.IndexOf(':');
+                if (colonIndex != -1)
+                {
+                    string item = line.Substring(0, colonIndex).Trim();
+                    comboBoxItems.Add(item);
+
+                    // Extract value after the colon
+                    string value = line.Substring(colonIndex + 1).Trim();
+                    // Assign to raceValue field
+                    EyeMaterialValue = value;
+                }
+            }
+            comboBox4.DataSource = comboBoxItems;
 
         }
     }

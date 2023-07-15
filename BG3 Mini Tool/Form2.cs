@@ -41,6 +41,10 @@ namespace BG3_Mini_Tool
                     // Disable other controls to prevent interaction
                     control.Enabled = false;
                 }
+                if (control is System.Windows.Forms.ComboBox)
+                {
+                    control.Enabled = true;
+                }
             }
         }
 

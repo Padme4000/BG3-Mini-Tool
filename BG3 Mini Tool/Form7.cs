@@ -33,6 +33,10 @@ namespace BG3_Mod_Templates
                     // Disable other controls to prevent interaction
                     control.Enabled = false;
                 }
+                if (control is System.Windows.Forms.ComboBox)
+                {
+                    control.Enabled = true;
+                }
             }
         }
 

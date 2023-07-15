@@ -220,6 +220,7 @@ namespace BG3_Mod_Templates
             this.Button4.TabIndex = 68;
             this.Button4.Text = "Update";
             this.Button4.UseVisualStyleBackColor = true;
+            this.Button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // label12
             // 
@@ -501,6 +502,8 @@ namespace BG3_Mod_Templates
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(173, 28);
             this.comboBox4.TabIndex = 150;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.comboBox4.Click += new System.EventHandler(this.comboBox4_Click);
             // 
             // Button_saveas
             // 
