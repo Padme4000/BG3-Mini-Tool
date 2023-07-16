@@ -1,0 +1,6 @@
+Dwarves : 11333346-bc64-4020-a6f8-7b9587db6e25
+Elves : 2c17490c-7b67-2ca8-ffd7-14e9c50db79b
+Githyanki : 16564a73-2c40-82c9-7f72-11f07e78c783
+Halfling: 44c3666a-cf33-93d0-bb9e-5879d4bfe0da
+Human : eec2c59b-f568-8b75-2ab0-ebd5f84a8285
+Tiefling : 05ffe01d-815c-844b-5366-124429552988

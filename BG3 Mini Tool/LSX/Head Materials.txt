@@ -1,0 +1,176 @@
+Drow/Elf;
+
+ELF_F_NKD_Head_A : 93d670df-8e3d-7c35-01f8-cef6b2b83746
+ELF_F_NKD_Head_B : 4d2f62a6-fa3e-34bf-0c30-5f5c5162f2a1
+ELF_F_NKD_Head_C : b9fa4715-c747-e99c-173c-9d6d417a992e
+ELF_F_NKD_Head_D : 489d7f2c-9839-e1d0-67c5-260294337785
+ELF_F_NKD_Head_E : 01942843-9367-5f4a-22f8-27505d90287d
+ELF_F_NKD_Head_F : 3ceae978-6218-ba21-4eae-82fa956b842f
+ELF_F_NKD_Head_G : 7c32a03d-4873-ee77-e869-72c404b4c2b4
+ELF_F_NKD_Head_H : a25cc69e-c487-0199-6465-46ff787f5c0c
+ELF_F_NKD_Head_Florrick : bbe4f44b-5b96-2f3c-6c3f-9947f3d98b09
+ELF_F_NKD_Head_Kagha : 9a2888a6-6791-0944-ed5e-553517ba5fad
+ELF_F_NKD_Head_Minthara : 6a40eae1-2ff4-b4ae-b0f4-37b9bc045cd3
+ELF_F_NKD_Head_Shadowheart : 9e2966c7-b61c-4bc1-bef1-a79cb5fde067
+ELF_MS_NKD_Head_Halsin : eb073f87-db9b-7e43-6483-a01069467441
+ELF_M_NKD_Head_Astarion : 6a420215-5b66-bbc2-f79d-48ebc848e7bb
+ELF_M_NKD_Head_Cazador : 33ec278a-c0b1-0af5-4d3e-29c86cb2bafc
+ELF_M_NKD_Head_B : 01a11b87-c31b-9b4f-d9b6-6578e2cea366
+ELF_M_NKD_Head_C : 68e690ba-3672-5b86-6966-c8e460b49b9e
+ELF_M_NKD_Head_D : c9bbb2d5-3ef0-faaf-e7bd-2028ed7678f2
+ELF_M_NKD_Head_E : edf26aac-71df-e31a-1c2d-baf4ffe80ec4
+ELF_M_NKD_Head_F : b46e1c06-4ee7-3c9f-d3cf-d967f5a8f86c
+ELF_M_NKD_Head_G : 77cf9c4f-2b35-4b9e-8cfc-c091525a9a98
+
+Dwarf;
+
+DWR_F_NKD_Head_A : 1703f9a3-991b-2f71-5d4e-38f2fe6c2459
+DWR_F_NKD_Head_B : 24d8741d-7b2a-4f72-a37c-dd82f669e9fb
+DWR_F_NKD_Head_C : af13d5b8-09c4-7fa2-9df9-b1b8ed89cd80
+DWR_F_NKD_Head_D : bf93cecf-7e1e-6c44-1d15-f09e27796d58
+DWR_F_NKD_Head_E : 14482d2e-0622-c7f2-e093-2d65bc0ad4fa
+DWR_F_NKD_Head_F : 6e7d00d0-8b52-0fce-3487-831ec8e5ed22
+DWR_F_NKD_Head_G : 61ce9db9-6388-b7da-e8bc-f0717ee99f09
+DWR_F_NKD_Head_H : 25a9c700-2926-a87f-baed-920a2ed55979
+DWR_F_NKD_Elder_Head_A : 68a3798c-9dd4-0c2b-c984-641a8f999879
+DWR_F_NKD_Head_Nettie : 6848c16d-8f24-a180-6126-20bf70a329ea
+DWR_M_NKD_Head_A : c8578c23-1e6b-24c5-a144-9c599aa31a45
+DWR_M_NKD_Head_B : a28feb4e-cc33-1002-f7e3-686e5b12df96
+DWR_M_NKD_Head_C : b68101ed-8063-2264-ba88-7613049b6b5e
+DWR_M_NKD_Head_D : c5d8edaa-3df8-f029-9b3a-f283b3cf677c
+DWR_M_NKD_Head_E : 83a2db38-4402-1ae5-3abc-ccb1d1333e7b
+DWR_M_NKD_Head_G : 679fcbe6-c934-606b-95f6-9a1647be6819
+
+Githyanki;
+
+GTY_F_NKD_Head_A : 747cccf0-5a57-456d-981b-f14b2268650b
+GTY_F_NKD_Head_B : e9d8c2d1-701b-aea7-05b1-d5693b9e9628
+GTY_F_NKD_Head_C : 75e61d7d-6195-37e2-99a2-b6a977f183f6
+GTY_F_NKD_Head_D : 99dac347-9d9f-67e9-baf4-c5166f3307e6
+GTY_F_NKD_Head_E : 56f231a5-116f-52d2-e112-46abdde1475b
+GTY_F_NKD_Head_F : 4651fbe4-14a3-b5ba-fd3e-c8c4b200ecb0
+GTY_F_NKD_Head_G : 2e5846e3-8822-4661-ef1e-2a3c548cbea2
+GTY_F_NKD_Head_Laezel : dbbe50bf-8156-7f09-72d9-06155f78dab2
+GTY_M_NKD_Elder_Head_A : b39cfa79-4839-1f9b-6274-af5aa72fbd05
+GTY_M_NKD_Head_Kithrak_Voss : 259dfbb4-3643-f606-c020-bb38ab31b6b0
+GTY_M_NKD_Head_A : 6937d0c6-e0a8-02be-33c6-12fc7487332b
+GTY_M_NKD_Head_B : 67c65a6a-364f-4e1e-b795-c8911c0441b6
+GTY_M_NKD_Head_C : 251a8a98-6b09-cfe9-4e26-21eaf7113377
+GTY_M_NKD_Head_D : 3fa4ce8f-e49d-491f-b991-2067bb62f364
+GTY_M_NKD_Head_E : 345030ee-f668-f9e5-48c5-db3f3e0dba5a
+GTY_M_NKD_Head_F : 591e7408-6afc-4381-a91f-b9f9fd141c50
+GTY_M_NKD_Head_G : fc4ad65e-4fbe-7e35-0148-16d6b93ae1cb
+GTY_M_NKD_Head_H : 194b2a65-0acc-c2f6-9d48-356e09a6ac4d
+GTY_M_NKD_Head_I : cbe73c39-4779-1015-194b-d3d6450d3c01
+
+
+Gnome/Deep Gnome;
+
+GNO_F_NKD_Head_A : a8ac61c8-b639-ed30-1b5a-71e9ed2e377f
+GNO_F_NKD_Head_B : 456370f6-d6bf-d89d-ecd0-5a5f09686354
+GNO_F_NKD_Head_C : 8bfc2eee-5786-6a49-c383-b367f021715d
+GNO_F_NKD_Head_D : 334d281b-5f67-ee17-a2d4-10db18f3c667
+GNO_F_NKD_Head_E : a291ae08-419a-edf9-9e66-64f1a1c8b87a
+GNO_F_NKD_Head_F : d1742e97-4202-f507-97c5-78196abf2d9a
+GNO_F_NKD_Elder_Head_A : c58766c5-b6a5-aade-f2e8-ad08c4ba35c4
+GNO_M_NKD_Head_Barcus_Wroot : c57e93a8-1b9e-ee1a-2f51-f93e2ed422f0
+GNO_M_NKD_Head_A : dd279652-8d4c-c8fe-5853-b9cfe41f2027
+GNO_M_NKD_Head_B : a45df80d-ac7f-a35a-f3e2-420891a8a8ae
+GNO_M_NKD_Head_C : 7a6530f2-a097-70a2-e8ca-390cfa549db6
+GNO_M_NKD_Head_D : dbff0fef-1b2c-6947-8945-9a1822aeae07
+GNO_M_NKD_Head_E : 932a9f0a-3ae3-4e27-bf95-80131b8e1c60
+
+
+HalfElf/Drow;
+
+HEL_F_NKD_Head_A : 430112fa-a6e0-18f7-58e5-bca8561ebc78
+HEL_F_NKD_Head_B : ecdc74ed-68f1-d4b4-2aa2-1fe314b040f3
+HEL_F_NKD_Head_C : 5831f4e1-841f-badf-bbfc-39067fa5fd85
+HEL_F_NKD_Head_D : 285a65c3-6323-0cbc-34fb-f60d99911f72
+HEL_F_NKD_Head_E : e8315f9b-04c1-f737-e88d-5003c89fb555
+HEL_F_NKD_Head_F : 9d584ccc-5985-f6f0-b410-50e4526acb93
+HEL_F_NKD_Head_G : b4d34feb-98ad-5beb-67da-67925da84d72
+HEL_F_NKD_Head_Shadowheart : 2ea81f5e-48d8-20f5-75f1-bd731fbdd5c7
+HEL_M_NKD_Head_A : 4524bbe1-374e-d3d2-333a-b09c9e5d4ef0
+HEL_M_NKD_Head_B : 83f07de6-7843-9648-d14a-f9987c3ca3c1
+HEL_M_NKD_Head_C : c6545098-6685-45db-12bf-cb3dcbbae034
+HEL_M_NKD_Head_D : 52dc7437-53b8-e929-79dd-35be6773c1a3
+HEL_M_NKD_Head_E : 983860aa-82d6-48ef-e518-0459c22dcb68
+HEL_M_NKD_Head_F : ef38c0c3-3b19-3a4c-39ba-bb13a8464f02
+
+Halfling;
+
+HFL_F_NKD_Head_A : 4cb15bb3-bef8-004f-4364-3d1a29db637a
+HFL_F_NKD_Head_B : fa93e83a-68b4-f48f-fc34-ada14968a2f5
+HFL_F_NKD_Head_C : bef7df1f-4ade-7af9-d1c6-26ca2afc9cec
+HFL_F_NKD_Head_D : 5a46a2e7-7c81-09e5-b4a9-9f48fd0fc4f5
+HFL_F_NKD_Head_E : ab1e40e2-0c9f-029b-1407-fcaebcb7b171
+HFL_F_NKD_Head_F : c5e108fa-c160-c3ee-8102-c5d7330a2a22
+HFL_F_NKD_Elder_Head_A : cfa99067-b40e-c291-1d31-6f86c1070aa7
+HFL_M_NKD_Elder_Head_A : 24e94d6e-5fdd-8ef8-aa0c-a653ee110b0d
+HFL_M_NKD_Head_A : c550b5fd-8bd5-1a94-3040-378329697409
+HFL_M_NKD_Head_B : c580d422-ed4c-796d-36ed-66b79eb74579
+HFL_M_NKD_Head_C : 24aff57f-b0a9-c3d8-44ff-f4f74f2e13ed
+HFL_M_NKD_Head_D : 08a1985a-77a6-1bbf-ee5b-cb077a8d502f
+HFL_M_NKD_Head_E : 04c013d5-572f-3226-e844-b02935aef820
+HFL_M_NKD_Head_F : eeb1a6b9-6aae-efdd-6289-28d5d65d0d8a
+
+Human;
+
+HUM_F_NKD_Head_B : d1fbdf16-f9d1-4c97-9428-f5cecf50e256
+HUM_F_NKD_Head_C : 775a3d83-b13a-196e-0a9e-fb2e3d8e55cc
+HUM_F_NKD_Head_D : 59282199-160a-14e1-34ab-8a187bfbe7b7
+HUM_F_NKD_Head_E : 7ab98474-4675-951b-81b5-5df12948d789
+HUM_F_NKD_Head_F : a82a5bcd-a143-28b0-b98f-2793247235ab
+HUM_F_NKD_Head_G : cea0ec90-693e-39d0-7e8f-baebf3cf4cba
+HUM_F_NKD_Head_H : ed2b4a23-786c-c726-b92d-b24cfd0403df
+HUM_F_NKD_Head_I : f4f92781-2b0d-a20d-17f7-c0ea70646159
+HUM_F_NKD_Head_J : 680a5468-53d0-85a6-1c82-aeecb4648d82
+HUM_F_NKD_Head_K : 0d193b9c-56fa-db4f-00b0-516979913d54
+HUM_FS_NKD_Head_A : 459a33cf-4fa5-bd7a-5708-811dec531b67
+HUM_F_NKD_Elder_Head_A : 14ec1e3a-ab23-1ff2-02f6-d8b8b90a96ee
+HUM_F_NKD_Head_Keene : 48b684cd-e9fa-1bf0-91b6-b17ceae43fc0
+HUM_F_NKD_Head_Mayrina : dc7d18dc-9753-a06d-8293-71fdb815c84f
+HUM_F_NKD_Head_Mizora : b30d88a7-1bcc-4605-4fc6-d1b0e262f86a
+HUM_MS_NKD_Head_A : f892bfc7-e2ac-e38d-c347-d6386cc1802d
+HUM_M_NKD_Elder_Head_A : 0c0d6ab0-8c04-5db0-a955-4c5ea0a985e4
+HUM_M_NKD_Elder_Head_B : dc659113-9bd0-8fc3-179d-b9ff98daf159
+HUM_M_NKD_Head_Abdirak : 63859803-52cf-bee3-69a3-7abeca127040
+HUM_M_NKD_Head_Aradin : 5165e9fe-b45f-aecb-6c46-07e73a589495
+HUM_M_NKD_Head_Gale : ba068bfb-a7c4-c74d-9219-6501f556432e
+HUM_M_NKD_Head_Oscar : 032040a0-907d-83bc-ab1a-11d4bf54bdb0
+HUM_M_NKD_Head_Raphael : 51c3fd91-df83-efd2-512c-ef6cb6e42b42
+HUM_M_NKD_Head_Rath : 92887782-7a22-d54c-a39b-795d5b6ebcf7
+HUM_M_NKD_Head_Volo : 1cf744ab-c8f2-9778-3ad0-d53b30adc61b
+HUM_M_NKD_Head_Wyll : 7c82e817-7228-0d87-6e69-1d90e16ea533
+HUM_M_NKD_Head_A : 5e72bbed-26e8-4c0e-98f3-45f1d76bddb5
+HUM_M_NKD_Head_B : 4fdfa3c8-a368-77a0-76f6-44cd783fc466
+HUM_M_NKD_Head_C : 08dee4f2-e027-7e88-671a-c65de08e3986
+HUM_M_NKD_Head_D : f8f12335-0d49-bb81-f9e1-a0955c5ddc24
+HUM_M_NKD_Head_E : fc1aad3f-5802-f676-e4d4-1de5bab8668e
+HUM_M_NKD_Head_F : c1fa0e0d-a42d-d6ca-187a-94eb2a232b52
+HUM_M_NKD_Head_G : 5339686d-31b0-2463-3b22-fdf1035ec238
+HUM_M_NKD_Head_H : 3d9c617f-7909-52af-f922-d6e91bad7514
+HUM_M_NKD_Head_I : fb179099-a163-ac43-b3da-e4364a89d104
+
+
+Tiefling;
+
+TIF_F_NKD_Head_A : 85480e07-d116-3d3a-68d5-4ced970484fb
+TIF_F_NKD_Head_B : 211b4a96-39b2-6e13-41e6-60e60af00f9f
+TIF_F_NKD_Head_C : 91453796-f34a-66b0-7281-490bebed0c14
+TIF_F_NKD_Head_D : a5f49080-3195-0e3f-18cf-6ce8eb32844f
+TIF_F_NKD_Head_E : d5caea5e-ead8-0880-7664-681792c8a70e
+TIF_F_NKD_Head_F : 6346476f-2fd6-e950-34a2-d852729b67cf
+TIF_F_NKD_Elder_Head_A : 681ef671-fd6a-ee17-a1d3-0b11f099910b
+TIF_FS_NKD_Head_Karlach : 42e8750f-c419-82ca-2f1a-e1062791b8a3
+TIF_M_NKD_Elder_Head_A : b15d0e69-ecee-f032-201e-68fe3a8c3946
+TIF_M_NKD_Elder_Head_B : 2f99ccc9-ab22-d2ef-ae07-050359249360
+TIF_M_NKD_Head_Rolan : 8fc90f83-e7b6-6a9d-3d38-26bf62998d3d
+TIF_M_NKD_Head_Zevlor : 47ab04ba-5ac5-6110-8fc2-b68888b930f5
+TIF_M_NKD_Head_A : d52df711-ce43-6f4f-0e0c-e89cce5114be
+TIF_M_NKD_Head_B : 6d121933-fe8d-7fc3-e32c-6c525c71363d
+TIF_M_NKD_Head_C : 2dc02eef-402b-d7eb-3417-2457925f84fc
+TIF_M_NKD_Head_D : c7b79bb0-6d80-fb34-f4e6-cabf9cb965cf
+TIF_M_NKD_Head_E : 32cb9df2-603a-d194-5a90-30fc34c3504b
+TIF_M_NKD_Head_F : 355a1278-e9d2-ecdc-eb57-a78faa08c1e5
