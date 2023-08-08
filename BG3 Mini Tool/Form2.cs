@@ -104,93 +104,42 @@ namespace BG3_Mini_Tool
             }
         }
 
-        private void Button2_Click(object sender, EventArgs e) //Bodytype Masc
+        private void Button2_Click(object sender, EventArgs e) // Bodytype Masc
         {
+            string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
+            string targetLine = "<attribute id=\"Bodytype\" type=\"uint8\" value=\"1\" />";
+
+            string[] lines = File.ReadAllLines(filePath);
+            for (int i = 0; i < lines.Length; i++)
             {
-                string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
-                int lineToChange = 9;
-
-                string[] lines = File.ReadAllLines(filePath);
-                if (lines.Length >= lineToChange)
+                if (lines[i].Contains(targetLine))
                 {
-                    string lineToModify = lines[lineToChange - 1];
-                    if (lineToModify.Contains("value=\"1\""))
-                    {
-                        lineToModify = lineToModify.Replace("value=\"1\"", "value=\"0\"");
-                    }
-                    lines[lineToChange - 1] = lineToModify;
-                    File.WriteAllLines(filePath, lines);
+                    lines[i] = lines[i].Replace("value=\"1\"", "value=\"0\"");
+                    break;
                 }
-
             }
+
+            File.WriteAllLines(filePath, lines);
         }
 
         private void Button8_Click(object sender, EventArgs e) //Bodytype Feminine
         {
-            {
-                string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
-                int lineToChange = 9;
-
-                string[] lines = File.ReadAllLines(filePath);
-                if (lines.Length >= lineToChange)
-                {
-                    string lineToModify = lines[lineToChange - 1];
-                    if (lineToModify.Contains("value=\"0\""))
-                    {
-                        lineToModify = lineToModify.Replace("value=\"0\"", "value=\"1\"");
-                    }
-                    lines[lineToChange - 1] = lineToModify;
-                    File.WriteAllLines(filePath, lines);
-                }
-
-            }
-        }
-        private void Button9_Click(object sender, EventArgs e) //Slotname Horns
-        {
-
             string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
-            string oldFixedString1 = "id=\"SlotName\" type=\"FixedString\" value=\"Head\"";
-            string oldFixedString2 = "id=\"SlotName\" type=\"FixedString\" value=\"Horns\"";
-            string newFixedString = "id=\"SlotName\" type=\"FixedString\" value=\"Horns\"";
+            string targetLine = "<attribute id=\"Bodytype\" type=\"uint8\" value=\"0\" />";
 
             string[] lines = File.ReadAllLines(filePath);
             for (int i = 0; i < lines.Length; i++)
             {
-                if (lines[i].Contains(oldFixedString1))
+                if (lines[i].Contains(targetLine))
                 {
-                    lines[i] = lines[i].Replace(oldFixedString1, newFixedString);
-                }
-                else if (lines[i].Contains(oldFixedString2))
-                {
-                    lines[i] = lines[i].Replace(oldFixedString2, newFixedString);
+                    lines[i] = lines[i].Replace("value=\"0\"", "value=\"1\"");
+                    break;
                 }
             }
+
             File.WriteAllLines(filePath, lines);
-
         }
-        private void Button3_Click(object sender, EventArgs e) //Slotname Head
-        {
 
-            string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
-            string oldFixedString1 = "id=\"SlotName\" type=\"FixedString\" value=\"Head\"";
-            string oldFixedString2 = "id=\"SlotName\" type=\"FixedString\" value=\"Horns\"";
-            string newFixedString = "id=\"SlotName\" type=\"FixedString\" value=\"Head\"";
-
-            string[] lines = File.ReadAllLines(filePath);
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (lines[i].Contains(oldFixedString1))
-                {
-                    lines[i] = lines[i].Replace(oldFixedString1, newFixedString);
-                }
-                else if (lines[i].Contains(oldFixedString2))
-                {
-                    lines[i] = lines[i].Replace(oldFixedString2, newFixedString);
-                }
-            }
-            File.WriteAllLines(filePath, lines);
-
-        }
         //Add new head/horns to existing CharacterCreationAppearanceVisuals
         //Save to existing file
         private void Button_add_Click(object sender, EventArgs e)
@@ -369,7 +318,6 @@ namespace BG3_Mini_Tool
                 Guid guid = Guid.NewGuid();
                 textBoxUniqueUUID.Text = "" + guid.ToString();
             }
-
         }
 
         private void UUIDGen_VisualResource_Click(object sender, EventArgs e)
@@ -536,6 +484,106 @@ namespace BG3_Mini_Tool
         {
             // Set the desired size of the form
             this.Size = new Size(1091, 525);
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear(); // Clear existing items
+
+            string filePath = "LSX Files\\SlotName.txt";
+            List<string> comboBoxItems = new List<string>();
+            string[] lines = File.ReadAllLines(filePath);
+            foreach (string line in lines)
+            {
+                comboBox1.Items.Add(line); // Add each line to the dropdown
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
+            string selectedValue = comboBox1.SelectedItem.ToString();
+
+            // Load the XML content from the file
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(filePath);
+
+            // Find the specific attribute node by its id
+            XmlElement attributeNode = xmlDoc.SelectSingleNode("//attribute[@id='SlotName']") as XmlElement;
+
+            if (attributeNode != null)
+            {
+                // Update the 'value' attribute with the selected value from comboBox1
+                attributeNode.SetAttribute("value", selectedValue);
+
+                // Save the modified XML content back to the file
+                xmlDoc.Save(filePath);
+            }
+            else
+            {
+                MessageBox.Show("Attribute 'SlotName' not found in XML.");
+            }
+        }       
+
+        private string GenerateUniqueUuid()
+        {
+            return "h" + Guid.NewGuid().ToString("N");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string newUuid = GenerateUniqueUuid();
+            textBoxName.Text = newUuid;
+        }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
+            string targetLine = "<attribute id=\"BodyShape\" type=\"uint8\" value=\"1\" />";
+
+            string[] lines = File.ReadAllLines(filePath);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                if (lines[i].Contains(targetLine))
+                {
+                    lines[i] = lines[i].Replace("value=\"1\"", "value=\"0\"");
+                    break;
+                }
+            }
+
+            File.WriteAllLines(filePath, lines);
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
+            string targetLine = "<attribute id=\"BodyShape\" type=\"uint8\" value=\"0\" />";
+
+            string[] lines = File.ReadAllLines(filePath);
+            for (int i = 0; i < lines.Length; i++)
+            {
+                if (lines[i].Contains(targetLine))
+                {
+                    lines[i] = lines[i].Replace("value=\"0\"", "value=\"1\"");
+                    break;
+                }
+            }
+
+            File.WriteAllLines(filePath, lines);
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
