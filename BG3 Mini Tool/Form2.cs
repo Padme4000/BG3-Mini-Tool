@@ -19,8 +19,8 @@ namespace BG3_Mini_Tool
     {
         public Form2()
         {
-            InitializeComponent(); 
-            
+            InitializeComponent();
+
             FolderPublic.Enabled = false;
             FolderCharacterCreation.Enabled = false;
 
@@ -45,25 +45,6 @@ namespace BG3_Mini_Tool
                 {
                     control.Enabled = true;
                 }
-            }
-        }
-
-        private void Update_name_Click(object sender, EventArgs e) //NewName
-        {
-            {
-                string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
-                string newValue = textBoxName.Text; // Replace with the name of your text box control
-
-                string[] lines = File.ReadAllLines(filePath);
-                if (lines.Length >= 8)
-                {
-                    string pattern = "\".+\""; // Matches any value within quotation marks
-                    string currentLine = lines[7]; // Line 9 is index 8 in the array
-                    string replacedLine = Regex.Replace(currentLine, pattern, "\"DisplayName\" type=\"FixedString\" value=\"" + newValue + "\"");
-                    lines[7] = replacedLine;
-                    File.WriteAllLines(filePath, lines);
-                }
-
             }
         }
 
@@ -334,7 +315,6 @@ namespace BG3_Mini_Tool
             // Set tooltip text for Buttons
             System.Windows.Forms.ToolTip toolTip1 = new System.Windows.Forms.ToolTip();
             toolTip1.SetToolTip(comboBoxRaceUUID, "Select the race you are making the head/horns for. Then click Update");
-            toolTip1.SetToolTip(textBoxName, "Can be anything you want.");
             toolTip1.SetToolTip(Button_saveas, "Save as a new file.");
             toolTip1.SetToolTip(Button_add, "Adds the information filled above from Display Name to VisualResource to the CharacterCreationAppearanceVisuals.lsx you define with Locate Button");
             toolTip1.SetToolTip(textBoxUniqueUUID, "Must be a unique UUID");
@@ -431,7 +411,7 @@ namespace BG3_Mini_Tool
                 float heightRatio = textBox.Height / textSize.Height;
                 float ratio = Math.Min(widthRatio, heightRatio);
 
-                const float maxFontSize = 12f; 
+                const float maxFontSize = 12f;
                 float newSize = textBox.Font.Size * ratio;
 
                 if (newSize > maxFontSize)
@@ -527,17 +507,6 @@ namespace BG3_Mini_Tool
             {
                 MessageBox.Show("Attribute 'SlotName' not found in XML.");
             }
-        }       
-
-        private string GenerateUniqueUuid()
-        {
-            return "h" + Guid.NewGuid().ToString("N");
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            string newUuid = GenerateUniqueUuid();
-            textBoxName.Text = newUuid;
         }
 
         private void textBoxName_TextChanged(object sender, EventArgs e)
@@ -584,6 +553,37 @@ namespace BG3_Mini_Tool
         private void label14_Click(object sender, EventArgs e)
         {
 
+        }
+        private string GenerateUniqueUuid()
+        {
+            return "h" + Guid.NewGuid().ToString("N");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string newUuid = GenerateUniqueUuid();
+            textBoxNameHandle.Text = newUuid;
+        }
+
+        private Form5? Form5Instance;
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (Form5Instance == null)
+            {
+                Form5Instance = new Form5();
+                Form5Instance.Show();
+            }
+            else
+            {
+                Form5Instance.Show();
+                Form5Instance.BringToFront();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Default is the default bodyshape the race gets. Other is if they have an alternative bodyshape such as Strong\r\nFor Example for Half-Orcs and Dragonborn even though they use Strong bodyshape you would click default\r\nas that is the only bodyshape they have available.");
         }
     }
 }
