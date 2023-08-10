@@ -31,7 +31,6 @@ namespace BG3_Mini_Tool
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -43,20 +42,15 @@ namespace BG3_Mini_Tool
             Button8 = new Button();
             Update_UniqueUUID = new Button();
             textBoxUniqueUUID = new TextBox();
-            label9 = new Label();
-            label11 = new Label();
             label13 = new Label();
             Button_add = new Button();
             textBoxpath = new TextBox();
             Button_locateLSX = new Button();
-            label15 = new Label();
             Update_RaceUUID = new Button();
             comboBoxRaceUUID = new ComboBox();
             Button_saveas = new Button();
-            label17 = new Label();
             UUIDGen_Unique = new Button();
             UUIDGen_VisualResource = new Button();
-            label8 = new Label();
             ButtonCreateFolders = new Button();
             ButtonSelectFolder = new Button();
             label16 = new Label();
@@ -72,19 +66,28 @@ namespace BG3_Mini_Tool
             label7 = new Label();
             button3 = new Button();
             button6 = new Button();
-            label12 = new Label();
             button7 = new Button();
             button9 = new Button();
             label21 = new Label();
             textBoxNameHandle = new TextBox();
             button4 = new Button();
             button5 = new Button();
+            button10 = new Button();
+            button11 = new Button();
+            button12 = new Button();
+            button13 = new Button();
+            button14 = new Button();
+            button15 = new Button();
+            button16 = new Button();
+            button17 = new Button();
+            button18 = new Button();
+            button19 = new Button();
             SuspendLayout();
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(79, 221);
+            label2.Location = new Point(79, 129);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(75, 20);
@@ -94,7 +97,7 @@ namespace BG3_Mini_Tool
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(66, 303);
+            label3.Location = new Point(66, 201);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(88, 20);
@@ -104,7 +107,7 @@ namespace BG3_Mini_Tool
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(32, 410);
+            label4.Location = new Point(32, 308);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(121, 20);
@@ -113,7 +116,7 @@ namespace BG3_Mini_Tool
             // 
             // textBoxVisualResource
             // 
-            textBoxVisualResource.Location = new Point(161, 410);
+            textBoxVisualResource.Location = new Point(161, 308);
             textBoxVisualResource.Margin = new Padding(4, 5, 4, 5);
             textBoxVisualResource.Name = "textBoxVisualResource";
             textBoxVisualResource.Size = new Size(348, 26);
@@ -123,7 +126,7 @@ namespace BG3_Mini_Tool
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(49, 374);
+            label5.Location = new Point(49, 272);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(105, 20);
@@ -133,7 +136,7 @@ namespace BG3_Mini_Tool
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(75, 340);
+            label6.Location = new Point(75, 238);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(79, 20);
@@ -143,7 +146,7 @@ namespace BG3_Mini_Tool
             // Button2
             // 
             Button2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Button2.Location = new Point(161, 217);
+            Button2.Location = new Point(161, 125);
             Button2.Name = "Button2";
             Button2.Size = new Size(69, 31);
             Button2.TabIndex = 13;
@@ -154,7 +157,7 @@ namespace BG3_Mini_Tool
             // Update_VisualResource
             // 
             Update_VisualResource.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Update_VisualResource.Location = new Point(516, 410);
+            Update_VisualResource.Location = new Point(516, 308);
             Update_VisualResource.Name = "Update_VisualResource";
             Update_VisualResource.Size = new Size(69, 31);
             Update_VisualResource.TabIndex = 17;
@@ -165,7 +168,7 @@ namespace BG3_Mini_Tool
             // Button8
             // 
             Button8.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Button8.Location = new Point(236, 217);
+            Button8.Location = new Point(236, 125);
             Button8.Name = "Button8";
             Button8.Size = new Size(92, 31);
             Button8.TabIndex = 19;
@@ -176,7 +179,7 @@ namespace BG3_Mini_Tool
             // Update_UniqueUUID
             // 
             Update_UniqueUUID.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Update_UniqueUUID.Location = new Point(516, 373);
+            Update_UniqueUUID.Location = new Point(516, 271);
             Update_UniqueUUID.Name = "Update_UniqueUUID";
             Update_UniqueUUID.Size = new Size(69, 31);
             Update_UniqueUUID.TabIndex = 23;
@@ -186,30 +189,12 @@ namespace BG3_Mini_Tool
             // 
             // textBoxUniqueUUID
             // 
-            textBoxUniqueUUID.Location = new Point(161, 374);
+            textBoxUniqueUUID.Location = new Point(161, 272);
             textBoxUniqueUUID.Margin = new Padding(4, 5, 4, 5);
             textBoxUniqueUUID.Name = "textBoxUniqueUUID";
             textBoxUniqueUUID.Size = new Size(348, 26);
             textBoxUniqueUUID.TabIndex = 22;
             textBoxUniqueUUID.Text = "Unique UUID";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(591, 340);
-            label9.Name = "label9";
-            label9.Size = new Size(213, 20);
-            label9.TabIndex = 35;
-            label9.Text = "Choose what you are making";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(334, 221);
-            label11.Name = "label11";
-            label11.Size = new Size(322, 20);
-            label11.TabIndex = 37;
-            label11.Text = "Choose the bodytype you are making this for";
             // 
             // label13
             // 
@@ -224,7 +209,7 @@ namespace BG3_Mini_Tool
             // Button_add
             // 
             Button_add.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Button_add.Location = new Point(36, 481);
+            Button_add.Location = new Point(36, 379);
             Button_add.Name = "Button_add";
             Button_add.Size = new Size(173, 31);
             Button_add.TabIndex = 51;
@@ -234,7 +219,7 @@ namespace BG3_Mini_Tool
             // 
             // textBoxpath
             // 
-            textBoxpath.Location = new Point(36, 557);
+            textBoxpath.Location = new Point(36, 455);
             textBoxpath.Margin = new Padding(4, 5, 4, 5);
             textBoxpath.Name = "textBoxpath";
             textBoxpath.Size = new Size(1011, 26);
@@ -245,7 +230,7 @@ namespace BG3_Mini_Tool
             // Button_locateLSX
             // 
             Button_locateLSX.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Button_locateLSX.Location = new Point(36, 518);
+            Button_locateLSX.Location = new Point(36, 416);
             Button_locateLSX.Name = "Button_locateLSX";
             Button_locateLSX.Size = new Size(458, 31);
             Button_locateLSX.TabIndex = 54;
@@ -253,19 +238,10 @@ namespace BG3_Mini_Tool
             Button_locateLSX.UseVisualStyleBackColor = true;
             Button_locateLSX.Click += Button_locateLSX_Click;
             // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(215, 485);
-            label15.Name = "label15";
-            label15.Size = new Size(215, 20);
-            label15.TabIndex = 55;
-            label15.Text = "Add the slot to an existing file";
-            // 
             // Update_RaceUUID
             // 
             Update_RaceUUID.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Update_RaceUUID.Location = new Point(516, 299);
+            Update_RaceUUID.Location = new Point(516, 197);
             Update_RaceUUID.Name = "Update_RaceUUID";
             Update_RaceUUID.Size = new Size(69, 31);
             Update_RaceUUID.TabIndex = 59;
@@ -277,7 +253,7 @@ namespace BG3_Mini_Tool
             // 
             comboBoxRaceUUID.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxRaceUUID.FormattingEnabled = true;
-            comboBoxRaceUUID.Location = new Point(161, 300);
+            comboBoxRaceUUID.Location = new Point(161, 198);
             comboBoxRaceUUID.Name = "comboBoxRaceUUID";
             comboBoxRaceUUID.Size = new Size(348, 28);
             comboBoxRaceUUID.TabIndex = 61;
@@ -287,7 +263,7 @@ namespace BG3_Mini_Tool
             // Button_saveas
             // 
             Button_saveas.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Button_saveas.Location = new Point(36, 444);
+            Button_saveas.Location = new Point(36, 342);
             Button_saveas.Name = "Button_saveas";
             Button_saveas.Size = new Size(140, 31);
             Button_saveas.TabIndex = 64;
@@ -295,19 +271,10 @@ namespace BG3_Mini_Tool
             Button_saveas.UseVisualStyleBackColor = true;
             Button_saveas.Click += Button_saveas_Click;
             // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(182, 448);
-            label17.Name = "label17";
-            label17.Size = new Size(393, 20);
-            label17.TabIndex = 65;
-            label17.Text = "If you do not already have one generated save your file";
-            // 
             // UUIDGen_Unique
             // 
             UUIDGen_Unique.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            UUIDGen_Unique.Location = new Point(591, 374);
+            UUIDGen_Unique.Location = new Point(591, 272);
             UUIDGen_Unique.Name = "UUIDGen_Unique";
             UUIDGen_Unique.Size = new Size(219, 31);
             UUIDGen_Unique.TabIndex = 66;
@@ -318,22 +285,13 @@ namespace BG3_Mini_Tool
             // UUIDGen_VisualResource
             // 
             UUIDGen_VisualResource.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            UUIDGen_VisualResource.Location = new Point(591, 411);
+            UUIDGen_VisualResource.Location = new Point(591, 309);
             UUIDGen_VisualResource.Name = "UUIDGen_VisualResource";
             UUIDGen_VisualResource.Size = new Size(219, 31);
             UUIDGen_VisualResource.TabIndex = 69;
             UUIDGen_VisualResource.Text = "Generate Unique UUID";
             UUIDGen_VisualResource.UseVisualStyleBackColor = true;
             UUIDGen_VisualResource.Click += UUIDGen_VisualResource_Click;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(157, 90);
-            label8.Name = "label8";
-            label8.Size = new Size(738, 20);
-            label8.TabIndex = 122;
-            label8.Text = "Fill in or use the Check Mod Folder Button to check if your mod folder includes the folder for the meta.lsx";
             // 
             // ButtonCreateFolders
             // 
@@ -444,7 +402,7 @@ namespace BG3_Mini_Tool
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(161, 337);
+            comboBox1.Location = new Point(161, 235);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(348, 28);
             comboBox1.TabIndex = 125;
@@ -454,7 +412,7 @@ namespace BG3_Mini_Tool
             // button1
             // 
             button1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(516, 336);
+            button1.Location = new Point(516, 234);
             button1.Name = "button1";
             button1.Size = new Size(69, 31);
             button1.TabIndex = 126;
@@ -465,7 +423,7 @@ namespace BG3_Mini_Tool
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(66, 117);
+            label7.Location = new Point(66, 92);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(89, 20);
@@ -475,7 +433,7 @@ namespace BG3_Mini_Tool
             // button3
             // 
             button3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(236, 113);
+            button3.Location = new Point(236, 88);
             button3.Name = "button3";
             button3.Size = new Size(92, 31);
             button3.TabIndex = 135;
@@ -486,7 +444,7 @@ namespace BG3_Mini_Tool
             // button6
             // 
             button6.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.Location = new Point(161, 113);
+            button6.Location = new Point(161, 88);
             button6.Name = "button6";
             button6.Size = new Size(69, 31);
             button6.TabIndex = 134;
@@ -494,19 +452,10 @@ namespace BG3_Mini_Tool
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(79, 147);
-            label12.Name = "label12";
-            label12.Size = new Size(774, 60);
-            label12.TabIndex = 136;
-            label12.Text = resources.GetString("label12.Text");
-            // 
             // button7
             // 
             button7.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.Location = new Point(591, 265);
+            button7.Location = new Point(591, 163);
             button7.Name = "button7";
             button7.Size = new Size(219, 31);
             button7.TabIndex = 141;
@@ -517,17 +466,18 @@ namespace BG3_Mini_Tool
             // button9
             // 
             button9.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.Location = new Point(516, 265);
+            button9.Location = new Point(516, 163);
             button9.Name = "button9";
             button9.Size = new Size(69, 31);
             button9.TabIndex = 140;
             button9.Text = "Update";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(49, 269);
+            label21.Location = new Point(49, 167);
             label21.Margin = new Padding(4, 0, 4, 0);
             label21.Name = "label21";
             label21.Size = new Size(106, 20);
@@ -536,7 +486,7 @@ namespace BG3_Mini_Tool
             // 
             // textBoxNameHandle
             // 
-            textBoxNameHandle.Location = new Point(161, 266);
+            textBoxNameHandle.Location = new Point(161, 164);
             textBoxNameHandle.Margin = new Padding(4, 5, 4, 5);
             textBoxNameHandle.Multiline = true;
             textBoxNameHandle.Name = "textBoxNameHandle";
@@ -546,7 +496,7 @@ namespace BG3_Mini_Tool
             // button4
             // 
             button4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(816, 265);
+            button4.Location = new Point(816, 163);
             button4.Name = "button4";
             button4.Size = new Size(219, 31);
             button4.TabIndex = 142;
@@ -556,28 +506,147 @@ namespace BG3_Mini_Tool
             // 
             // button5
             // 
-            button5.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(386, 113);
+            button5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Location = new Point(386, 88);
             button5.Name = "button5";
-            button5.Size = new Size(54, 31);
+            button5.Size = new Size(44, 31);
             button5.TabIndex = 143;
-            button5.Text = "Info";
+            button5.Text = "?";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
+            // 
+            // button10
+            // 
+            button10.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button10.Location = new Point(1058, 49);
+            button10.Name = "button10";
+            button10.Size = new Size(44, 31);
+            button10.TabIndex = 144;
+            button10.Text = "?";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
+            // 
+            // button11
+            // 
+            button11.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button11.Location = new Point(386, 124);
+            button11.Name = "button11";
+            button11.Size = new Size(44, 31);
+            button11.TabIndex = 145;
+            button11.Text = "?";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
+            // 
+            // button12
+            // 
+            button12.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button12.Location = new Point(1058, 162);
+            button12.Name = "button12";
+            button12.Size = new Size(44, 31);
+            button12.TabIndex = 146;
+            button12.Text = "?";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
+            // 
+            // button13
+            // 
+            button13.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button13.Location = new Point(640, 200);
+            button13.Name = "button13";
+            button13.Size = new Size(44, 31);
+            button13.TabIndex = 147;
+            button13.Text = "?";
+            button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
+            // 
+            // button14
+            // 
+            button14.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button14.Location = new Point(640, 237);
+            button14.Name = "button14";
+            button14.Size = new Size(44, 31);
+            button14.TabIndex = 148;
+            button14.Text = "?";
+            button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
+            // 
+            // button15
+            // 
+            button15.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button15.Location = new Point(844, 272);
+            button15.Name = "button15";
+            button15.Size = new Size(44, 31);
+            button15.TabIndex = 149;
+            button15.Text = "?";
+            button15.UseVisualStyleBackColor = true;
+            button15.Click += button15_Click;
+            // 
+            // button16
+            // 
+            button16.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button16.Location = new Point(844, 309);
+            button16.Name = "button16";
+            button16.Size = new Size(44, 31);
+            button16.TabIndex = 150;
+            button16.Text = "?";
+            button16.UseVisualStyleBackColor = true;
+            button16.Click += button16_Click;
+            // 
+            // button17
+            // 
+            button17.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button17.Location = new Point(768, 502);
+            button17.Name = "button17";
+            button17.Size = new Size(341, 31);
+            button17.TabIndex = 172;
+            button17.Text = "Finished setting it up now what do I do?";
+            button17.UseVisualStyleBackColor = true;
+            button17.Click += button17_Click;
+            // 
+            // button18
+            // 
+            button18.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button18.Location = new Point(284, 342);
+            button18.Name = "button18";
+            button18.Size = new Size(44, 31);
+            button18.TabIndex = 173;
+            button18.Text = "?";
+            button18.UseVisualStyleBackColor = true;
+            button18.Click += button18_Click;
+            // 
+            // button19
+            // 
+            button19.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button19.Location = new Point(284, 378);
+            button19.Name = "button19";
+            button19.Size = new Size(44, 31);
+            button19.TabIndex = 174;
+            button19.Text = "?";
+            button19.UseVisualStyleBackColor = true;
+            button19.Click += button19_Click;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(1075, 621);
+            ClientSize = new Size(1121, 545);
+            Controls.Add(button19);
+            Controls.Add(button18);
+            Controls.Add(button17);
+            Controls.Add(button16);
+            Controls.Add(button15);
+            Controls.Add(button14);
+            Controls.Add(button13);
+            Controls.Add(button12);
+            Controls.Add(button11);
+            Controls.Add(button10);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button7);
             Controls.Add(button9);
             Controls.Add(label21);
             Controls.Add(textBoxNameHandle);
-            Controls.Add(label12);
             Controls.Add(button3);
             Controls.Add(button6);
             Controls.Add(label7);
@@ -585,7 +654,6 @@ namespace BG3_Mini_Tool
             Controls.Add(comboBox1);
             Controls.Add(label20);
             Controls.Add(FolderCharacterCreation);
-            Controls.Add(label8);
             Controls.Add(ButtonCreateFolders);
             Controls.Add(ButtonSelectFolder);
             Controls.Add(label16);
@@ -596,17 +664,13 @@ namespace BG3_Mini_Tool
             Controls.Add(FolderModName);
             Controls.Add(UUIDGen_VisualResource);
             Controls.Add(UUIDGen_Unique);
-            Controls.Add(label17);
             Controls.Add(Button_saveas);
             Controls.Add(comboBoxRaceUUID);
             Controls.Add(Update_RaceUUID);
-            Controls.Add(label15);
             Controls.Add(Button_locateLSX);
             Controls.Add(textBoxpath);
             Controls.Add(Button_add);
             Controls.Add(label13);
-            Controls.Add(label11);
-            Controls.Add(label9);
             Controls.Add(Update_UniqueUUID);
             Controls.Add(textBoxUniqueUUID);
             Controls.Add(Button8);
@@ -641,20 +705,15 @@ namespace BG3_Mini_Tool
         private Button Button8;
         private Button Update_UniqueUUID;
         private TextBox textBoxUniqueUUID;
-        private Label label9;
-        private Label label11;
         private Label label13;
         private Button Button_add;
         private TextBox textBoxpath;
         private Button Button_locateLSX;
-        private Label label15;
         private Button Update_RaceUUID;
         private ComboBox comboBoxRaceUUID;
         private Button Button_saveas;
-        private Label label17;
         private Button UUIDGen_Unique;
         private Button UUIDGen_VisualResource;
-        private Label label8;
         private Button ButtonCreateFolders;
         private Button ButtonSelectFolder;
         private Label label16;
@@ -670,13 +729,22 @@ namespace BG3_Mini_Tool
         private Label label7;
         private Button button3;
         private Button button6;
-        private Label label12;
         private Button button7;
         private Button button9;
         private Label label21;
         private TextBox textBoxNameHandle;
         private Button button4;
         private Button button5;
+        private Button button10;
+        private Button button11;
+        private Button button12;
+        private Button button13;
+        private Button button14;
+        private Button button15;
+        private Button button16;
+        private Button button17;
+        private Button button18;
+        private Button button19;
     }
 }
 

@@ -40,7 +40,7 @@ namespace BG3_Mini_Tool
         {
         }
 
-        
+
         private Form2? Form2Instance;
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -81,15 +81,15 @@ namespace BG3_Mini_Tool
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
-            if (Form7Instance== null)
+            if (Form7Instance == null)
             {
                 Form7Instance = new Form7();
                 Form7Instance.Show();
             }
             else
-            { 
+            {
                 Form7Instance.Show();
-                Form7Instance.BringToFront();            
+                Form7Instance.BringToFront();
             }
         }
 

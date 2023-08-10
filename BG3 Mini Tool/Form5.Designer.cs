@@ -37,8 +37,8 @@
             button4 = new Button();
             Update_name = new Button();
             label1 = new Label();
-            textBoxName = new TextBox();
-            Button_locateLSX = new Button();
+            textBoxNameHandle = new TextBox();
+            Button_locatexml = new Button();
             textBoxpath = new TextBox();
             label8 = new Label();
             ButtonCreateFolders = new Button();
@@ -49,6 +49,13 @@
             FolderEnglish = new TextBox();
             FolderLocalization = new TextBox();
             FolderModName = new TextBox();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button6 = new Button();
+            button7 = new Button();
+            button8 = new Button();
+            button9 = new Button();
             SuspendLayout();
             // 
             // button10
@@ -60,6 +67,7 @@
             button10.TabIndex = 153;
             button10.Text = "Save as";
             button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // button11
             // 
@@ -70,16 +78,17 @@
             button11.TabIndex = 152;
             button11.Text = "Add to your mod file";
             button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.Location = new Point(217, 24);
+            label14.Location = new Point(422, 21);
             label14.Name = "label14";
-            label14.Size = new Size(602, 25);
+            label14.Size = new Size(208, 25);
             label14.TabIndex = 151;
-            label14.Text = "CharacterCreationAppearanceVisuals - Localization File";
+            label14.Text = "Localization Editor";
             // 
             // button5
             // 
@@ -90,6 +99,7 @@
             button5.TabIndex = 150;
             button5.Text = "Update";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label10
             // 
@@ -119,6 +129,7 @@
             button4.TabIndex = 147;
             button4.Text = "Generate Unique Handle";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // Update_name
             // 
@@ -129,6 +140,7 @@
             Update_name.TabIndex = 146;
             Update_name.Text = "Update";
             Update_name.UseVisualStyleBackColor = true;
+            Update_name.Click += Update_name_Click;
             // 
             // label1
             // 
@@ -140,24 +152,25 @@
             label1.TabIndex = 145;
             label1.Text = "Name Handle";
             // 
-            // textBoxName
+            // textBoxNameHandle
             // 
-            textBoxName.Location = new Point(134, 151);
-            textBoxName.Margin = new Padding(4, 5, 4, 5);
-            textBoxName.Multiline = true;
-            textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(348, 26);
-            textBoxName.TabIndex = 144;
+            textBoxNameHandle.Location = new Point(134, 151);
+            textBoxNameHandle.Margin = new Padding(4, 5, 4, 5);
+            textBoxNameHandle.Multiline = true;
+            textBoxNameHandle.Name = "textBoxNameHandle";
+            textBoxNameHandle.Size = new Size(348, 26);
+            textBoxNameHandle.TabIndex = 144;
             // 
-            // Button_locateLSX
+            // Button_locatexml
             // 
-            Button_locateLSX.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Button_locateLSX.Location = new Point(22, 260);
-            Button_locateLSX.Name = "Button_locateLSX";
-            Button_locateLSX.Size = new Size(458, 31);
-            Button_locateLSX.TabIndex = 155;
-            Button_locateLSX.Text = "Locate your Localization xml\r\n";
-            Button_locateLSX.UseVisualStyleBackColor = true;
+            Button_locatexml.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            Button_locatexml.Location = new Point(22, 260);
+            Button_locatexml.Name = "Button_locatexml";
+            Button_locatexml.Size = new Size(458, 31);
+            Button_locatexml.TabIndex = 155;
+            Button_locatexml.Text = "Locate your Localization xml\r\n";
+            Button_locatexml.UseVisualStyleBackColor = true;
+            Button_locatexml.Click += Button_locateLSX_Click;
             // 
             // textBoxpath
             // 
@@ -259,12 +272,96 @@
             FolderModName.Text = "ModName";
             FolderModName.TextAlign = HorizontalAlignment.Center;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(843, 85);
+            button1.Name = "button1";
+            button1.Size = new Size(44, 31);
+            button1.TabIndex = 165;
+            button1.Text = "?";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(843, 151);
+            button2.Name = "button2";
+            button2.Size = new Size(44, 31);
+            button2.TabIndex = 166;
+            button2.Text = "?";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(614, 186);
+            button3.Name = "button3";
+            button3.Size = new Size(44, 31);
+            button3.TabIndex = 167;
+            button3.Text = "?";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button6
+            // 
+            button6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button6.Location = new Point(514, 259);
+            button6.Name = "button6";
+            button6.Size = new Size(44, 31);
+            button6.TabIndex = 168;
+            button6.Text = "?";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // button7
+            // 
+            button7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.Location = new Point(229, 297);
+            button7.Name = "button7";
+            button7.Size = new Size(44, 31);
+            button7.TabIndex = 169;
+            button7.Text = "?";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button8
+            // 
+            button8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button8.Location = new Point(229, 333);
+            button8.Name = "button8";
+            button8.Size = new Size(44, 31);
+            button8.TabIndex = 170;
+            button8.Text = "?";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
+            // button9
+            // 
+            button9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button9.Location = new Point(698, 342);
+            button9.Name = "button9";
+            button9.Size = new Size(341, 31);
+            button9.TabIndex = 171;
+            button9.Text = "Finished setting it up now what do I do?";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(1051, 385);
+            Controls.Add(button9);
+            Controls.Add(button8);
+            Controls.Add(button7);
+            Controls.Add(button6);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(label8);
             Controls.Add(ButtonCreateFolders);
             Controls.Add(ButtonSelectFolder);
@@ -274,7 +371,7 @@
             Controls.Add(FolderEnglish);
             Controls.Add(FolderLocalization);
             Controls.Add(FolderModName);
-            Controls.Add(Button_locateLSX);
+            Controls.Add(Button_locatexml);
             Controls.Add(textBoxpath);
             Controls.Add(button10);
             Controls.Add(button11);
@@ -285,7 +382,7 @@
             Controls.Add(button4);
             Controls.Add(Update_name);
             Controls.Add(label1);
-            Controls.Add(textBoxName);
+            Controls.Add(textBoxNameHandle);
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
             Name = "Form5";
@@ -306,8 +403,8 @@
         private Button button4;
         private Button Update_name;
         private Label label1;
-        private TextBox textBoxName;
-        private Button Button_locateLSX;
+        private TextBox textBoxNameHandle;
+        private Button Button_locatexml;
         private TextBox textBoxpath;
         private Label label8;
         private Button ButtonCreateFolders;
@@ -318,5 +415,12 @@
         private TextBox FolderEnglish;
         private TextBox FolderLocalization;
         private TextBox FolderModName;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button6;
+        private Button button7;
+        private Button button8;
+        private Button button9;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BG3_Mini_Tool
@@ -50,39 +52,52 @@ namespace BG3_Mini_Tool
 
         private void Update_UniqueUUID_Click(object sender, EventArgs e) //Unique UUID
         {
-            {
-                string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
-                string newValue = textBoxUniqueUUID.Text; // Replace with the name of your text box control
+            string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
+            string newValue = textBoxUniqueUUID.Text;
 
-                string[] lines = File.ReadAllLines(filePath);
-                if (lines.Length >= 13)
+            string[] lines = File.ReadAllLines(filePath);
+            string pattern = "\"UUID\" type=\"guid\" value=\"";
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                if (lines[i].Contains(pattern))
                 {
-                    string pattern = "\".+\""; // Matches any value within quotation marks
-                    string currentLine = lines[12]; // Line 9 is index 8 in the array
-                    string replacedLine = Regex.Replace(currentLine, pattern, "\"UUID\" type=\"guid\" value=\"" + newValue + "\"");
-                    lines[12] = replacedLine;
-                    File.WriteAllLines(filePath, lines);
+                    int startIndex = lines[i].IndexOf(pattern) + pattern.Length;
+                    int endIndex = lines[i].IndexOf("\"", startIndex);
+                    string linePrefix = lines[i].Substring(0, startIndex);
+                    string lineSuffix = lines[i].Substring(endIndex);
+                    string replacedLine = linePrefix + newValue + lineSuffix;
+                    lines[i] = replacedLine;
+                    break; // Assuming you want to replace only the first occurrence
                 }
             }
+            // Write the modified lines back to the file
+            File.WriteAllLines(filePath, lines);
         }
 
         private void Update_VisualResource_Click(object sender, EventArgs e) //Visual Resource UUID
         {
+            string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
+            string newValue = textBoxVisualResource.Text;
+
+            string[] lines = File.ReadAllLines(filePath);
+            string pattern = "\"VisualResource\" type=\"guid\" value=\"";
+
+            for (int i = 0; i < lines.Length; i++)
             {
-                string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
-                string newValue = textBoxVisualResource.Text; // Replace with the name of your text box control
-
-                string[] lines = File.ReadAllLines(filePath);
-                if (lines.Length >= 14)
+                if (lines[i].Contains(pattern))
                 {
-                    string pattern = "\".+\""; // Matches any value within quotation marks
-                    string currentLine = lines[13]; // Line 9 is index 8 in the array
-                    string replacedLine = Regex.Replace(currentLine, pattern, "\"VisualResource\" type=\"guid\" value=\"" + newValue + "\"");
-                    lines[13] = replacedLine;
-                    File.WriteAllLines(filePath, lines);
+                    int startIndex = lines[i].IndexOf(pattern) + pattern.Length;
+                    int endIndex = lines[i].IndexOf("\"", startIndex);
+                    string linePrefix = lines[i].Substring(0, startIndex);
+                    string lineSuffix = lines[i].Substring(endIndex);
+                    string replacedLine = linePrefix + newValue + lineSuffix;
+                    lines[i] = replacedLine;
+                    break; // Assuming you want to replace only the first occurrence
                 }
-
             }
+            // Write the modified lines back to the file
+            File.WriteAllLines(filePath, lines);
         }
 
         private void Button2_Click(object sender, EventArgs e) // Bodytype Masc
@@ -284,14 +299,23 @@ namespace BG3_Mini_Tool
             string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
 
             string[] lines = File.ReadAllLines(filePath);
-            if (lines.Length >= 15)
+            string pattern = "\"RaceUUID\" type=\"guid\" value=\"";
+
+            for (int i = 0; i < lines.Length; i++)
             {
-                string pattern = "\".+\""; // Matches any value within quotation marks
-                string currentLine = lines[9]; // Line 9 is index 8 in the array
-                string replacedLine = Regex.Replace(currentLine, pattern, "\"RaceUUID\" type=\"guid\" value=\"" + raceValue + "\"");
-                lines[9] = replacedLine;
-                File.WriteAllLines(filePath, lines);
+                if (lines[i].Contains(pattern))
+                {
+                    int startIndex = lines[i].IndexOf(pattern) + pattern.Length;
+                    int endIndex = lines[i].IndexOf("\"", startIndex);
+                    string linePrefix = lines[i].Substring(0, startIndex);
+                    string lineSuffix = lines[i].Substring(endIndex);
+                    string replacedLine = linePrefix + raceValue + lineSuffix;
+                    lines[i] = replacedLine;
+                    break; // Assuming you want to replace only the first occurrence
+                }
             }
+            // Write the modified lines back to the file
+            File.WriteAllLines(filePath, lines);
         }
         private void UUIDGen_Unique_Click(object sender, EventArgs e)
         {
@@ -314,7 +338,6 @@ namespace BG3_Mini_Tool
         {
             // Set tooltip text for Buttons
             System.Windows.Forms.ToolTip toolTip1 = new System.Windows.Forms.ToolTip();
-            toolTip1.SetToolTip(comboBoxRaceUUID, "Select the race you are making the head/horns for. Then click Update");
             toolTip1.SetToolTip(Button_saveas, "Save as a new file.");
             toolTip1.SetToolTip(Button_add, "Adds the information filled above from Display Name to VisualResource to the CharacterCreationAppearanceVisuals.lsx you define with Locate Button");
             toolTip1.SetToolTip(textBoxUniqueUUID, "Must be a unique UUID");
@@ -583,7 +606,94 @@ namespace BG3_Mini_Tool
         private void button5_Click(object sender, EventArgs e)
         {
             // Display a pop-up message box with text
-            MessageBox.Show("Default is the default bodyshape the race gets. Other is if they have an alternative bodyshape such as Strong\r\nFor Example for Half-Orcs and Dragonborn even though they use Strong bodyshape you would click default\r\nas that is the only bodyshape they have available.");
+            MessageBox.Show("Default is the default bodyshape the race gets. Other is if they have an alternative bodyshape such as Strong. For Example for Half-Orcs and Dragonborn even though they use Strong bodyshape you would click default\r\nas that is the only bodyshape they have available. For example in the game file the default bodyshape value is 0 and the next available bodyshape is 1. But because Dragonborn and Half Orcs only have one body shape their strong bodyshape is assigned the value 0");
+        }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Fill in or use the Check Mod Folder Button to check if your mod folder includes the folder for the CharacterCreationAppearanceVisuals.lsx");
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Choose the bodytype you are making this for. In the game file Masc is value 0 and Feminine is 1");
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Make sure this matches the handle you give on the Localization editor. For assets sharing same name you can keep same handle and only are required to have it once in the xml/loca file");
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Select the race you are making the mesh for. Then click Update. This file is sorted by the LSX Files\\Races.txt just so if Larian ever adds a new slot to this file it can be manually added. This is also so you can manually add races from mods as well. Follow the notes in that file if you plan to add more to it. If you plan to make the mesh available to more than one mesh. Finish setting up the rest of the file and then click Save As, if you already have a file click Add to your mod file and change the race, generate a new unique uuid and then click Add to mod File again");
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Choose what you are making. This file is sorted by the LSX Files\\SlotName.txt just so if Larian ever adds a new slot to this file it can be manually added.");
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Always generate a new Unique UUID when creating a new slot so this doesn't override other slots in your own mod or in other peoples mods.");
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("This must match the UUID you gave or will give your hair in your Public\\Your_Shared\\Content\\Assets\\Characters\\[PAK]_Hair\\_merged.lsx file. This tells the game that is the asset it wants to load for that slot.");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
+            string selectedHandle = textBoxNameHandle.Text.ToString();
+
+            // Load the XML content from the file
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(filePath);
+
+            // Find the specific attribute node by its id
+            XmlElement attributeNode = xmlDoc.SelectSingleNode("//attribute[@id='DisplayName']") as XmlElement;
+
+            if (attributeNode != null)
+            {
+                // Update the 'handle' attribute with the selected handle from textBoxNameHandle
+                attributeNode.SetAttribute("handle", selectedHandle);
+
+                // Save the modified XML content back to the file
+                xmlDoc.Save(filePath);
+            }
+            else
+            {
+                MessageBox.Show("Attribute 'DisplayName' not found in XML.");
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("This file needs to remain as .lsx so once you have saved your file and finished adding to it, the file is finished and needs no further actions");
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Locate your CharacterCreationAppearanceVisuals.lsx file if you have one already. If you do not have one. once you have finished filling this form out and using the Update buttons please use Save As");
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("If you have located your CharacterCreationAppearanceVisuals.lsx then use this to add new slots to that file.");
+
         }
     }
 }

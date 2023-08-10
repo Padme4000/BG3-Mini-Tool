@@ -16,12 +16,19 @@ namespace BG3_Mod_Templates
         {
             InitializeComponent();
 
+            numericUpDown4.Tag = numericUpDown4.Value;
+
             foreach (Control control in Controls)
             {
                 if (control is System.Windows.Forms.TextBox)
                 {
-                    // Enable user input in text boxes
                     ((System.Windows.Forms.TextBox)control).ReadOnly = false;
+                    textBoxVersion.ReadOnly = true;
+                }
+                else if (control is System.Windows.Forms.Panel)
+                {
+                    // Enable Buttons for interaction
+                    control.Enabled = true;
                 }
                 else if (control is System.Windows.Forms.Button)
                 {
@@ -147,18 +154,20 @@ namespace BG3_Mod_Templates
 
         private void numericUpDown4_ValueChanged_1(object sender, EventArgs e)
         {
-            if (numericUpDown4.Value > 0)
+            long currentValue = long.Parse(textBoxVersion.Text);
+            decimal previousValue = (decimal)numericUpDown4.Tag;
+
+            if (numericUpDown4.Value > previousValue)
             {
-                long currentValue = long.Parse(textBoxVersion.Text);
                 currentValue += 1;
-                textBoxVersion.Text = currentValue.ToString("D17");
             }
-            else
+            else if (numericUpDown4.Value < previousValue)
             {
-                long currentValue = long.Parse(textBoxVersion.Text);
                 currentValue -= 1;
-                textBoxVersion.Text = currentValue.ToString("D17");
             }
+
+            textBoxVersion.Text = currentValue.ToString("D17");
+            numericUpDown4.Tag = numericUpDown4.Value;
         }
 
         private void numericUpDown1_ValueChanged_1(object sender, EventArgs e)
@@ -193,5 +202,86 @@ namespace BG3_Mod_Templates
             // Set the desired size of the form
             this.Size = new Size(600, 315);
         }
+
+        private void textBoxHex_TextChanged(object sender, EventArgs e)
+        {
+            string hexColor = textBoxHex.Text.TrimStart('#');
+
+            try
+            {
+                if (hexColor.Length == 6)
+                {
+                    byte r = byte.Parse(hexColor.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                    byte g = byte.Parse(hexColor.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                    byte b = byte.Parse(hexColor.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+
+                    float red = r / 255.0f;
+                    float green = g / 255.0f;
+                    float blue = b / 255.0f;
+
+                    string srgbColor = $"({red:F6}, {green:F6}, {blue:F6}, 1.000000)";
+                    textBoxSRGB.Text = srgbColor;
+
+                    // Update the color of panelColorBox
+                    panelColorBox.BackColor = Color.FromArgb(r, g, b);
+                }
+                else if (hexColor.Length == 8)
+                {
+                    byte r = byte.Parse(hexColor.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                    byte g = byte.Parse(hexColor.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                    byte b = byte.Parse(hexColor.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                    byte a = byte.Parse(hexColor.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+
+                    float red = r / 255.0f;
+                    float green = g / 255.0f;
+                    float blue = b / 255.0f;
+                    float alpha = a / 255.0f;
+
+                    string srgbColor = $"({red:F6}, {green:F6}, {blue:F6}, {alpha:F6})";
+                    textBoxSRGB.Text = srgbColor;
+
+                    // Update the color of panelColorBox
+                    panelColorBox.BackColor = Color.FromArgb(r, g, b, a);
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Hex Value is not in the correct format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Button7_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "LSX Files|*.lsx";
+            openFileDialog.Title = "Select meta.lsx File";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                string newValue = textBoxVersion.Text;
+
+                string[] lines = File.ReadAllLines(filePath);
+                string pattern = "\"Version64\" type=\"int64\" value=\"";
+
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    if (lines[i].Contains(pattern))
+                    {
+                        int startIndex = lines[i].IndexOf(pattern) + pattern.Length;
+                        int endIndex = lines[i].IndexOf("\"", startIndex);
+                        string linePrefix = lines[i].Substring(0, startIndex);
+                        string lineSuffix = lines[i].Substring(endIndex);
+                        string replacedLine = linePrefix + newValue + lineSuffix;
+                        lines[i] = replacedLine;
+                    }
+                }
+
+                File.WriteAllLines(filePath, lines);
+
+                MessageBox.Show("Version information updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System.Reflection;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace BG3_Mod_Templates
 {
@@ -8,14 +10,16 @@ namespace BG3_Mod_Templates
         {
             InitializeComponent();
 
+            numericUpDown4.Tag = numericUpDown4.Value;
+
             FolderMods.ReadOnly = true;
 
             foreach (Control control in Controls)
             {
                 if (control is System.Windows.Forms.TextBox)
                 {
-                    // Enable user input in text boxes
                     ((System.Windows.Forms.TextBox)control).ReadOnly = false;
+                    textBoxVersion.ReadOnly = true;
                 }
                 else if (control is System.Windows.Forms.Button)
                 {
@@ -169,13 +173,14 @@ namespace BG3_Mod_Templates
                     string lineSuffix = lines[i].Substring(endIndex);
                     string replacedLine = linePrefix + newValue + lineSuffix;
                     lines[i] = replacedLine;
-                    break; // 
+                    // Don't break here, so that it continues searching for other instances
                 }
             }
 
             File.WriteAllLines(filePath, lines);
         }
-        private void Button7_Click(object sender, EventArgs e) //Version Number
+
+        private void Button7_Click(object sender, EventArgs e)
         {
             string filePath = "LSX Files\\meta.lsx";
             string newValue = textBoxVersion.Text;
@@ -193,7 +198,6 @@ namespace BG3_Mod_Templates
                     string lineSuffix = lines[i].Substring(endIndex);
                     string replacedLine = linePrefix + newValue + lineSuffix;
                     lines[i] = replacedLine;
-                    break; // 
                 }
             }
 
@@ -227,18 +231,20 @@ namespace BG3_Mod_Templates
         }
         private void numericUpDown4_ValueChanged(object sender, EventArgs e)
         {
-            if (numericUpDown4.Value > 0)
+            long currentValue = long.Parse(textBoxVersion.Text);
+            decimal previousValue = (decimal)numericUpDown4.Tag;
+
+            if (numericUpDown4.Value > previousValue)
             {
-                long currentValue = long.Parse(textBoxVersion.Text);
                 currentValue += 1;
-                textBoxVersion.Text = currentValue.ToString("D17");
             }
-            else
+            else if (numericUpDown4.Value < previousValue)
             {
-                long currentValue = long.Parse(textBoxVersion.Text);
                 currentValue -= 1;
-                textBoxVersion.Text = currentValue.ToString("D17");
             }
+
+            textBoxVersion.Text = currentValue.ToString("D17");
+            numericUpDown4.Tag = numericUpDown4.Value;
         }
         private void ButtonSelectFolder_Click(object sender, EventArgs e)
         {
@@ -279,7 +285,7 @@ namespace BG3_Mod_Templates
         private void ButtonCreateFolders_Click(object sender, EventArgs e)
         {
             string exeLocation = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            string modsFolderPath = Path.Combine("\"", "Mods" + 1);
+            string modsFolderPath = Path.Combine(exeLocation, "Mods"); // Assuming you want "Mods1" folder
 
             if (!Directory.Exists(modsFolderPath))
             {
@@ -317,6 +323,7 @@ namespace BG3_Mod_Templates
         }
 
 
+
         private void Button8_Click(object sender, EventArgs e)
         {
             // Get the current directory and the original file path
@@ -343,24 +350,6 @@ namespace BG3_Mod_Templates
                 File.Copy(originalFilePath, saveFileDialog.FileName, true);
                 MessageBox.Show("File saved successfully!", "File Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-            this.FormClosing += new FormClosingEventHandler(Form3_FormClosing);
-
-            // Set tooltip text for Buttons
-            System.Windows.Forms.ToolTip toolTip1 = new System.Windows.Forms.ToolTip();
-            toolTip1.SetToolTip(ButtonSelectFolder, "Select your main mod folder");
-            toolTip1.SetToolTip(ButtonCreateFolders, "Create Folders");
-            toolTip1.SetToolTip(textBoxName, "Name of your mod folder. Auto filled in if you located your mod folder.");
-            toolTip1.SetToolTip(textBox_creator, "Your Username on Nexus for example. Or if you want the name you want to go by for your BG3 mods");
-            toolTip1.SetToolTip(textBoxDesc, "The description of your mod. In BG3 mod manager it shows up when hovering over the mod name");
-            toolTip1.SetToolTip(textBoxShared2, "This is the name of your Shared folder in a similar structure to the above folder structure");
-            toolTip1.SetToolTip(textBoxUniqueUUID, "This is your unique uuid. click Update when you are happy");
-            toolTip1.SetToolTip(Button6, "Generate a Unique UUID. Your mod must have a unique UUID");
-            toolTip1.SetToolTip(textBoxVersion, "This is how the number shows in the meta.lsx, in bg3 mod manager it will show as the number below");
-            toolTip1.SetToolTip(Button8, "Save your file to a location of your choice.");
         }
 
         private void Form3_FormClosing(object? sender, FormClosingEventArgs e)
@@ -404,6 +393,83 @@ namespace BG3_Mod_Templates
         {
             // Set the desired size of the form
             this.Size = new Size(774, 517);
+        }
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            this.FormClosing += new FormClosingEventHandler(Form3_FormClosing);
+
+            // Set tooltip text for Buttons
+            System.Windows.Forms.ToolTip toolTip1 = new System.Windows.Forms.ToolTip();
+            toolTip1.SetToolTip(ButtonSelectFolder, "Select your main mod folder");
+            toolTip1.SetToolTip(ButtonCreateFolders, "Create Folders");
+            toolTip1.SetToolTip(textBoxName, "Name of your mod folder. Auto filled in if you located your mod folder.");
+            toolTip1.SetToolTip(textBox_creator, "Your Username on Nexus for example. Or if you want the name you want to go by for your BG3 mods");
+            toolTip1.SetToolTip(textBoxDesc, "The description of your mod. In BG3 mod manager it shows up when hovering over the mod name");
+            toolTip1.SetToolTip(textBoxShared2, "This is the name of your Shared folder in a similar structure to the above folder structure");
+            toolTip1.SetToolTip(textBoxUniqueUUID, "This is your unique uuid. click Update when you are happy");
+            toolTip1.SetToolTip(Button6, "Generate a Unique UUID. Your mod must have a unique UUID");
+            toolTip1.SetToolTip(textBoxVersion, "This is how the number shows in the meta.lsx, in bg3 mod manager it will show as the number below");
+            toolTip1.SetToolTip(Button8, "Save your file to a location of your choice.");
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Fill in or use the Check Mod Folder Button to check if your mod folder includes the folder for the meta.lsx file");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Add the name you want the mod to be shown as created by. This can be your nexusmods handle or whatever you want.");
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Whatever you want the name of your mod to be.");
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Give your mod a little description, can be a brief description on what it does.");
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Give your shared folder a name, most usually give it same name as the mod name. It is your mods equivelant of the games Pathing system. For example Public\\Shared\\CharacterCreation. and this needs to be different to the word Shared in our mods which is why we give it a unique name such as the name of our mod. This is also what we name the Shared folder when creating out folders. Like you may have done in the folder creation at the top of this page.");
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Always generate a new Unique UUID when creating a new mod so this doesn't override other peoples mods. Use the Generate Unique UUID button to generate a new one");
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Clicking the Generate Unique UUID button will generate a new unique UUID which will auto fill the above box which then you can click update to update your meta.lsx with a new UUID.");
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("If this is your first version of your mod you can leave the numbers at 1.0.0.0 and just click Update to make sure the version number is set to 1.0.0.0 (36028797018963968). If you are updating the whole meta.lsx for your mod you can change the version number to match your update. The what seem random numbers aren't actually random and this is how Bg3 Mod Manager reads the version number and converts it to 4 digit version number you see. if you want to only update a version number for a pre-existing mod please use the Tools page.");
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("If you do not have a meta.lsx file or wish to override one please use this Save as and save it to your Mods\\YourShared folder once you have finished editing");
+        }
+
+        private void button14_Click_1(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("This file needs to remain as .lsx so once you have finished adding to it and saved your file, the file is finished and needs no further actions");
         }
     }
 }
