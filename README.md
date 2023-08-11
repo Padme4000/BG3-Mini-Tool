@@ -10,8 +10,8 @@ This tool won't be made for everything. I can only make it work for things I kno
 
 Things already included:
 - create a new meta.lsx
-- New Head/Horn slots
-- folder creation for lsx locations
+- New CharacterCreationAppearanceVisuals.lsx slots
+- folder creation for lsx/xml locations
 - Colour wheel that shows Hex and converts it also to sRGB 0 to 1.0 converter
 - separate version number generator in the tools tab with the colour wheel
 
