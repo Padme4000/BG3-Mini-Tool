@@ -56,6 +56,7 @@
             button7 = new Button();
             button8 = new Button();
             button9 = new Button();
+            button12 = new Button();
             SuspendLayout();
             // 
             // button10
@@ -287,7 +288,7 @@
             // button2
             // 
             button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(843, 151);
+            button2.Location = new Point(949, 149);
             button2.Name = "button2";
             button2.Size = new Size(44, 31);
             button2.TabIndex = 166;
@@ -350,12 +351,24 @@
             button9.UseVisualStyleBackColor = true;
             button9.Click += button9_Click;
             // 
+            // button12
+            // 
+            button12.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button12.Location = new Point(789, 154);
+            button12.Name = "button12";
+            button12.Size = new Size(154, 27);
+            button12.TabIndex = 172;
+            button12.Text = "Copy to Clipboard";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(1051, 385);
+            Controls.Add(button12);
             Controls.Add(button9);
             Controls.Add(button8);
             Controls.Add(button7);
@@ -388,6 +401,7 @@
             Margin = new Padding(4);
             Name = "Form5";
             Text = "Form5";
+            FormClosing += Form5_FormClosing;
             Load += Form5_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -423,5 +437,6 @@
         private Button button7;
         private Button button8;
         private Button button9;
+        private Button button12;
     }
 }

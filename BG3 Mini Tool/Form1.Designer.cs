@@ -64,11 +64,11 @@ namespace BG3_Mini_Tool
             // Button1
             // 
             Button1.AutoSize = true;
-            Button1.Location = new Point(53, 229);
+            Button1.Location = new Point(54, 229);
             Button1.Name = "Button1";
-            Button1.Size = new Size(174, 42);
+            Button1.Size = new Size(161, 65);
             Button1.TabIndex = 25;
-            Button1.Text = "Character Creation";
+            Button1.Text = "Character Creation\r\nAppearance Visuals\r\n";
             Button1.UseVisualStyleBackColor = true;
             Button1.Click += Button1_Click;
             // 

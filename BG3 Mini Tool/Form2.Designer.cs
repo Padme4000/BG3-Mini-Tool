@@ -83,6 +83,7 @@ namespace BG3_Mini_Tool
             button18 = new Button();
             button19 = new Button();
             button20 = new Button();
+            button21 = new Button();
             SuspendLayout();
             // 
             // label2
@@ -638,12 +639,24 @@ namespace BG3_Mini_Tool
             button20.UseVisualStyleBackColor = true;
             button20.Click += button20_Click;
             // 
+            // button21
+            // 
+            button21.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button21.Location = new Point(591, 130);
+            button21.Name = "button21";
+            button21.Size = new Size(154, 27);
+            button21.TabIndex = 176;
+            button21.Text = "Copy to Clipboard";
+            button21.UseVisualStyleBackColor = true;
+            button21.Click += button21_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(1121, 545);
+            Controls.Add(button21);
             Controls.Add(button20);
             Controls.Add(button19);
             Controls.Add(button18);
@@ -760,6 +773,7 @@ namespace BG3_Mini_Tool
         private Button button18;
         private Button button19;
         private Button button20;
+        private Button button21;
     }
 }
 

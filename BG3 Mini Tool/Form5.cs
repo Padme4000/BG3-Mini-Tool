@@ -320,8 +320,18 @@ namespace BG3_Mini_Tool
 
         private void textBoxNameHandle_Click(object sender, EventArgs e)
         {
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
             // Copy the text to the clipboard
             Clipboard.SetText(textBoxNameHandle.Text);
+        }
+
+        private void Form5_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true; // Cancel the form closing event
+            this.Hide(); // Hide the form instead of closing it
         }
     }
 }

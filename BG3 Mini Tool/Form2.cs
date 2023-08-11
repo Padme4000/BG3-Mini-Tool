@@ -680,7 +680,7 @@ namespace BG3_Mini_Tool
         private void button17_Click(object sender, EventArgs e)
         {
             // Display a pop-up message box with text
-            MessageBox.Show("This file needs to remain as .lsx so once you have saved your file and finished adding to it, the file is finished and needs no further actions");
+            MessageBox.Show("First make sure you setup your Localization file. But this file needs to remain as .lsx so once you have saved your file and finished adding to it, the file is finished and needs no further actions");
         }
 
         private void button18_Click(object sender, EventArgs e)
@@ -698,14 +698,18 @@ namespace BG3_Mini_Tool
 
         private void textBoxNameHandle_Click(object sender, EventArgs e)
         {
-            // Copy the text to the clipboard
-            Clipboard.SetText(textBoxNameHandle.Text);
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
             // Display a pop-up message box with text
             MessageBox.Show("The Hairs option here is only for non autosnapping hairs. For autosnapping hairs add your hair slots to Public\\Shared\\CharacterCreation\\CharacterCreationSharedVisuals.lsx and Public\\Shared\\Races\\Races.lsx");
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            // Copy the text to the clipboard
+            Clipboard.SetText(textBoxNameHandle.Text);
         }
     }
 }

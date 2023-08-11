@@ -391,25 +391,10 @@ namespace BG3_Mod_Templates
 
         private void numericUpDown1_Resize(object sender, EventArgs e)
         {
-            // Set the desired size of the form
-            this.Size = new Size(774, 517);
         }
         private void Form3_Load(object sender, EventArgs e)
         {
             this.FormClosing += new FormClosingEventHandler(Form3_FormClosing);
-
-            // Set tooltip text for Buttons
-            System.Windows.Forms.ToolTip toolTip1 = new System.Windows.Forms.ToolTip();
-            toolTip1.SetToolTip(ButtonSelectFolder, "Select your main mod folder");
-            toolTip1.SetToolTip(ButtonCreateFolders, "Create Folders");
-            toolTip1.SetToolTip(textBoxName, "Name of your mod folder. Auto filled in if you located your mod folder.");
-            toolTip1.SetToolTip(textBox_creator, "Your Username on Nexus for example. Or if you want the name you want to go by for your BG3 mods");
-            toolTip1.SetToolTip(textBoxDesc, "The description of your mod. In BG3 mod manager it shows up when hovering over the mod name");
-            toolTip1.SetToolTip(textBoxShared2, "This is the name of your Shared folder in a similar structure to the above folder structure");
-            toolTip1.SetToolTip(textBoxUniqueUUID, "This is your unique uuid. click Update when you are happy");
-            toolTip1.SetToolTip(Button6, "Generate a Unique UUID. Your mod must have a unique UUID");
-            toolTip1.SetToolTip(textBoxVersion, "This is how the number shows in the meta.lsx, in bg3 mod manager it will show as the number below");
-            toolTip1.SetToolTip(Button8, "Save your file to a location of your choice.");
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -457,7 +442,7 @@ namespace BG3_Mod_Templates
         private void button15_Click(object sender, EventArgs e)
         {
             // Display a pop-up message box with text
-            MessageBox.Show("If this is your first version of your mod you can leave the numbers at 1.0.0.0 and just click Update to make sure the version number is set to 1.0.0.0 (36028797018963968). If you are updating the whole meta.lsx for your mod you can change the version number to match your update. The what seem random numbers aren't actually random and this is how Bg3 Mod Manager reads the version number and converts it to 4 digit version number you see. if you want to only update a version number for a pre-existing mod please use the Tools page.");
+            MessageBox.Show("This is how the number shows in the meta.lsx, in bg3 mod manager it will show as the number below. If this is your first version of your mod you can leave the numbers at 1.0.0.0 and just click Update to make sure the version number is set to 1.0.0.0 (36028797018963968). If you are updating the whole meta.lsx for your mod you can change the version number to match your update.");
         }
 
         private void button16_Click(object sender, EventArgs e)

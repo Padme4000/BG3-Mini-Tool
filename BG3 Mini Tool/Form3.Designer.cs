@@ -514,7 +514,7 @@ namespace BG3_Mod_Templates
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(870, 433);
+            ClientSize = new Size(870, 431);
             Controls.Add(button14);
             Controls.Add(button17);
             Controls.Add(button16);
