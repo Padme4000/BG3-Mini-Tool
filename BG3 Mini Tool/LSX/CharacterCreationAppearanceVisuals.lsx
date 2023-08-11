@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <save>
-  <version major="4" minor="0" revision="4" build="602"/>
+  <version major="4" minor="0" revision="9" build="328" />
   <region id="CharacterCreationAppearanceVisuals">
     <node id="root">
       <children>
         <node id="CharacterCreationAppearanceVisual">
-          <attribute id="DisplayName" type="FixedString" value="P4_TEST"/>
-          <attribute id="Bodytype" type="uint8" value="0"/> <!-- Masc = 0 Feminine = 1 -->
-          <attribute id="RaceUUID" type="guid" value="4f5d1434-5175-4fa9-b7dc-ab24fba37929"/>
-          <attribute id="RootTemplate" type="guid" value="00000000-0000-0000-0000-000000000000"/>
-          <attribute id="SlotName" type="FixedString" value="Head"/>
-          <attribute id="UUID" type="guid" value="bc2de674-9935-470d-9a46-e40ee1f7a967"/>
-          <attribute id="VisualResource" type="guid" value="6ca5c396-846a-44de-9db2-fe470b43fb67"/>
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="Bodytype" type="uint8" value="0" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h64ce9a37a45d49d4816c811a96c46a3a" version="1" />
+          <attribute id="RaceUUID" type="guid" value="3560f4a2-c0b8-4f8b-baf8-6b6eaef0c160" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="ddb6154f-2bef-4aa3-b49e-08df909ad970" />
+          <attribute id="VisualResource" type="guid" value="6ffaec89-3b83-4ed0-a562-3993ac205908" />
         </node>
       </children>
     </node>

@@ -9,8 +9,8 @@ RaceUUID so you can quickly replace the above with your desired race
 	Halfling: 78cd3bcc-1c43-4a2a-aa80-c34322c16a04
 	Human: 0eb594cb-8820-4be6-a58d-8be7a1a98fba
 	Tiefling: b6dccbed-30f3-424b-a181-c4540cf38197
-	Strong Elf: 6c038dcb-7eb5-431d-84f8-cecfaf1c0c5a
-	Strong Human: e6cf4c1f-ba82-4d54-b163-7d0e067ed0bf
+	Dragonborn: 9c61a74a-20df-4119-89c5-d996956b6c66
+	Half-Orc: 5c39a726-71c8-4748-ba8d-f768b3c11a91
 	
 Modded Races
 	Race Name: 00000000-0000-0000-0000-000000000000
