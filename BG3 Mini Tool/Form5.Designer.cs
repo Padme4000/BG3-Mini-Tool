@@ -160,6 +160,7 @@
             textBoxNameHandle.Name = "textBoxNameHandle";
             textBoxNameHandle.Size = new Size(348, 26);
             textBoxNameHandle.TabIndex = 144;
+            textBoxNameHandle.Click += textBoxNameHandle_Click;
             // 
             // Button_locatexml
             // 

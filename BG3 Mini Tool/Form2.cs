@@ -695,6 +695,18 @@ namespace BG3_Mini_Tool
             MessageBox.Show("If you have located your CharacterCreationAppearanceVisuals.lsx then use this to add new slots to that file.");
 
         }
+
+        private void textBoxNameHandle_Click(object sender, EventArgs e)
+        {
+            // Copy the text to the clipboard
+            Clipboard.SetText(textBoxNameHandle.Text);
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("The Hairs option here is only for non autosnapping hairs. For autosnapping hairs add your hair slots to Public\\Shared\\CharacterCreation\\CharacterCreationSharedVisuals.lsx and Public\\Shared\\Races\\Races.lsx");
+        }
     }
 }
 

@@ -278,6 +278,7 @@ namespace BG3_Mod_Templates
             textBoxVersion.Size = new Size(174, 26);
             textBoxVersion.TabIndex = 99;
             textBoxVersion.Text = "36028797018963968";
+            textBoxVersion.Click += textBoxVersion_Click;
             textBoxVersion.TextChanged += textBoxVersion_TextChanged;
             // 
             // numericUpDown1

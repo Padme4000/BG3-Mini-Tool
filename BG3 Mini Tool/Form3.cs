@@ -471,5 +471,11 @@ namespace BG3_Mod_Templates
             // Display a pop-up message box with text
             MessageBox.Show("This file needs to remain as .lsx so once you have finished adding to it and saved your file, the file is finished and needs no further actions");
         }
+
+        private void textBoxVersion_Click(object sender, EventArgs e)
+        {
+            // Copy the text to the clipboard
+            Clipboard.SetText(textBoxVersion.Text);
+        }
     }
 }

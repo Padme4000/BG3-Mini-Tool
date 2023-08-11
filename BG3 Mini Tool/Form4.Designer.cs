@@ -45,6 +45,8 @@
             textBoxVersion = new TextBox();
             label11 = new Label();
             Button7 = new Button();
+            button13 = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
@@ -110,7 +112,7 @@
             textBoxSRGB.Name = "textBoxSRGB";
             textBoxSRGB.Size = new Size(299, 24);
             textBoxSRGB.TabIndex = 101;
-            textBoxSRGB.Text = "(0.501961, 1.000000, 1.000000, 1.000000)";
+            textBoxSRGB.Text = "0.501961 1.000000 1.000000";
             // 
             // label3
             // 
@@ -134,7 +136,7 @@
             // 
             // numericUpDown4
             // 
-            numericUpDown4.Location = new Point(272, 219);
+            numericUpDown4.Location = new Point(272, 260);
             numericUpDown4.Maximum = new decimal(new int[] { 9, 0, 0, 0 });
             numericUpDown4.Name = "numericUpDown4";
             numericUpDown4.Size = new Size(39, 26);
@@ -143,21 +145,21 @@
             // 
             // numericUpDown3
             // 
-            numericUpDown3.Location = new Point(227, 218);
+            numericUpDown3.Location = new Point(227, 259);
             numericUpDown3.Name = "numericUpDown3";
             numericUpDown3.Size = new Size(39, 26);
             numericUpDown3.TabIndex = 111;
             // 
             // numericUpDown2
             // 
-            numericUpDown2.Location = new Point(182, 218);
+            numericUpDown2.Location = new Point(182, 259);
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(39, 26);
             numericUpDown2.TabIndex = 110;
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(137, 218);
+            numericUpDown1.Location = new Point(137, 259);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(39, 26);
             numericUpDown1.TabIndex = 109;
@@ -167,7 +169,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(317, 221);
+            label13.Location = new Point(317, 262);
             label13.Name = "label13";
             label13.Size = new Size(207, 20);
             label13.TabIndex = 108;
@@ -175,7 +177,7 @@
             // 
             // textBoxVersion
             // 
-            textBoxVersion.Location = new Point(137, 184);
+            textBoxVersion.Location = new Point(137, 225);
             textBoxVersion.Margin = new Padding(4, 5, 4, 5);
             textBoxVersion.Name = "textBoxVersion";
             textBoxVersion.Size = new Size(174, 26);
@@ -186,7 +188,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(6, 187);
+            label11.Location = new Point(6, 228);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new Size(123, 20);
@@ -196,7 +198,7 @@
             // Button7
             // 
             Button7.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Button7.Location = new Point(318, 182);
+            Button7.Location = new Point(318, 223);
             Button7.Name = "Button7";
             Button7.Size = new Size(118, 31);
             Button7.TabIndex = 106;
@@ -204,12 +206,36 @@
             Button7.UseVisualStyleBackColor = true;
             Button7.Click += Button7_Click_1;
             // 
+            // button13
+            // 
+            button13.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button13.Location = new Point(297, 182);
+            button13.Name = "button13";
+            button13.Size = new Size(118, 27);
+            button13.TabIndex = 148;
+            button13.Text = "Update Hex";
+            button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(137, 182);
+            button1.Name = "button1";
+            button1.Size = new Size(154, 27);
+            button1.TabIndex = 149;
+            button1.Text = "Copy to Clipboard";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Tools
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(584, 276);
+            ClientSize = new Size(584, 300);
+            Controls.Add(button1);
+            Controls.Add(button13);
             Controls.Add(numericUpDown4);
             Controls.Add(numericUpDown3);
             Controls.Add(numericUpDown2);
@@ -259,5 +285,7 @@
         private TextBox textBoxVersion;
         private Label label11;
         private Button Button7;
+        private Button button13;
+        private Button button1;
     }
 }

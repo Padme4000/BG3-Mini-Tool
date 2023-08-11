@@ -82,6 +82,7 @@ namespace BG3_Mini_Tool
             button17 = new Button();
             button18 = new Button();
             button19 = new Button();
+            button20 = new Button();
             SuspendLayout();
             // 
             // label2
@@ -492,6 +493,7 @@ namespace BG3_Mini_Tool
             textBoxNameHandle.Name = "textBoxNameHandle";
             textBoxNameHandle.Size = new Size(348, 26);
             textBoxNameHandle.TabIndex = 138;
+            textBoxNameHandle.Click += textBoxNameHandle_Click;
             // 
             // button4
             // 
@@ -625,12 +627,24 @@ namespace BG3_Mini_Tool
             button19.UseVisualStyleBackColor = true;
             button19.Click += button19_Click;
             // 
+            // button20
+            // 
+            button20.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button20.Location = new Point(690, 200);
+            button20.Name = "button20";
+            button20.Size = new Size(44, 31);
+            button20.TabIndex = 175;
+            button20.Text = "??";
+            button20.UseVisualStyleBackColor = true;
+            button20.Click += button20_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(1121, 545);
+            Controls.Add(button20);
             Controls.Add(button19);
             Controls.Add(button18);
             Controls.Add(button17);
@@ -745,6 +759,7 @@ namespace BG3_Mini_Tool
         private Button button17;
         private Button button18;
         private Button button19;
+        private Button button20;
     }
 }
 

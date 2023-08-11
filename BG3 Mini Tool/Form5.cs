@@ -317,5 +317,11 @@ namespace BG3_Mini_Tool
             // Write the modified lines back to the file
             File.WriteAllLines(filePath, lines);
         }
+
+        private void textBoxNameHandle_Click(object sender, EventArgs e)
+        {
+            // Copy the text to the clipboard
+            Clipboard.SetText(textBoxNameHandle.Text);
+        }
     }
 }
