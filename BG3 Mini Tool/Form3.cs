@@ -1,4 +1,7 @@
 ﻿using System.Reflection;
+using System;
+using System.Linq;
+using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -57,27 +60,28 @@ namespace BG3_Mod_Templates
 
         private void Button5_Click(object sender, EventArgs e) //Mod Creator
         {
-            string filePath = "LSX Files\\meta.lsx";
             string newValue = textBox_creator.Text;
 
-            string[] lines = File.ReadAllLines(filePath);
-            string pattern = "\"Author\" type=\"LSWString\" value=\"";
+            XmlDocument doc = new XmlDocument();
+            doc.Load("LSX Files\\meta.lsx"); // Load the currently opened file
 
-            for (int i = 0; i < lines.Length; i++)
+            XmlNode authorNode = doc.SelectSingleNode("//attribute[@id='Author'][@type='LSWString']");
+            if (authorNode != null)
             {
-                if (lines[i].Contains(pattern))
+                foreach (XmlAttribute attribute in authorNode.Attributes)
                 {
-                    int startIndex = lines[i].IndexOf(pattern) + pattern.Length;
-                    int endIndex = lines[i].IndexOf("\"", startIndex);
-                    string linePrefix = lines[i].Substring(0, startIndex);
-                    string lineSuffix = lines[i].Substring(endIndex);
-                    string replacedLine = linePrefix + newValue + lineSuffix;
-                    lines[i] = replacedLine;
-                    break; // 
+                    if (attribute.Name == "value")
+                    {
+                        attribute.Value = newValue;
+                        break;
+                    }
                 }
-            }
 
-            File.WriteAllLines(filePath, lines);
+                // Save the updated XML content to the RichTextBox
+                StringWriter sw = new StringWriter();
+                doc.Save(sw);
+                textBox_creator.Text = sw.ToString();
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e) //Mod Name
@@ -203,6 +207,25 @@ namespace BG3_Mod_Templates
 
             File.WriteAllLines(filePath, lines);
         }
+
+        private void numericUpDown4_ValueChanged(object sender, EventArgs e)
+        {
+            long currentValue = long.Parse(textBoxVersion.Text);
+            decimal previousValue = (decimal)numericUpDown4.Tag;
+
+            if (numericUpDown4.Value > previousValue)
+            {
+                currentValue += 1;
+            }
+            else if (numericUpDown4.Value < previousValue)
+            {
+                currentValue -= 1;
+            }
+
+            textBoxVersion.Text = currentValue.ToString("D17");
+            numericUpDown4.Tag = numericUpDown4.Value;
+        }
+
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             if (numericUpDown1.Value < 1)
@@ -228,23 +251,6 @@ namespace BG3_Mod_Templates
 
             // Set the value of textBoxVersion to the int64Value as a 17-character string
             textBoxVersion.Text = int64Value.ToString("D17");
-        }
-        private void numericUpDown4_ValueChanged(object sender, EventArgs e)
-        {
-            long currentValue = long.Parse(textBoxVersion.Text);
-            decimal previousValue = (decimal)numericUpDown4.Tag;
-
-            if (numericUpDown4.Value > previousValue)
-            {
-                currentValue += 1;
-            }
-            else if (numericUpDown4.Value < previousValue)
-            {
-                currentValue -= 1;
-            }
-
-            textBoxVersion.Text = currentValue.ToString("D17");
-            numericUpDown4.Tag = numericUpDown4.Value;
         }
         private void ButtonSelectFolder_Click(object sender, EventArgs e)
         {
@@ -361,32 +367,6 @@ namespace BG3_Mod_Templates
         private void Form3_Load_1(object sender, EventArgs e)
         {
             this.FormClosing += new FormClosingEventHandler(Form3_FormClosing);
-        }
-
-
-        private void textBoxUniqueUUID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxVersion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FolderModName_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void numericUpDown1_Resize(object sender, EventArgs e)

@@ -103,7 +103,7 @@ namespace BG3_Mini_Tool
         private void Button2_Click(object sender, EventArgs e) // Bodytype Masc
         {
             string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
-            string targetLine = "<attribute id=\"Bodytype\" type=\"uint8\" value=\"1\" />";
+            string targetLine = "<attribute id=\"BodyType\" type=\"uint8\" value=\"1\" />";
 
             string[] lines = File.ReadAllLines(filePath);
             for (int i = 0; i < lines.Length; i++)
@@ -121,7 +121,7 @@ namespace BG3_Mini_Tool
         private void Button8_Click(object sender, EventArgs e) //Bodytype Feminine
         {
             string filePath = "LSX Files\\CharacterCreationAppearanceVisuals.lsx";
-            string targetLine = "<attribute id=\"Bodytype\" type=\"uint8\" value=\"0\" />";
+            string targetLine = "<attribute id=\"BodyType\" type=\"uint8\" value=\"0\" />";
 
             string[] lines = File.ReadAllLines(filePath);
             for (int i = 0; i < lines.Length; i++)

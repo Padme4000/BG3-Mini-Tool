@@ -4,15 +4,21 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace BG3_Mod_Templates
 {
     public partial class Tools : Form
     {
+        private Dictionary<string, string> uuidReplacementDict = new Dictionary<string, string>();
+        private Dictionary<string, string> handleReplacementDict = new Dictionary<string, string>();
+
         public Tools()
         {
             InitializeComponent();
@@ -121,11 +127,6 @@ namespace BG3_Mod_Templates
             }
         }
 
-        private void textBoxVersion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void numericUpDown4_ValueChanged_1(object sender, EventArgs e)
         {
             long currentValue = long.Parse(textBoxVersion.Text);
@@ -209,7 +210,7 @@ namespace BG3_Mod_Templates
                 MessageBox.Show("Version information updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-               
+
         private void Form8_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true; // Cancel the form closing event
@@ -354,6 +355,169 @@ namespace BG3_Mod_Templates
         {
             // Copy the text to the clipboard
             Clipboard.SetText(textBoxSRGB.Text);
+        }
+
+        private void replace_uuid_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedPath = folderBrowserDialog.SelectedPath;
+                ProcessUUIDs(selectedPath);
+            }
+        }
+        private void replace_handles_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedPath = folderBrowserDialog.SelectedPath;
+                ProcessHandles(selectedPath);
+            }
+        }
+
+        private void ProcessUUIDs(string directory)
+        {
+            string[] lsxFiles = Directory.GetFiles(directory, "*.lsx", SearchOption.AllDirectories);
+            string[] txtFiles = Directory.GetFiles(directory, "*.txt", SearchOption.AllDirectories);
+
+            foreach (string filePath in lsxFiles.Concat(txtFiles))
+            {
+                string content = File.ReadAllText(filePath);
+                string updatedContent = ProcessUUIDsInContent(content);
+
+                File.WriteAllText(filePath, updatedContent);
+            }
+
+            MessageBox.Show("UUID replacement has finished processing.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ProcessHandles(string directory)
+        {
+            string[] lsxFiles = Directory.GetFiles(directory, "*.lsx", SearchOption.AllDirectories);
+            string[] xmlFiles = Directory.GetFiles(directory, "*.xml", SearchOption.AllDirectories);
+
+            foreach (string filePath in lsxFiles.Concat(xmlFiles))
+            {
+                string content = File.ReadAllText(filePath);
+                string updatedContent = ProcessHandlesInContent(content);
+
+                File.WriteAllText(filePath, updatedContent);
+            }
+
+            MessageBox.Show("Handle replacement has finished processing.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private string[] patternsToIgnore = new string[]
+    {
+            @"<attribute id=""ParentTemplateId""",
+            @"<attribute id=""ClothColliderResourceID""",
+            @"<attribute id=""DynamicPhysicsResourceID""",
+            @"<attribute id=""PreviewVisualResource""",
+            @"<attribute id=""PreviewVisualResourceID""",
+            @"<attribute id=""ShortNameSetId""",
+            @"<attribute id=""RagdollResourceID""",
+            @"<attribute id=""SoftbodyResourceID""",
+            @"<attribute id=""SpringResourceID""",
+            @"<attribute id=""FallBackAnimation""",
+            @"<attribute id=""BlueprintInstanceResourceID""",
+            @"<attribute id=""ClothColliderResourceID""",
+            @"<attribute id=""HairPresetResourceId""",
+            @"<attribute id=""RemapperSlotId""",
+            @"<attribute id=""ScalpMaterialId""",
+            @"<attribute id=""PairElement1""",
+            @"<attribute id=""PairElement2""",
+            @"<attribute id=""Object""",
+            @"<attribute id=""IKBoneName""",
+            @"<attribute id=""IKRigResourceID""",
+            @"<attribute id=""PairElement1""",
+            @"<attribute id=""PairElement2""",
+            @"<attribute id=""MaterialId""",
+            @"<attribute id=""RaceUUID""",
+        // Add more patterns to ignore as needed
+     };
+
+        private string ProcessUUIDsInContent(string content)
+        {
+            string updatedContent = content;
+            string uuidPattern = @"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}";
+
+            // Split the content into lines
+            string[] lines = updatedContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Process each line individually
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string line = lines[i];
+
+                // Check if the line contains any of the patterns to ignore
+                if (patternsToIgnore.Any(patternToIgnore => Regex.IsMatch(line, patternToIgnore)))
+                {
+                    // If it does, keep the line as is
+                    continue;
+                }
+
+                // Replace UUIDs in the line
+                lines[i] = Regex.Replace(line, uuidPattern, match =>
+                {
+                    string currentUUID = match.Value;
+
+                    if (!uuidReplacementDict.ContainsKey(currentUUID))
+                    {
+                        uuidReplacementDict[currentUUID] = Guid.NewGuid().ToString();
+                    }
+
+                    return uuidReplacementDict[currentUUID];
+                });
+            }
+
+            // Reconstruct the updated content from the modified lines
+            updatedContent = string.Join(Environment.NewLine, lines);
+
+            return updatedContent;
+        }
+
+        private string ProcessHandlesInContent(string content)
+        {
+            string updatedContent = content;
+            string handlePattern = @"(handle\s*=\s*"")[^""]*""|contentuid\s*=\s*""[^""]*""";
+
+            // Process Handles
+            updatedContent = Regex.Replace(updatedContent, handlePattern, match =>
+            {
+                string currentHandle = match.Value.Substring(match.Value.IndexOf('"') + 1, 32);
+
+                if (!handleReplacementDict.ContainsKey(currentHandle))
+                {
+                    // Check if the currentHandle matches any pattern from the ignore list
+                    bool shouldIgnore = patternsToIgnore.Any(patternToIgnore => Regex.IsMatch(currentHandle, patternToIgnore));
+
+                    if (!shouldIgnore)
+                    {
+                        handleReplacementDict[currentHandle] = GenerateUniqueHandle();
+                    }
+                }
+
+                return handleReplacementDict.ContainsKey(currentHandle) ? $"{match.Value.Substring(0, match.Value.IndexOf('=') + 2)}{handleReplacementDict[currentHandle]}\"" : match.Value;
+            });
+
+            return updatedContent;
+        }
+
+        private string GenerateUniqueHandle()
+        {
+            return "h" + Guid.NewGuid().ToString("N");
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Default is the default bodyshape the race gets. Other is if they have an alternative bodyshape such as Strong. For Example for Half-Orcs and Dragonborn even though they use Strong bodyshape you would click default\r\nas that is the only bodyshape they have available. For example in the game file the default bodyshape value is 0 and the next available bodyshape is 1. But because Dragonborn and Half Orcs only have one body shape their strong bodyshape is assigned the value 0");
         }
     }
 }

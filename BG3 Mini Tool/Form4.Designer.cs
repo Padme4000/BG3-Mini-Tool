@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tools));
             label2 = new Label();
             label7 = new Label();
             colorDialog1 = new ColorDialog();
@@ -47,6 +48,12 @@
             Button7 = new Button();
             button13 = new Button();
             button1 = new Button();
+            replace_uuid = new Button();
+            replacehandles = new Button();
+            label5 = new Label();
+            button5 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
@@ -57,11 +64,11 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(265, 9);
+            label2.Location = new Point(227, 9);
             label2.Name = "label2";
-            label2.Size = new Size(70, 25);
+            label2.Size = new Size(132, 25);
             label2.TabIndex = 16;
-            label2.Text = "Tools";
+            label2.Text = "Extra Tools";
             // 
             // label7
             // 
@@ -183,7 +190,6 @@
             textBoxVersion.Size = new Size(174, 26);
             textBoxVersion.TabIndex = 107;
             textBoxVersion.Text = "36028797018963968";
-            textBoxVersion.TextChanged += textBoxVersion_TextChanged;
             // 
             // label11
             // 
@@ -228,12 +234,84 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // replace_uuid
+            // 
+            replace_uuid.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            replace_uuid.Location = new Point(171, 301);
+            replace_uuid.Name = "replace_uuid";
+            replace_uuid.Size = new Size(255, 57);
+            replace_uuid.TabIndex = 150;
+            replace_uuid.Text = "Mass Replace UUIDS";
+            replace_uuid.UseVisualStyleBackColor = true;
+            replace_uuid.Click += replace_uuid_Click;
+            // 
+            // replacehandles
+            // 
+            replacehandles.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            replacehandles.Location = new Point(171, 364);
+            replacehandles.Name = "replacehandles";
+            replacehandles.Size = new Size(255, 57);
+            replacehandles.TabIndex = 151;
+            replacehandles.Text = "Mass Replace handles";
+            replacehandles.UseVisualStyleBackColor = true;
+            replacehandles.Click += replace_handles_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(74, 424);
+            label5.MaximumSize = new Size(450, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(435, 140);
+            label5.TabIndex = 152;
+            label5.Text = resources.GetString("label5.Text");
+            label5.TextAlign = ContentAlignment.TopCenter;
+            label5.Click += label5_Click;
+            // 
+            // button5
+            // 
+            button5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Location = new Point(432, 376);
+            button5.Name = "button5";
+            button5.Size = new Size(44, 31);
+            button5.TabIndex = 153;
+            button5.Text = "?";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(432, 313);
+            button2.Name = "button2";
+            button2.Size = new Size(44, 31);
+            button2.TabIndex = 154;
+            button2.Text = "?";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.Location = new Point(482, 313);
+            button3.Name = "button3";
+            button3.Size = new Size(44, 31);
+            button3.TabIndex = 155;
+            button3.Text = "??";
+            button3.UseVisualStyleBackColor = true;
+            // 
             // Tools
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(584, 300);
+            ClientSize = new Size(584, 571);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button5);
+            Controls.Add(label5);
+            Controls.Add(replacehandles);
+            Controls.Add(replace_uuid);
             Controls.Add(button1);
             Controls.Add(button13);
             Controls.Add(numericUpDown4);
@@ -287,5 +365,11 @@
         private Button Button7;
         private Button button13;
         private Button button1;
+        private Button replace_uuid;
+        private Button replacehandles;
+        private Label label5;
+        private Button button5;
+        private Button button2;
+        private Button button3;
     }
 }

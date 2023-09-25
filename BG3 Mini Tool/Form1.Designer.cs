@@ -109,7 +109,7 @@ namespace BG3_Mini_Tool
             Button4.Name = "Button4";
             Button4.Size = new Size(121, 41);
             Button4.TabIndex = 29;
-            Button4.Text = "Tools";
+            Button4.Text = "Extra Tools";
             Button4.UseVisualStyleBackColor = true;
             Button4.Click += Button4_Click;
             // 

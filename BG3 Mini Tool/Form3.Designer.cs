@@ -106,7 +106,6 @@ namespace BG3_Mod_Templates
             textBoxUniqueUUID.Size = new Size(344, 26);
             textBoxUniqueUUID.TabIndex = 88;
             textBoxUniqueUUID.Text = "Use the Generate Unique UUID Button";
-            textBoxUniqueUUID.TextChanged += textBoxUniqueUUID_TextChanged;
             // 
             // Button3
             // 
@@ -279,7 +278,6 @@ namespace BG3_Mod_Templates
             textBoxVersion.TabIndex = 99;
             textBoxVersion.Text = "36028797018963968";
             textBoxVersion.Click += textBoxVersion_Click;
-            textBoxVersion.TextChanged += textBoxVersion_TextChanged;
             // 
             // numericUpDown1
             // 
@@ -297,7 +295,6 @@ namespace BG3_Mod_Templates
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(39, 26);
             numericUpDown2.TabIndex = 102;
-            numericUpDown2.ValueChanged += numericUpDown2_ValueChanged;
             // 
             // numericUpDown3
             // 
@@ -305,7 +302,6 @@ namespace BG3_Mod_Templates
             numericUpDown3.Name = "numericUpDown3";
             numericUpDown3.Size = new Size(39, 26);
             numericUpDown3.TabIndex = 103;
-            numericUpDown3.ValueChanged += numericUpDown3_ValueChanged;
             // 
             // numericUpDown4
             // 
@@ -325,7 +321,6 @@ namespace BG3_Mod_Templates
             FolderModName.TabIndex = 105;
             FolderModName.Text = "ModName";
             FolderModName.TextAlign = HorizontalAlignment.Center;
-            FolderModName.TextChanged += FolderModName_TextChanged;
             // 
             // FolderMods
             // 
