@@ -98,5 +98,37 @@ namespace BG3_Mini_Tool
             // Set the desired size of the form
             this.Size = new Size(302, 460);
         }
+
+        private Form8? Form8Instance;
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            if (Form8Instance == null)
+            {
+                Form8Instance = new Form8();
+                Form8Instance.Show();
+            }
+            else
+            {
+                Form8Instance.Show();
+                Form8Instance.BringToFront();
+            }
+        }
+
+        private Form10? Form10Instance;
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            if (Form10Instance == null)
+            {
+                Form10Instance = new Form10();
+                Form10Instance.Show();
+            }
+            else
+            {
+                Form10Instance.Show();
+                Form10Instance.BringToFront();
+            }
+        }
     }
 }

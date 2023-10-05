@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -357,15 +358,6 @@ namespace BG3_Mod_Templates
             Clipboard.SetText(textBoxSRGB.Text);
         }
 
-        private void replace_uuid_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                string selectedPath = folderBrowserDialog.SelectedPath;
-                ProcessUUIDs(selectedPath);
-            }
-        }
         private void replace_handles_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
@@ -373,6 +365,49 @@ namespace BG3_Mod_Templates
             {
                 string selectedPath = folderBrowserDialog.SelectedPath;
                 ProcessHandles(selectedPath);
+            }
+        }
+
+        private void ProcessHandles(string directory)
+        {
+            string[] lsxFiles = Directory.GetFiles(directory, "*.lsx", SearchOption.AllDirectories);
+            string[] xmlFiles = Directory.GetFiles(directory, "*.xml", SearchOption.AllDirectories);
+
+            foreach (string filePath in lsxFiles.Concat(xmlFiles))
+            {
+                string content = File.ReadAllText(filePath);
+                string updatedContent = ProcessHandlesInContent(content);
+
+                File.WriteAllText(filePath, updatedContent);
+            }
+
+            MessageBox.Show("Handle replacement has finished processing.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private string[] patternsToIgnore;
+
+        private string[] GetIgnoreList()
+        {
+            string exeDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            string ignoreListPath = Path.Combine(exeDirectory, "LSX Files", "IgnoreList.txt");
+
+            if (File.Exists(ignoreListPath))
+            {
+                return File.ReadAllLines(ignoreListPath);
+            }
+
+            return new string[0]; // Return an empty array if the file doesn't exist
+        }
+
+        private void replace_uuid_Click(object sender, EventArgs e)
+        {
+            patternsToIgnore = GetIgnoreList();
+
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedPath = folderBrowserDialog.SelectedPath;
+                ProcessUUIDs(selectedPath);
             }
         }
 
@@ -392,51 +427,6 @@ namespace BG3_Mod_Templates
             MessageBox.Show("UUID replacement has finished processing.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void ProcessHandles(string directory)
-        {
-            string[] lsxFiles = Directory.GetFiles(directory, "*.lsx", SearchOption.AllDirectories);
-            string[] xmlFiles = Directory.GetFiles(directory, "*.xml", SearchOption.AllDirectories);
-
-            foreach (string filePath in lsxFiles.Concat(xmlFiles))
-            {
-                string content = File.ReadAllText(filePath);
-                string updatedContent = ProcessHandlesInContent(content);
-
-                File.WriteAllText(filePath, updatedContent);
-            }
-
-            MessageBox.Show("Handle replacement has finished processing.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private string[] patternsToIgnore = new string[]
-    {
-            @"<attribute id=""ParentTemplateId""",
-            @"<attribute id=""ClothColliderResourceID""",
-            @"<attribute id=""DynamicPhysicsResourceID""",
-            @"<attribute id=""PreviewVisualResource""",
-            @"<attribute id=""PreviewVisualResourceID""",
-            @"<attribute id=""ShortNameSetId""",
-            @"<attribute id=""RagdollResourceID""",
-            @"<attribute id=""SoftbodyResourceID""",
-            @"<attribute id=""SpringResourceID""",
-            @"<attribute id=""FallBackAnimation""",
-            @"<attribute id=""BlueprintInstanceResourceID""",
-            @"<attribute id=""ClothColliderResourceID""",
-            @"<attribute id=""HairPresetResourceId""",
-            @"<attribute id=""RemapperSlotId""",
-            @"<attribute id=""ScalpMaterialId""",
-            @"<attribute id=""PairElement1""",
-            @"<attribute id=""PairElement2""",
-            @"<attribute id=""Object""",
-            @"<attribute id=""IKBoneName""",
-            @"<attribute id=""IKRigResourceID""",
-            @"<attribute id=""PairElement1""",
-            @"<attribute id=""PairElement2""",
-            @"<attribute id=""MaterialId""",
-            @"<attribute id=""RaceUUID""",
-        // Add more patterns to ignore as needed
-     };
-
         private string ProcessUUIDsInContent(string content)
         {
             string updatedContent = content;
@@ -445,15 +435,28 @@ namespace BG3_Mod_Templates
             // Split the content into lines
             string[] lines = updatedContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
+            bool insideObjectNode = false; // Flag to track if inside <node id="Object"> block
+
             // Process each line individually
             for (int i = 0; i < lines.Length; i++)
             {
                 string line = lines[i];
 
-                // Check if the line contains any of the patterns to ignore
-                if (patternsToIgnore.Any(patternToIgnore => Regex.IsMatch(line, patternToIgnore)))
+                if (line.Contains("<node id=\"Object\">"))
                 {
-                    // If it does, keep the line as is
+                    insideObjectNode = true;
+                }
+                else if (line.Contains("</node>"))
+                {
+                    insideObjectNode = false;
+                }
+
+                // Check if the line contains any of the patterns to ignore
+                bool shouldIgnore = patternsToIgnore.Any(patternToIgnore => line.Contains(patternToIgnore));
+
+                // If we're inside an <node id="Object"> block and the line matches a pattern to ignore, skip it
+                if (insideObjectNode && shouldIgnore)
+                {
                     continue;
                 }
 
@@ -517,7 +520,7 @@ namespace BG3_Mod_Templates
         private void button2_Click(object sender, EventArgs e)
         {
             // Display a pop-up message box with text
-            MessageBox.Show("Default is the default bodyshape the race gets. Other is if they have an alternative bodyshape such as Strong. For Example for Half-Orcs and Dragonborn even though they use Strong bodyshape you would click default\r\nas that is the only bodyshape they have available. For example in the game file the default bodyshape value is 0 and the next available bodyshape is 1. But because Dragonborn and Half Orcs only have one body shape their strong bodyshape is assigned the value 0");
+            MessageBox.Show("Add lines that has UUIDs you don't want to change as well as specific UUIDS to the LSX Files/IgnoreList.txt");
         }
     }
 }
