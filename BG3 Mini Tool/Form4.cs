@@ -212,7 +212,7 @@ namespace BG3_Mod_Templates
             }
         }
 
-        private void Form8_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form4_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true; // Cancel the form closing event
             this.Hide(); // Hide the form instead of closing it

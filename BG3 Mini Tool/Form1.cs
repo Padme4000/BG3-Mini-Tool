@@ -99,20 +99,17 @@ namespace BG3_Mini_Tool
             this.Size = new Size(302, 460);
         }
 
-        private Form8? Form8Instance;
+        private Form8 Form8Instance;
 
         private void button2_Click_2(object sender, EventArgs e)
         {
-            if (Form8Instance == null)
+            if (Form8Instance == null || Form8Instance.IsDisposed)
             {
                 Form8Instance = new Form8();
-                Form8Instance.Show();
             }
-            else
-            {
-                Form8Instance.Show();
-                Form8Instance.BringToFront();
-            }
+
+            Form8Instance.Show();
+            Form8Instance.BringToFront();
         }
 
         private Form10? Form10Instance;

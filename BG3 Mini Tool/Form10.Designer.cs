@@ -81,6 +81,7 @@
             button9.TabIndex = 201;
             button9.Text = "Update";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button3
             // 
@@ -154,6 +155,7 @@
             ButtonCreateFolders.TabIndex = 214;
             ButtonCreateFolders.Text = "Create Folders";
             ButtonCreateFolders.UseVisualStyleBackColor = true;
+            ButtonCreateFolders.Click += ButtonCreateFolders_Click;
             // 
             // ButtonSelectFolder
             // 
@@ -165,6 +167,7 @@
             ButtonSelectFolder.TabIndex = 213;
             ButtonSelectFolder.Text = "Check Mod Folder";
             ButtonSelectFolder.UseVisualStyleBackColor = true;
+            ButtonSelectFolder.Click += ButtonSelectFolder_Click;
             // 
             // label16
             // 
@@ -307,6 +310,7 @@
             Button_locateLSX.TabIndex = 222;
             Button_locateLSX.Text = "Locate your MaterialGroups folder\r\n";
             Button_locateLSX.UseVisualStyleBackColor = true;
+            Button_locateLSX.Click += Button_locateLSX_Click;
             // 
             // textBoxpath
             // 
@@ -325,6 +329,7 @@
             Button_add.TabIndex = 220;
             Button_add.Text = "Add to your mod file";
             Button_add.UseVisualStyleBackColor = true;
+            Button_add.Click += Button_add_Click;
             // 
             // button1
             // 
@@ -366,6 +371,7 @@
             Button6.TabIndex = 229;
             Button6.Text = "Generate Unique UUIDs";
             Button6.UseVisualStyleBackColor = true;
+            Button6.Click += Button6_Click;
             // 
             // Form10
             // 
@@ -404,7 +410,7 @@
             Controls.Add(textBoxVisualResource);
             Controls.Add(label13);
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "Form10";
             Text = "Form10";
             ResumeLayout(false);

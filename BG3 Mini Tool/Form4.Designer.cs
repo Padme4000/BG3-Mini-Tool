@@ -334,7 +334,7 @@
             Margin = new Padding(4, 5, 4, 5);
             Name = "Tools";
             Text = "Form8";
-            FormClosing += Form8_FormClosing;
+            FormClosing += Form4_FormClosing;
             Resize += Tools_Resize;
             ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();

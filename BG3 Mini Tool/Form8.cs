@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -216,34 +217,40 @@ namespace BG3_Mini_Tool
                 return;
             }
 
-            // Read all lines from the target file
-            string[] targetFileLines = File.ReadAllLines(targetFilePath);
-
-            // Get the path of the source file to get lines from
-            string sourceFilePath = "LSX Files\\CharacterCreationAppearanceVisuals_ForAll.lsx";
-
             try
             {
-                // Read the content between <children> and </children> from the source file
-                string sourceFileContent = File.ReadAllText(sourceFilePath);
-                int startIndex = sourceFileContent.IndexOf("<children>") + "<children>".Length;
-                int endIndex = sourceFileContent.IndexOf("</children>");
+                // Get the path of the source file to get lines from
+                string sourceFilePath = "LSX Files\\CharacterCreationAppearanceVisuals_ForAll.lsx";
 
-                if (startIndex >= 0 && endIndex >= 0 && startIndex < endIndex)
+                // Load the XML content from the target file
+                XmlDocument targetXmlDoc = new XmlDocument();
+                targetXmlDoc.Load(targetFilePath);
+
+                // Load the XML content from the source file
+                XmlDocument sourceXmlDoc = new XmlDocument();
+                sourceXmlDoc.Load(sourceFilePath);
+
+                // Get the <children> element from the source XML
+                XmlNode sourceChildrenNode = sourceXmlDoc.SelectSingleNode("//children");
+
+                if (sourceChildrenNode != null)
                 {
-                    string contentToInsert = sourceFileContent.Substring(startIndex, endIndex - startIndex);
+                    // Create a new XmlNodeList to hold the cloned nodes
+                    XmlNodeList nodesToInsert = targetXmlDoc.ImportNode(sourceChildrenNode, true).ChildNodes;
 
-                    // Insert the content into the target file at the beginning of the <children> section
-                    int childrenStartIndex = Array.IndexOf(targetFileLines, "<children>");
-                    int childrenEndIndex = Array.IndexOf(targetFileLines, "</children>", childrenStartIndex);
+                    // Get the <children> element from the target XML
+                    XmlNode targetChildrenNode = targetXmlDoc.SelectSingleNode("//children");
 
-                    if (childrenStartIndex >= 0 && childrenEndIndex >= 0)
+                    if (targetChildrenNode != null)
                     {
-                        List<string> newLines = new List<string>(targetFileLines);
-                        newLines.InsertRange(childrenStartIndex + 1, contentToInsert.Split('\n'));
+                        // Append the cloned nodes at the end of the target <children> section
+                        foreach (XmlNode node in nodesToInsert)
+                        {
+                            targetChildrenNode.AppendChild(targetXmlDoc.ImportNode(node, true));
+                        }
 
-                        // Write the updated lines back to the target file
-                        File.WriteAllLines(targetFilePath, newLines.ToArray());
+                        // Save the modified XML content back to the target file
+                        targetXmlDoc.Save(targetFilePath);
 
                         MessageBox.Show("Lines added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -254,7 +261,7 @@ namespace BG3_Mini_Tool
                 }
                 else
                 {
-                    MessageBox.Show("No content found between <children> and </children> in the source file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No <children> section found in the source file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -396,6 +403,12 @@ namespace BG3_Mini_Tool
         {
             string newUuid = GenerateUniqueUuid();
             textBoxNameHandle.Text = newUuid;
+        }
+
+        private void Form8_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true; // Cancel the form closing event
+            this.Hide(); // Hide the form instead of closing it
         }
     }
 }

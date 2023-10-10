@@ -414,6 +414,7 @@
             Margin = new Padding(4);
             Name = "Form8";
             Text = "Form8";
+            FormClosing += Form8_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }
