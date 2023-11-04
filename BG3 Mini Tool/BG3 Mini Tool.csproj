@@ -9,7 +9,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <PackageIcon>Padme Logo_Frosty.png</PackageIcon>
+    <ApplicationIcon>Padme4000 Logo.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Padme4000 Logo.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="LSX\" />

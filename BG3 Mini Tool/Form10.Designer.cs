@@ -74,7 +74,7 @@
             // button9
             // 
             button9.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.Location = new Point(488, 100);
+            button9.Location = new Point(488, 130);
             button9.Margin = new Padding(3, 4, 3, 4);
             button9.Name = "button9";
             button9.Size = new Size(69, 34);
@@ -86,18 +86,19 @@
             // button3
             // 
             button3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(563, 100);
+            button3.Location = new Point(563, 130);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(44, 34);
             button3.TabIndex = 200;
             button3.Text = "?";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(4, 109);
+            label4.Location = new Point(4, 139);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(121, 20);
@@ -106,7 +107,7 @@
             // 
             // textBoxVisualResource
             // 
-            textBoxVisualResource.Location = new Point(133, 106);
+            textBoxVisualResource.Location = new Point(133, 136);
             textBoxVisualResource.Margin = new Padding(4, 6, 4, 6);
             textBoxVisualResource.Name = "textBoxVisualResource";
             textBoxVisualResource.Size = new Size(348, 26);
@@ -123,6 +124,7 @@
             button10.TabIndex = 217;
             button10.Text = "?";
             button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // label20
             // 
@@ -253,7 +255,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(54, 220);
+            label5.Location = new Point(54, 255);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(71, 20);
@@ -263,50 +265,53 @@
             // button4
             // 
             button4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(648, 215);
+            button4.Location = new Point(381, 213);
             button4.Name = "button4";
             button4.Size = new Size(44, 31);
             button4.TabIndex = 226;
             button4.Text = "?";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button18
             // 
             button18.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button18.Location = new Point(381, 251);
+            button18.Location = new Point(381, 286);
             button18.Name = "button18";
             button18.Size = new Size(44, 31);
             button18.TabIndex = 225;
             button18.Text = "?";
             button18.UseVisualStyleBackColor = true;
+            button18.Click += button18_Click;
             // 
             // Button_saveas
             // 
             Button_saveas.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Button_saveas.Location = new Point(133, 251);
+            Button_saveas.Location = new Point(133, 286);
             Button_saveas.Name = "Button_saveas";
-            Button_saveas.Size = new Size(140, 31);
+            Button_saveas.Size = new Size(242, 31);
             Button_saveas.TabIndex = 224;
-            Button_saveas.Text = "Save as";
+            Button_saveas.Text = "Save base files to your mod";
             Button_saveas.UseVisualStyleBackColor = true;
             Button_saveas.Click += Button_saveas_Click;
             // 
             // button19
             // 
             button19.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button19.Location = new Point(381, 287);
+            button19.Location = new Point(381, 322);
             button19.Name = "button19";
             button19.Size = new Size(44, 31);
             button19.TabIndex = 223;
             button19.Text = "?";
             button19.UseVisualStyleBackColor = true;
+            button19.Click += button19_Click;
             // 
             // Button_locateLSX
             // 
             Button_locateLSX.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Button_locateLSX.Location = new Point(133, 178);
+            Button_locateLSX.Location = new Point(133, 208);
             Button_locateLSX.Name = "Button_locateLSX";
-            Button_locateLSX.Size = new Size(264, 31);
+            Button_locateLSX.Size = new Size(242, 40);
             Button_locateLSX.TabIndex = 222;
             Button_locateLSX.Text = "Locate your MaterialGroups folder\r\n";
             Button_locateLSX.UseVisualStyleBackColor = true;
@@ -314,7 +319,7 @@
             // 
             // textBoxpath
             // 
-            textBoxpath.Location = new Point(133, 217);
+            textBoxpath.Location = new Point(133, 252);
             textBoxpath.Margin = new Padding(4, 5, 4, 5);
             textBoxpath.Name = "textBoxpath";
             textBoxpath.Size = new Size(508, 26);
@@ -323,11 +328,11 @@
             // Button_add
             // 
             Button_add.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Button_add.Location = new Point(133, 288);
+            Button_add.Location = new Point(133, 323);
             Button_add.Name = "Button_add";
-            Button_add.Size = new Size(173, 31);
+            Button_add.Size = new Size(242, 31);
             Button_add.TabIndex = 220;
-            Button_add.Text = "Add to your mod file";
+            Button_add.Text = "Add the new entries to your mod";
             Button_add.UseVisualStyleBackColor = true;
             Button_add.Click += Button_add_Click;
             // 
@@ -341,21 +346,23 @@
             button1.TabIndex = 228;
             button1.Text = "?";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(563, 140);
+            button2.Location = new Point(381, 171);
             button2.Name = "button2";
             button2.Size = new Size(44, 31);
             button2.TabIndex = 231;
             button2.Text = "?";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 145);
+            label1.Location = new Point(21, 175);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(105, 20);
@@ -365,9 +372,9 @@
             // Button6
             // 
             Button6.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            Button6.Location = new Point(133, 141);
+            Button6.Location = new Point(133, 171);
             Button6.Name = "Button6";
-            Button6.Size = new Size(219, 31);
+            Button6.Size = new Size(242, 31);
             Button6.TabIndex = 229;
             Button6.Text = "Generate Unique UUIDs";
             Button6.UseVisualStyleBackColor = true;
@@ -378,7 +385,7 @@
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(992, 336);
+            ClientSize = new Size(992, 380);
             Controls.Add(button2);
             Controls.Add(label1);
             Controls.Add(Button6);

@@ -522,5 +522,11 @@ namespace BG3_Mod_Templates
             // Display a pop-up message box with text
             MessageBox.Show("Add lines that has UUIDs you don't want to change as well as specific UUIDS to the LSX Files/IgnoreList.txt");
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Add the AnimationSetBank ID to the LSX Files/IgnoreList.txt and SkeletonBank ID if using vanilla assets for those sections");
+        }
     }
 }

@@ -67,78 +67,52 @@ namespace BG3_Mini_Tool
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     string selectedPath = dialog.SelectedPath;
-                    string[] subfolders = Directory.GetDirectories(selectedPath);
+                    string publicPath = Path.Combine(selectedPath, "Public");
 
-                    if (subfolders.Length > 0)
+                    if (Directory.Exists(publicPath))
                     {
-                        // Check the name of the first subfolder in the selected folder
-                        string firstSubfolderName = Path.GetFileName(subfolders[0]);
+                        // Get the first subfolder before "Public"
+                        string parentFolder = Directory.GetParent(publicPath).FullName;
+                        FolderModName.Text = Path.GetFileName(parentFolder);
 
-                        if (firstSubfolderName == "Public")
+                        string enginePath = Path.Combine(publicPath, "Engine");
+
+                        if (Directory.Exists(enginePath))
                         {
-                            // We have the "Public" subfolder, proceed to check the rest of the path
-                            string publicPath = Path.Combine(selectedPath, "Public");
+                            string timelinePath = Path.Combine(enginePath, "Timeline");
 
-                            string[] publicSubfolders = Directory.GetDirectories(publicPath);
-                            if (publicSubfolders.Length > 0)
+                            if (Directory.Exists(timelinePath))
                             {
-                                string publicSubfolder = Path.GetFileName(publicSubfolders[0]);
+                                string materialGroupsPath = Path.Combine(timelinePath, "MaterialGroups");
 
-                                if (publicSubfolder == "Engine")
+                                if (Directory.Exists(materialGroupsPath))
                                 {
-                                    string enginePath = Path.Combine(publicPath, publicSubfolder);
-
-                                    string[] engineSubfolders = Directory.GetDirectories(enginePath);
-                                    if (engineSubfolders.Length > 0)
-                                    {
-                                        string engineSubfolder = Path.GetFileName(engineSubfolders[0]);
-
-                                        if (engineSubfolder == "Timeline")
-                                        {
-                                            string timelinePath = Path.Combine(enginePath, engineSubfolder, "MaterialGroups");
-
-                                            if (Directory.Exists(timelinePath))
-                                            {
-                                                // The path "Public > Engine > Timeline > MaterialGroups" exists
-                                                // Do your further processing here
-                                            }
-                                            else
-                                            {
-                                                MessageBox.Show("The selected folder does not contain a 'MaterialGroups' subfolder in 'Timeline'.", "Missing Subfolder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                            }
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("The selected folder does not contain a 'Timeline' subfolder in 'Engine'.", "Missing Subfolder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                        }
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("The selected folder does not contain a subfolder in 'Engine'.", "Missing Subfolder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    }
+                                    // The entire folder structure "Public > Engine > Timeline > MaterialGroups" exists
+                                    // Do your further processing here
                                 }
                                 else
                                 {
-                                    MessageBox.Show("The selected folder does not contain an 'Engine' subfolder in 'Public'.", "Missing Subfolder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("The selected folder does not contain a 'MaterialGroups' subfolder in 'Timeline'.", "Missing Subfolder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("The selected folder does not contain a subfolder in 'Public'.", "Missing Subfolder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("The selected folder does not contain a 'Timeline' subfolder in 'Engine'.", "Missing Subfolder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("The selected folder does not contain a 'Public' subfolder.", "Missing Subfolder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("The selected folder does not contain an 'Engine' subfolder in 'Public'.", "Missing Subfolder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("The selected folder does not contain any subfolders.", "Missing Subfolder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("The selected folder does not contain a 'Public' subfolder.", "Missing Subfolder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
         }
+
 
         private void ButtonCreateFolders_Click(object sender, EventArgs e)
         {
@@ -375,6 +349,49 @@ namespace BG3_Mini_Tool
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("These files are required to have your head added in order for visual effects to work such as speak with the dead. Due to the amount of files I made this tool to automate the process a bit more.");
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Search if the folders already exist and if not use the create button. It will add them to a Mods folder where the exe is. You can copy and paste those from there if you have another area you keep your mod folders.");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Add the ID from your assets visualbank here and click update.");
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("This button generates unique UUIDs where they are needed");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Locate where your MaterialGroups folder is, so when using Add to your files it knows where to look");
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Use this to save the base files your entries need adding to if you don't already have them");
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Add the new entries we made via updating with the VisualResource and Generate unique UUIDs to the main files in our mod. If you don't have those files please use the Save button first");
         }
     }
 }
