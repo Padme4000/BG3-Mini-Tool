@@ -269,6 +269,7 @@
             label2.Size = new Size(51, 20);
             label2.TabIndex = 190;
             label2.Text = "Name";
+            label2.Click += label2_Click;
             // 
             // textBox1
             // 
@@ -277,6 +278,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(348, 26);
             textBox1.TabIndex = 189;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button5
             // 

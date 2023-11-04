@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -392,6 +393,42 @@ namespace BG3_Mini_Tool
         {
             // Display a pop-up message box with text
             MessageBox.Show("Add the new entries we made via updating with the VisualResource and Generate unique UUIDs to the main files in our mod. If you don't have those files please use the Save button first");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string folderPath = @"LSX Files/MaterialGroups_Edited";
+            string newText = textBox1.Text.Trim();
+
+            // Check if the folder exists
+            if (Directory.Exists(folderPath))
+            {
+                try
+                {
+                    string[] xmlFiles = Directory.GetFiles(folderPath, "*.lsx");
+
+                    foreach (string xmlFile in xmlFiles)
+                    {
+                        // Read the content of the XML file
+                        string fileContent = File.ReadAllText(xmlFile);
+
+                        // Use a regular expression to find and replace text within comments with different formats
+                        string updatedContent = Regex.Replace(fileContent, @"<!--\s*(.*?)\s*""([^""]*)""\s*-->", match =>
+                        {
+                            return $"<!-- {match.Groups[1].Value} \"{newText}\" -->";
+                        });
+
+                        // Write the updated content back to the XML file
+                        File.WriteAllText(xmlFile, updatedContent);
+                    }
+
+                    MessageBox.Show("Text within comments updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

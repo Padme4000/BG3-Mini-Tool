@@ -400,5 +400,14 @@ namespace BG3_Mini_Tool
             e.Cancel = true; // Cancel the form closing event
             this.Hide(); // Hide the form instead of closing it
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

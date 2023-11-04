@@ -58,6 +58,10 @@
             button2 = new Button();
             label1 = new Label();
             Button6 = new Button();
+            button7 = new Button();
+            button5 = new Button();
+            label2 = new Label();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // label13
@@ -380,12 +384,55 @@
             Button6.UseVisualStyleBackColor = true;
             Button6.Click += Button6_Click;
             // 
+            // button7
+            // 
+            button7.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.Location = new Point(488, 94);
+            button7.Name = "button7";
+            button7.Size = new Size(69, 31);
+            button7.TabIndex = 235;
+            button7.Text = "Update";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button5
+            // 
+            button5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.Location = new Point(563, 93);
+            button5.Name = "button5";
+            button5.Size = new Size(44, 31);
+            button5.TabIndex = 234;
+            button5.Text = "?";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(74, 102);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 20);
+            label2.TabIndex = 233;
+            label2.Text = "Name";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(133, 99);
+            textBox1.Margin = new Padding(4, 5, 4, 5);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(348, 26);
+            textBox1.TabIndex = 232;
+            // 
             // Form10
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(992, 380);
+            Controls.Add(button7);
+            Controls.Add(button5);
+            Controls.Add(label2);
+            Controls.Add(textBox1);
             Controls.Add(button2);
             Controls.Add(label1);
             Controls.Add(Button6);
@@ -456,5 +503,9 @@
         private Button button2;
         private Label label1;
         private Button Button6;
+        private Button button7;
+        private Button button5;
+        private Label label2;
+        private TextBox textBox1;
     }
 }
