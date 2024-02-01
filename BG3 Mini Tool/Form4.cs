@@ -224,7 +224,7 @@ namespace BG3_Mod_Templates
 
             try
             {
-                if (hexColor.Length == 6)
+                if (hexColor.Length == 6 || hexColor.Length == 8)
                 {
                     byte r = byte.Parse(hexColor.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
                     byte g = byte.Parse(hexColor.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
@@ -234,53 +234,57 @@ namespace BG3_Mod_Templates
                     float green = g / 255.0f;
                     float blue = b / 255.0f;
 
-                    string srgbColor = $"{red:F6} {green:F6} {blue:F6}";
-                    srgbColor = srgbColor.Replace(" ", "");
-
+                    string srgbColor = $"{red} {green} {blue}";
                     textBoxSRGB.Text = srgbColor;
 
                     // Update the color of panelColorBox
-                    panelColorBox.BackColor = Color.FromArgb(r, g, b);
+                    if (hexColor.Length == 8)
+                    {
+                        byte a = byte.Parse(hexColor.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                        float alpha = a / 255.0f;
+                        srgbColor = $"{red} {green} {blue} {alpha}";
+                        panelColorBox.BackColor = Color.FromArgb(a, r, g, b);
+                    }
+                    else
+                    {
+                        panelColorBox.BackColor = Color.FromArgb(r, g, b);
+                    }
                 }
-                else if (hexColor.Length == 8)
+                else
                 {
-                    byte r = byte.Parse(hexColor.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                    byte g = byte.Parse(hexColor.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                    byte b = byte.Parse(hexColor.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                    byte a = byte.Parse(hexColor.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-
-                    float red = r / 255.0f;
-                    float green = g / 255.0f;
-                    float blue = b / 255.0f;
-                    float alpha = a / 255.0f;
-
-                    string srgbColor = $"{red:F6} {green:F6} {blue:F6}";
-                    srgbColor = srgbColor.Replace(" ", "");
-
-                    textBoxSRGB.Text = srgbColor;
-
-                    // Update the color of panelColorBox
-                    panelColorBox.BackColor = Color.FromArgb(r, g, b, a);
+                    throw new FormatException();
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Hex Value is not in the correct format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // If the user didn't enter '#', prepend it and try again
+                if (!textBoxHex.Text.StartsWith("#") && textBoxHex.Text.Length > 0)
+                {
+                    textBoxHex.Text = "#" + textBoxHex.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Hex Value is not in the correct format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
-
 
         private List<Color> customColors = new List<Color>();
 
         private void panelColorBox_Click(object sender, EventArgs e)
         {
-            // Show the ColorDialog to get the user's color selection
             ColorDialog colorDialog = new ColorDialog();
 
             // Set custom colors if available
             if (customColors.Count > 0)
             {
                 colorDialog.CustomColors = customColors.Select(c => ColorTranslator.ToOle(c)).ToArray();
+            }
+
+            // Attempt to parse the color from textBoxDirectHex
+            if (TryParseHexColor(textBoxHex.Text, out Color directHexColor))
+            {
+                colorDialog.Color = directHexColor;
             }
 
             if (colorDialog.ShowDialog() == DialogResult.OK)
@@ -310,6 +314,42 @@ namespace BG3_Mod_Templates
                 textBoxSRGB.Text = $"{red} {green} {blue}";
             }
         }
+
+        private bool TryParseHexColor(string hexColor, out Color color)
+        {
+            color = Color.Empty;
+
+            hexColor = hexColor.TrimStart('#');
+
+            try
+            {
+                if (hexColor.Length == 6 || hexColor.Length == 8)
+                {
+                    byte r = byte.Parse(hexColor.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                    byte g = byte.Parse(hexColor.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                    byte b = byte.Parse(hexColor.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+
+                    if (hexColor.Length == 8)
+                    {
+                        byte a = byte.Parse(hexColor.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                        color = Color.FromArgb(a, r, g, b);
+                    }
+                    else
+                    {
+                        color = Color.FromArgb(r, g, b);
+                    }
+
+                    return true;
+                }
+
+                return false;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+
         private void button13_Click(object sender, EventArgs e)
         {
             string srgbInput = textBoxSRGB.Text.Trim();
@@ -343,8 +383,8 @@ namespace BG3_Mod_Templates
                 textBoxHex.Text = hexColor;
                 panelColorBox.BackColor = Color.FromArgb(r, g, b);
 
-                // Update textBoxSRGB with formatted values and spaces
-                textBoxSRGB.Text = $"{red:F7} {green:F7} {blue:F7}";
+                // Update textBoxSRGB with entered values and spaces
+                textBoxSRGB.Text = $"{red} {green} {blue}";
             }
             catch (FormatException)
             {
@@ -451,11 +491,8 @@ namespace BG3_Mod_Templates
                     insideObjectNode = false;
                 }
 
-                // Check if the line contains any of the patterns to ignore
-                bool shouldIgnore = patternsToIgnore.Any(patternToIgnore => line.Contains(patternToIgnore));
-
-                // If we're inside an <node id="Object"> block and the line matches a pattern to ignore, skip it
-                if (insideObjectNode && shouldIgnore)
+                // If we're inside an <node id="Object"> block, skip further processing
+                if (insideObjectNode)
                 {
                     continue;
                 }
@@ -472,6 +509,27 @@ namespace BG3_Mod_Templates
 
                     return uuidReplacementDict[currentUUID];
                 });
+
+                // Ignore List
+                bool shouldIgnore = patternsToIgnore.Any(patternToIgnore =>
+                {
+                    string pattern = patternToIgnore.Trim();
+
+                    // Check if the line contains the attribute name (enclosed in double quotes) or the attribute name alone
+                    if (line.Contains($"\"{pattern}\"") || line.Contains(pattern))
+                    {
+                        return true; // Ignore the line if it matches an attribute name
+                    }
+
+                    return false;
+                });
+
+                // If the line should be ignored, revert UUID replacement
+                if (shouldIgnore)
+                {
+                    lines[i] = line; // Revert the line to its original state
+                    continue;
+                }
             }
 
             // Reconstruct the updated content from the modified lines
@@ -479,6 +537,7 @@ namespace BG3_Mod_Templates
 
             return updatedContent;
         }
+
 
         private string ProcessHandlesInContent(string content)
         {
@@ -488,12 +547,16 @@ namespace BG3_Mod_Templates
             // Process Handles
             updatedContent = Regex.Replace(updatedContent, handlePattern, match =>
             {
-                string currentHandle = match.Value.Substring(match.Value.IndexOf('"') + 1, 32);
+                int indexOfQuote = match.Value.IndexOf('"');
+                string currentHandle = !string.IsNullOrEmpty(match.Value) && indexOfQuote >= 0
+                ? match.Value.Substring(indexOfQuote + 1, 32)
+                : string.Empty;
 
                 if (!handleReplacementDict.ContainsKey(currentHandle))
                 {
                     // Check if the currentHandle matches any pattern from the ignore list
-                    bool shouldIgnore = patternsToIgnore.Any(patternToIgnore => Regex.IsMatch(currentHandle, patternToIgnore));
+                    bool shouldIgnore = patternsToIgnore != null && patternsToIgnore.Any(patternToIgnore => Regex.IsMatch(currentHandle, patternToIgnore));
+
 
                     if (!shouldIgnore)
                     {
@@ -527,6 +590,12 @@ namespace BG3_Mod_Templates
         {
             // Display a pop-up message box with text
             MessageBox.Show("Add the AnimationSetBank ID to the LSX Files/IgnoreList.txt and SkeletonBank ID if using vanilla assets for those sections");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Press the Colour box to open the Colour Wheel");
         }
     }
 }

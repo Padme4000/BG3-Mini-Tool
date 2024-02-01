@@ -60,28 +60,27 @@ namespace BG3_Mod_Templates
 
         private void Button5_Click(object sender, EventArgs e) //Mod Creator
         {
+            string filePath = "LSX Files\\meta.lsx";
             string newValue = textBox_creator.Text;
 
-            XmlDocument doc = new XmlDocument();
-            doc.Load("LSX Files\\meta.lsx"); // Load the currently opened file
+            string[] lines = File.ReadAllLines(filePath);
+            string pattern = "\"Author\" type=\"LSString\" value=\"";
 
-            XmlNode authorNode = doc.SelectSingleNode("//attribute[@id='Author'][@type='LSWString']");
-            if (authorNode != null)
+            for (int i = 0; i < lines.Length; i++)
             {
-                foreach (XmlAttribute attribute in authorNode.Attributes)
+                if (lines[i].Contains(pattern))
                 {
-                    if (attribute.Name == "value")
-                    {
-                        attribute.Value = newValue;
-                        break;
-                    }
+                    int startIndex = lines[i].IndexOf(pattern) + pattern.Length;
+                    int endIndex = lines[i].IndexOf("\"", startIndex);
+                    string linePrefix = lines[i].Substring(0, startIndex);
+                    string lineSuffix = lines[i].Substring(endIndex);
+                    string replacedLine = linePrefix + newValue + lineSuffix;
+                    lines[i] = replacedLine;
+                    break; // 
                 }
-
-                // Save the updated XML content to the RichTextBox
-                StringWriter sw = new StringWriter();
-                doc.Save(sw);
-                textBox_creator.Text = sw.ToString();
             }
+
+            File.WriteAllLines(filePath, lines);
         }
 
         private void Button1_Click(object sender, EventArgs e) //Mod Name
@@ -165,7 +164,7 @@ namespace BG3_Mod_Templates
             string newValue = textBoxUniqueUUID.Text;
 
             string[] lines = File.ReadAllLines(filePath);
-            string pattern = "\"UUID\" type=\"guid\" value=\"";
+            string pattern = "\"UUID\" type=\"FixedString\" value=\"";
 
             for (int i = 0; i < lines.Length; i++)
             {

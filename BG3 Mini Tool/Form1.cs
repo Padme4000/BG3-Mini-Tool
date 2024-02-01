@@ -13,11 +13,13 @@ namespace BG3_Mini_Tool
 {
     public partial class Form1 : Form
     {
-        private Form3? form3Instance;
+
         public Form1()
         {
             InitializeComponent();
         }
+
+        private Form3? form3Instance;
         private void Button16_Click(object sender, EventArgs e)
         {
             if (form3Instance == null)
@@ -31,28 +33,19 @@ namespace BG3_Mini_Tool
                 form3Instance.BringToFront();
             }
         }
-        private void Button2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void Button3_Click(object sender, EventArgs e)
-        {
-        }
-
-
-        private Form2? Form2Instance;
+        private Form11? Form11Instance;
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (Form2Instance == null)
+            if (Form11Instance == null)
             {
-                Form2Instance = new Form2();
-                Form2Instance.Show();
+                Form11Instance = new Form11();
+                Form11Instance.Show();
             }
             else
             {
-                Form2Instance.Show();
-                Form2Instance.BringToFront();
+                Form11Instance.Show();
+                Form11Instance.BringToFront();
             }
         }
 
@@ -99,32 +92,18 @@ namespace BG3_Mini_Tool
             this.Size = new Size(302, 460);
         }
 
-        private Form8 Form8Instance;
-
-        private void button2_Click_2(object sender, EventArgs e)
+        private Form5? Form5Instance;
+        private void button5_Click(object sender, EventArgs e)
         {
-            if (Form8Instance == null || Form8Instance.IsDisposed)
+            if (Form5Instance == null)
             {
-                Form8Instance = new Form8();
-            }
-
-            Form8Instance.Show();
-            Form8Instance.BringToFront();
-        }
-
-        private Form10? Form10Instance;
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            if (Form10Instance == null)
-            {
-                Form10Instance = new Form10();
-                Form10Instance.Show();
+                Form5Instance = new Form5();
+                Form5Instance.Show();
             }
             else
             {
-                Form10Instance.Show();
-                Form10Instance.BringToFront();
+                Form5Instance.Show();
+                Form5Instance.BringToFront();
             }
         }
     }

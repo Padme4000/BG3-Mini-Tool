@@ -54,6 +54,7 @@
             button5 = new Button();
             button2 = new Button();
             button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
@@ -301,12 +302,24 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // button4
+            // 
+            button4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.Location = new Point(442, 106);
+            button4.Name = "button4";
+            button4.Size = new Size(44, 31);
+            button4.TabIndex = 156;
+            button4.Text = "?";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // Tools
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             ClientSize = new Size(584, 571);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button5);
@@ -334,7 +347,7 @@
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4, 5, 4, 5);
             Name = "Tools";
-            Text = "Form8";
+            Text = "Extra Tools";
             FormClosing += Form4_FormClosing;
             Resize += Tools_Resize;
             ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
@@ -372,5 +385,6 @@
         private Button button5;
         private Button button2;
         private Button button3;
+        private Button button4;
     }
 }

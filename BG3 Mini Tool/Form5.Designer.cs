@@ -400,7 +400,7 @@
             Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
             Name = "Form5";
-            Text = "Form5";
+            Text = "Localisation Editor";
             FormClosing += Form5_FormClosing;
             Load += Form5_Load;
             ResumeLayout(false);
