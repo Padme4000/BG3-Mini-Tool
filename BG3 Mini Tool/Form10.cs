@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace BG3_Mini_Tool
 {
@@ -429,6 +430,223 @@ namespace BG3_Mini_Tool
                     MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            // Use OpenFileDialog to allow the user to select the source file
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "XML Files (*.xml; *.lsx; *.txt)|*.xml;*.lsx;*.txt|All Files (*.*)|*.*",
+                Title = "Select the source file"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string sourceFilePath = openFileDialog.FileName; // Path to the selected source file
+                string targetFolderPath = textBoxpath.Text; // Path to the target folder
+
+                try
+                {
+                    if (Directory.Exists(targetFolderPath))
+                    {
+                        XDocument sourceDoc = XDocument.Load(sourceFilePath);
+                        HashSet<string> processedVisualResources = new HashSet<string>();
+                        int totalTargets = Directory.EnumerateFiles(targetFolderPath, "*.*", SearchOption.TopDirectoryOnly)
+                            .Count(file => file.EndsWith(".lsx") || file.EndsWith(".lsf.lsx"));
+                        int targetsProcessed = 0;
+
+                        foreach (var sourceNode in sourceDoc.Descendants("node"))
+                        {
+                            var slotNameAttribute = sourceNode.Elements("attribute")
+                                .FirstOrDefault(attr =>
+                                    (string)attr.Attribute("id") == "SlotName" &&
+                                    (string)attr.Attribute("type") == "FixedString" &&
+                                    (string)attr.Attribute("value") == "Head");
+
+                            if (slotNameAttribute == null)
+                            {
+                                // If SlotName attribute is not present in the source, skip this node
+                                continue;
+                            }
+
+                            // Extract VisualResourceID from the source node
+                            var visualResourceID = sourceNode.Elements("attribute")
+                                .Where(attr =>
+                                    (string)attr.Attribute("id") == "VisualResource" &&
+                                    (string)attr.Attribute("type") == "guid")
+                                .Select(attr => (string)attr.Attribute("value"))
+                                .FirstOrDefault();
+
+                            // Check if the VisualResourceID has already been processed
+                            if (processedVisualResources.Contains(visualResourceID))
+                            {
+                                Console.WriteLine($"VisualResourceID {visualResourceID} already processed. Skipping.");
+                                continue;
+                            }
+
+                            Console.WriteLine($"Processing VisualResourceID: {visualResourceID}");
+
+                            // Check if the VisualResourceID already exists in any target files
+                            bool visualResourceExists = Directory.EnumerateFiles(targetFolderPath, "*.*", SearchOption.TopDirectoryOnly)
+                                .Where(file => file.EndsWith(".lsx") || file.EndsWith(".lsf.lsx"))
+                                .Any(targetFilePath =>
+                                {
+                                    XDocument targetDoc = XDocument.Load(targetFilePath);
+                                    return targetDoc.Descendants("node")
+                                        .Elements("attribute")
+                                        .Any(attr =>
+                                            (string)attr.Attribute("id") == "VisualResourceID" &&
+                                            (string)attr.Attribute("type") == "guid" &&
+                                            (string)attr.Attribute("value") == visualResourceID);
+                                });
+
+                            if (!visualResourceExists)
+                            {
+                                Console.WriteLine($"VisualResourceID {visualResourceID} not found in target files. Creating new entry.");
+
+                                foreach (string targetFilePath in Directory.EnumerateFiles(targetFolderPath, "*.*", SearchOption.TopDirectoryOnly)
+                                    .Where(file => file.EndsWith(".lsx") || file.EndsWith(".lsf.lsx")))
+                                {
+                                    XDocument targetDoc = XDocument.Load(targetFilePath);
+
+                                    // Find the <children> element
+                                    var childrenElement = targetDoc.Descendants("children").FirstOrDefault();
+
+                                    if (childrenElement != null)
+                                    {
+                                        // Find the last <node> element in the target file
+                                        var lastNode = targetDoc.Descendants("node").LastOrDefault();
+
+                                        if (lastNode != null)
+                                        {
+                                            // Create a copy of the last <node> element in the target file
+                                            XElement copiedElement = new XElement(lastNode);
+
+                                            // Replace the Key with a unique value
+                                            var keyAttribute = copiedElement.Elements("attribute")
+                                                .FirstOrDefault(attr => (string)attr.Attribute("id") == "Key" && (string)attr.Attribute("type") == "guid");
+
+                                            if (keyAttribute != null)
+                                            {
+                                                keyAttribute.SetAttributeValue("value", Guid.NewGuid().ToString());
+                                            }
+
+                                            // Replace the VisualResourceID with the corresponding value from the source file
+                                            var visualResourceAttribute = copiedElement.Elements("attribute")
+                                                .FirstOrDefault(attr => (string)attr.Attribute("id") == "VisualResourceID" && (string)attr.Attribute("type") == "guid");
+
+                                            if (visualResourceAttribute != null)
+                                            {
+                                                visualResourceAttribute.SetAttributeValue("value", visualResourceID);
+                                            }
+
+                                            // Add the copied element to <children>
+                                            childrenElement.Add(copiedElement);
+
+                                            // Save the modified targetDoc back to the target file
+                                            using (var stream = File.Open(targetFilePath, FileMode.Create))
+                                            {
+                                                targetDoc.Save(stream);
+                                            }
+
+                                            Console.WriteLine("Updated: " + targetFilePath);
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("No <node> element found in target file: " + targetFilePath);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("No <children> element found in target file: " + targetFilePath);
+                                    }
+                                }
+
+                                // Add the processed VisualResourceID to the set
+                                processedVisualResources.Add(visualResourceID);
+                            }
+                            else
+                            {
+                                Console.WriteLine($"VisualResourceID {visualResourceID} already exists in target files. Skipping.");
+                            }
+
+                            targetsProcessed++;
+                            Console.WriteLine($"Progress: {targetsProcessed} of {totalTargets} targets processed.");
+                        }
+
+                        Console.WriteLine("Elements copied and modified successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Target folder does not exist.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void count_Click(object sender, EventArgs e)
+        {
+            using (var folderDialog = new FolderBrowserDialog())
+            {
+                DialogResult result = folderDialog.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(folderDialog.SelectedPath))
+                {
+                    string[] files = Directory.GetFiles(folderDialog.SelectedPath, "*.lsx");
+
+                    if (files.Length == 0)
+                    {
+                        MessageBox.Show("No .lsx files found in the selected folder.");
+                        return;
+                    }
+
+                    var commonVisualResourceIDs = new HashSet<string>();
+
+                    foreach (string file in files)
+                    {
+                        var doc = XDocument.Load(file);
+                        var versionComment = doc.DescendantNodes()
+                                                .OfType<XComment>()
+                                                .FirstOrDefault(comment => comment.Value.Contains("1.0.0.0"));
+
+                        if (versionComment == null)
+                        {
+                            MessageBox.Show($"File '{file}' does not contain the specified version comment.");
+                            return;
+                        }
+
+                        var afterVersionComment = versionComment.NodesAfterSelf().OfType<XElement>();
+
+                        var visualResourceIDs = afterVersionComment.Descendants("attribute")
+                                                                    .Where(x => (string)x.Attribute("id") == "VisualResourceID")
+                                                                    .Select(x => (string)x.Attribute("value"))
+                                                                    .Distinct()
+                                                                    .ToList();
+
+                        if (commonVisualResourceIDs.Count == 0)
+                        {
+                            commonVisualResourceIDs.UnionWith(visualResourceIDs);
+                        }
+                        else
+                        {
+                            commonVisualResourceIDs.IntersectWith(visualResourceIDs);
+                        }
+                    }
+
+                    textBox1.Text = commonVisualResourceIDs.Count.ToString();
+                }
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            // Display a pop-up message box with text
+            MessageBox.Show("Use this if your CharacterCreationAppearanceVisuals already has a lot of entries. May need using more than once. If many entries it can take some time to finish. Have one of the MaterialGroups open in your editing software to watch them be added. A pop up message will appear when it has finished.");
         }
     }
 }

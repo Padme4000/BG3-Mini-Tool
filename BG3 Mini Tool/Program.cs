@@ -10,7 +10,13 @@ namespace BG3_Mini_Tool
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+
+            // Configure the application to properly scale on high DPI displays by setting the HighDpiMode to DpiUnaware.
+            // This ensures consistent scaling behavior without adjusting for DPI changes.
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetHighDpiMode(HighDpiMode.DpiUnaware);
+
             Application.Run(new Form1());
         }
     }

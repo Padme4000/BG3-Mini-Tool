@@ -62,6 +62,8 @@
             button5 = new Button();
             label2 = new Label();
             textBox1 = new TextBox();
+            button8 = new Button();
+            button11 = new Button();
             SuspendLayout();
             // 
             // label13
@@ -423,12 +425,37 @@
             textBox1.Size = new Size(348, 26);
             textBox1.TabIndex = 232;
             // 
+            // button8
+            // 
+            button8.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button8.Location = new Point(133, 360);
+            button8.Name = "button8";
+            button8.Size = new Size(508, 31);
+            button8.TabIndex = 236;
+            button8.Text = "Add new entries from your CharacterCreationAppearanceVisuals";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
+            // button11
+            // 
+            button11.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button11.Location = new Point(647, 357);
+            button11.Margin = new Padding(3, 4, 3, 4);
+            button11.Name = "button11";
+            button11.Size = new Size(44, 34);
+            button11.TabIndex = 237;
+            button11.Text = "?";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
+            // 
             // Form10
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(992, 380);
+            ClientSize = new Size(992, 410);
+            Controls.Add(button11);
+            Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(button5);
             Controls.Add(label2);
@@ -507,5 +534,7 @@
         private Button button5;
         private Label label2;
         private TextBox textBox1;
+        private Button button8;
+        private Button button11;
     }
 }

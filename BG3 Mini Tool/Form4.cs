@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BG3_Mini_Tool;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,6 @@ namespace BG3_Mod_Templates
 {
     public partial class Tools : Form
     {
-        private Dictionary<string, string> uuidReplacementDict = new Dictionary<string, string>();
-        private Dictionary<string, string> handleReplacementDict = new Dictionary<string, string>();
-
         public Tools()
         {
             InitializeComponent();
@@ -218,363 +216,6 @@ namespace BG3_Mod_Templates
             this.Hide(); // Hide the form instead of closing it
         }
 
-        private void textBoxHex_TextChanged(object sender, EventArgs e)
-        {
-            string hexColor = textBoxHex.Text.TrimStart('#');
-
-            try
-            {
-                if (hexColor.Length == 6 || hexColor.Length == 8)
-                {
-                    byte r = byte.Parse(hexColor.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                    byte g = byte.Parse(hexColor.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                    byte b = byte.Parse(hexColor.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-
-                    float red = r / 255.0f;
-                    float green = g / 255.0f;
-                    float blue = b / 255.0f;
-
-                    string srgbColor = $"{red} {green} {blue}";
-                    textBoxSRGB.Text = srgbColor;
-
-                    // Update the color of panelColorBox
-                    if (hexColor.Length == 8)
-                    {
-                        byte a = byte.Parse(hexColor.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                        float alpha = a / 255.0f;
-                        srgbColor = $"{red} {green} {blue} {alpha}";
-                        panelColorBox.BackColor = Color.FromArgb(a, r, g, b);
-                    }
-                    else
-                    {
-                        panelColorBox.BackColor = Color.FromArgb(r, g, b);
-                    }
-                }
-                else
-                {
-                    throw new FormatException();
-                }
-            }
-            catch (FormatException)
-            {
-                // If the user didn't enter '#', prepend it and try again
-                if (!textBoxHex.Text.StartsWith("#") && textBoxHex.Text.Length > 0)
-                {
-                    textBoxHex.Text = "#" + textBoxHex.Text;
-                }
-                else
-                {
-                    MessageBox.Show("Hex Value is not in the correct format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private List<Color> customColors = new List<Color>();
-
-        private void panelColorBox_Click(object sender, EventArgs e)
-        {
-            ColorDialog colorDialog = new ColorDialog();
-
-            // Set custom colors if available
-            if (customColors.Count > 0)
-            {
-                colorDialog.CustomColors = customColors.Select(c => ColorTranslator.ToOle(c)).ToArray();
-            }
-
-            // Attempt to parse the color from textBoxDirectHex
-            if (TryParseHexColor(textBoxHex.Text, out Color directHexColor))
-            {
-                colorDialog.Color = directHexColor;
-            }
-
-            if (colorDialog.ShowDialog() == DialogResult.OK)
-            {
-                // Add the selected color to customColors
-                customColors.Insert(0, colorDialog.Color);
-
-                // Keep only the last 16 custom colors
-                if (customColors.Count > 16)
-                {
-                    customColors.RemoveAt(customColors.Count - 1);
-                }
-
-                // Set the color of the panelColorBox to the selected color
-                panelColorBox.BackColor = colorDialog.Color;
-
-                // Convert the color to hex string
-                string hexColor = ColorTranslator.ToHtml(colorDialog.Color);
-                textBoxHex.Text = hexColor;
-
-                // Convert the color to sRGB values in the range of 0 to 1.0
-                float red = colorDialog.Color.R / 255.0f;
-                float green = colorDialog.Color.G / 255.0f;
-                float blue = colorDialog.Color.B / 255.0f;
-
-                // Update the textBoxSRGB with the new sRGB values
-                textBoxSRGB.Text = $"{red} {green} {blue}";
-            }
-        }
-
-        private bool TryParseHexColor(string hexColor, out Color color)
-        {
-            color = Color.Empty;
-
-            hexColor = hexColor.TrimStart('#');
-
-            try
-            {
-                if (hexColor.Length == 6 || hexColor.Length == 8)
-                {
-                    byte r = byte.Parse(hexColor.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                    byte g = byte.Parse(hexColor.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                    byte b = byte.Parse(hexColor.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-
-                    if (hexColor.Length == 8)
-                    {
-                        byte a = byte.Parse(hexColor.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                        color = Color.FromArgb(a, r, g, b);
-                    }
-                    else
-                    {
-                        color = Color.FromArgb(r, g, b);
-                    }
-
-                    return true;
-                }
-
-                return false;
-            }
-            catch (FormatException)
-            {
-                return false;
-            }
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            string srgbInput = textBoxSRGB.Text.Trim();
-            string[] components = srgbInput.Split();
-
-            if (components.Length != 3)
-            {
-                MessageBox.Show("Invalid SRGB format. Please enter valid values in the format '0.123 0.456 0.789'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            try
-            {
-                CultureInfo cultureInfo = CultureInfo.InvariantCulture;
-
-                float red = float.Parse(components[0], NumberStyles.Float, cultureInfo);
-                float green = float.Parse(components[1], NumberStyles.Float, cultureInfo);
-                float blue = float.Parse(components[2], NumberStyles.Float, cultureInfo);
-
-                if (red < 0 || red > 1 || green < 0 || green > 1 || blue < 0 || blue > 1)
-                {
-                    throw new FormatException();
-                }
-
-                byte r = (byte)(red * 255);
-                byte g = (byte)(green * 255);
-                byte b = (byte)(blue * 255);
-
-                // Update textBoxHex and panelColorBox directly
-                string hexColor = $"{r:X2}{g:X2}{b:X2}";
-                textBoxHex.Text = hexColor;
-                panelColorBox.BackColor = Color.FromArgb(r, g, b);
-
-                // Update textBoxSRGB with entered values and spaces
-                textBoxSRGB.Text = $"{red} {green} {blue}";
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Invalid SRGB format. Please enter valid values in the format '0.123 0.456 0.789'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Copy the text to the clipboard
-            Clipboard.SetText(textBoxSRGB.Text);
-        }
-
-        private void replace_handles_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                string selectedPath = folderBrowserDialog.SelectedPath;
-                ProcessHandles(selectedPath);
-            }
-        }
-
-        private void ProcessHandles(string directory)
-        {
-            string[] lsxFiles = Directory.GetFiles(directory, "*.lsx", SearchOption.AllDirectories);
-            string[] xmlFiles = Directory.GetFiles(directory, "*.xml", SearchOption.AllDirectories);
-
-            foreach (string filePath in lsxFiles.Concat(xmlFiles))
-            {
-                string content = File.ReadAllText(filePath);
-                string updatedContent = ProcessHandlesInContent(content);
-
-                File.WriteAllText(filePath, updatedContent);
-            }
-
-            MessageBox.Show("Handle replacement has finished processing.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private string[] patternsToIgnore;
-
-        private string[] GetIgnoreList()
-        {
-            string exeDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            string ignoreListPath = Path.Combine(exeDirectory, "LSX Files", "IgnoreList.txt");
-
-            if (File.Exists(ignoreListPath))
-            {
-                return File.ReadAllLines(ignoreListPath);
-            }
-
-            return new string[0]; // Return an empty array if the file doesn't exist
-        }
-
-        private void replace_uuid_Click(object sender, EventArgs e)
-        {
-            patternsToIgnore = GetIgnoreList();
-
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                string selectedPath = folderBrowserDialog.SelectedPath;
-                ProcessUUIDs(selectedPath);
-            }
-        }
-
-        private void ProcessUUIDs(string directory)
-        {
-            string[] lsxFiles = Directory.GetFiles(directory, "*.lsx", SearchOption.AllDirectories);
-            string[] txtFiles = Directory.GetFiles(directory, "*.txt", SearchOption.AllDirectories);
-
-            foreach (string filePath in lsxFiles.Concat(txtFiles))
-            {
-                string content = File.ReadAllText(filePath);
-                string updatedContent = ProcessUUIDsInContent(content);
-
-                File.WriteAllText(filePath, updatedContent);
-            }
-
-            MessageBox.Show("UUID replacement has finished processing.", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private string ProcessUUIDsInContent(string content)
-        {
-            string updatedContent = content;
-            string uuidPattern = @"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}";
-
-            // Split the content into lines
-            string[] lines = updatedContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-
-            bool insideObjectNode = false; // Flag to track if inside <node id="Object"> block
-
-            // Process each line individually
-            for (int i = 0; i < lines.Length; i++)
-            {
-                string line = lines[i];
-
-                if (line.Contains("<node id=\"Object\">"))
-                {
-                    insideObjectNode = true;
-                }
-                else if (line.Contains("</node>"))
-                {
-                    insideObjectNode = false;
-                }
-
-                // If we're inside an <node id="Object"> block, skip further processing
-                if (insideObjectNode)
-                {
-                    continue;
-                }
-
-                // Replace UUIDs in the line
-                lines[i] = Regex.Replace(line, uuidPattern, match =>
-                {
-                    string currentUUID = match.Value;
-
-                    if (!uuidReplacementDict.ContainsKey(currentUUID))
-                    {
-                        uuidReplacementDict[currentUUID] = Guid.NewGuid().ToString();
-                    }
-
-                    return uuidReplacementDict[currentUUID];
-                });
-
-                // Ignore List
-                bool shouldIgnore = patternsToIgnore.Any(patternToIgnore =>
-                {
-                    string pattern = patternToIgnore.Trim();
-
-                    // Check if the line contains the attribute name (enclosed in double quotes) or the attribute name alone
-                    if (line.Contains($"\"{pattern}\"") || line.Contains(pattern))
-                    {
-                        return true; // Ignore the line if it matches an attribute name
-                    }
-
-                    return false;
-                });
-
-                // If the line should be ignored, revert UUID replacement
-                if (shouldIgnore)
-                {
-                    lines[i] = line; // Revert the line to its original state
-                    continue;
-                }
-            }
-
-            // Reconstruct the updated content from the modified lines
-            updatedContent = string.Join(Environment.NewLine, lines);
-
-            return updatedContent;
-        }
-
-
-        private string ProcessHandlesInContent(string content)
-        {
-            string updatedContent = content;
-            string handlePattern = @"(handle\s*=\s*"")[^""]*""|contentuid\s*=\s*""[^""]*""";
-
-            // Process Handles
-            updatedContent = Regex.Replace(updatedContent, handlePattern, match =>
-            {
-                int indexOfQuote = match.Value.IndexOf('"');
-                string currentHandle = !string.IsNullOrEmpty(match.Value) && indexOfQuote >= 0
-                ? match.Value.Substring(indexOfQuote + 1, 32)
-                : string.Empty;
-
-                if (!handleReplacementDict.ContainsKey(currentHandle))
-                {
-                    // Check if the currentHandle matches any pattern from the ignore list
-                    bool shouldIgnore = patternsToIgnore != null && patternsToIgnore.Any(patternToIgnore => Regex.IsMatch(currentHandle, patternToIgnore));
-
-
-                    if (!shouldIgnore)
-                    {
-                        handleReplacementDict[currentHandle] = GenerateUniqueHandle();
-                    }
-                }
-
-                return handleReplacementDict.ContainsKey(currentHandle) ? $"{match.Value.Substring(0, match.Value.IndexOf('=') + 2)}{handleReplacementDict[currentHandle]}\"" : match.Value;
-            });
-
-            return updatedContent;
-        }
-
-        private string GenerateUniqueHandle()
-        {
-            return "h" + Guid.NewGuid().ToString("N");
-        }
-
         private void label5_Click(object sender, EventArgs e)
         {
 
@@ -591,11 +232,56 @@ namespace BG3_Mod_Templates
             // Display a pop-up message box with text
             MessageBox.Show("Add the AnimationSetBank ID to the LSX Files/IgnoreList.txt and SkeletonBank ID if using vanilla assets for those sections");
         }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void Tools_Load(object sender, EventArgs e)
         {
-            // Display a pop-up message box with text
-            MessageBox.Show("Press the Colour box to open the Colour Wheel");
+
+        }
+
+        private ColourWheel? colourwheelInstance;
+        private void Button4_Click_1(object sender, EventArgs e)
+        {
+            if (colourwheelInstance == null)
+            {
+                colourwheelInstance = new ColourWheel();
+                colourwheelInstance.Show();
+            }
+            else
+            {
+                colourwheelInstance.Show();
+                colourwheelInstance.BringToFront();
+            }
+        }
+
+        private MassReplace? massreplacelInstance;
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (massreplacelInstance == null)
+            {
+                massreplacelInstance = new MassReplace();
+                massreplacelInstance.Show();
+            }
+            else
+            {
+                massreplacelInstance.Show();
+                massreplacelInstance.BringToFront();
+            }
+        }
+
+        private TextureSeams? TextureSeamslInstance;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (TextureSeamslInstance == null)
+            {
+                TextureSeamslInstance = new TextureSeams();
+                TextureSeamslInstance.Show();
+            }
+            else
+            {
+                TextureSeamslInstance.Show();
+                TextureSeamslInstance.BringToFront();
+            }
         }
     }
 }
