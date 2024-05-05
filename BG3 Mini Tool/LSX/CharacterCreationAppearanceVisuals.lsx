@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="328" />
+  <region id="CharacterCreationAppearanceVisuals">
+    <node id="root">
+      <children>
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="0" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h99766211cb0646089a70950241e8eaae" version="1" />
+          <attribute id="RaceUUID" type="guid" value="5c39a726-71c8-4748-ba8d-f768b3c11a91" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="0d1831a0-9591-4916-8683-1dc018a6cc70" />
+          <attribute id="VisualResource" type="guid" value="1ba95b42-97aa-4a0d-b82e-88e81406afce" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>
