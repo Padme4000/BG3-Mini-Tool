@@ -34,6 +34,7 @@
             button4 = new Button();
             label5 = new Label();
             label2 = new Label();
+            button2 = new Button();
             SuspendLayout();
             // 
             // button3
@@ -99,12 +100,24 @@
             label2.TabIndex = 39;
             label2.Text = "CharacterCreationAppearanceVisuals\r\n";
             // 
+            // button2
+            // 
+            button2.AutoSize = true;
+            button2.Location = new Point(58, 314);
+            button2.Name = "button2";
+            button2.Size = new Size(276, 65);
+            button2.TabIndex = 40;
+            button2.Text = "Convert CCSV entries for Races.lsx";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
+            // 
             // Form11
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(403, 318);
+            ClientSize = new Size(403, 385);
+            Controls.Add(button2);
             Controls.Add(label2);
             Controls.Add(label5);
             Controls.Add(button4);
@@ -128,5 +141,6 @@
         private Button button4;
         private Label label5;
         private Label label2;
+        private Button button2;
     }
 }

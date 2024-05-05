@@ -446,6 +446,12 @@ namespace BG3_Mini_Tool
                 string sourceFilePath = openFileDialog.FileName; // Path to the selected source file
                 string targetFolderPath = textBoxpath.Text; // Path to the target folder
 
+                if (string.IsNullOrEmpty(targetFolderPath) || !Directory.Exists(targetFolderPath))
+                {
+                    MessageBox.Show("Target folder does not exist. Please use the Locate lsx Button.");
+                    return;
+                }
+
                 try
                 {
                     if (Directory.Exists(targetFolderPath))

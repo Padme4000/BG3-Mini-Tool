@@ -241,31 +241,36 @@ namespace BG3_Mini_Tool
 
                 try
                 {
-                    // Load the XML document
-                    XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.Load(filePath);
+                    // Read all lines from the file
+                    string[] lines = File.ReadAllLines(filePath);
 
-                    // Get all nodes with the attribute "id" equal to "UUID"
-                    XmlNodeList uuidNodes = xmlDoc.SelectNodes("//attribute[@id='UUID']");
+                    // Find the line containing the UUID
+                    string uuidLine = lines.FirstOrDefault(line => line.Contains("UUID"));
 
-                    // Generate and replace UUIDs for each node
-                    foreach (XmlNode uuidNode in uuidNodes)
+                    if (uuidLine != null)
                     {
+                        // Extract the existing UUID from the line
+                        string existingUuid = uuidLine.Split(new[] { "value=\"" }, StringSplitOptions.None)[1].Split('"')[0];
+
                         // Generate a new UUID
-                        Guid newUuid = Guid.NewGuid();
+                        string newUuid = Guid.NewGuid().ToString();
 
-                        // Update the "value" attribute with the new UUID
-                        XmlAttribute valueAttribute = uuidNode.Attributes["value"];
-                        if (valueAttribute != null)
-                        {
-                            valueAttribute.Value = newUuid.ToString();
-                        }
+                        // Replace the existing UUID value with the new one in the line
+                        string newUuidLine = uuidLine.Replace(existingUuid, newUuid);
+
+                        // Replace the line in the array of lines
+                        int index = Array.IndexOf(lines, uuidLine);
+                        lines[index] = newUuidLine;
+
+                        // Write the modified lines back to the file
+                        File.WriteAllLines(filePath, lines);
+
+                        MessageBox.Show("UUIDs updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-                    // Save the updated XML document
-                    xmlDoc.Save(filePath);
-
-                    MessageBox.Show("UUIDs updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                    {
+                        MessageBox.Show("UUID not found in the file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 catch (Exception ex)
                 {

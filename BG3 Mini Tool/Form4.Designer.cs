@@ -211,7 +211,6 @@
             Text = "Extra Tools";
             FormClosing += Form4_FormClosing;
             Load += Tools_Load;
-            Resize += Tools_Resize;
             ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();

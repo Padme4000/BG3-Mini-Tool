@@ -70,28 +70,6 @@ namespace BG3_Mini_Tool
 
         }
 
-        private Form7? Form7Instance;
-
-        private void Button2_Click_1(object sender, EventArgs e)
-        {
-            if (Form7Instance == null)
-            {
-                Form7Instance = new Form7();
-                Form7Instance.Show();
-            }
-            else
-            {
-                Form7Instance.Show();
-                Form7Instance.BringToFront();
-            }
-        }
-
-        private void Form1_Resize(object sender, EventArgs e)
-        {
-            // Set the desired size of the form
-            this.Size = new Size(302, 460);
-        }
-
         private Form5? Form5Instance;
         private void button5_Click(object sender, EventArgs e)
         {
@@ -104,6 +82,22 @@ namespace BG3_Mini_Tool
             {
                 Form5Instance.Show();
                 Form5Instance.BringToFront();
+            }
+        }
+
+        private Form7? Form7Instance;
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (Form7Instance == null)
+            {
+                Form7Instance = new Form7();
+                Form7Instance.Show();
+            }
+            else
+            {
+                Form7Instance.Show();
+                Form7Instance.BringToFront();
             }
         }
     }

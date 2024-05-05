@@ -715,7 +715,6 @@ namespace BG3_Mini_Tool
             Text = "CharacterCreationAppearanceValues";
             FormClosing += Form2_FormClosing;
             Load += Form2_Load_1;
-            Resize += Form2_Resize;
             ResumeLayout(false);
             PerformLayout();
         }

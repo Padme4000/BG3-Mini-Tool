@@ -28,124 +28,122 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Button10 = new System.Windows.Forms.Button();
-            this.Button9 = new System.Windows.Forms.Button();
-            this.Button8 = new System.Windows.Forms.Button();
-            this.Button7 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label5 = new Label();
+            Button14 = new Button();
+            Button7 = new Button();
+            Button8 = new Button();
+            Button9 = new Button();
+            Button10 = new Button();
+            Button11 = new Button();
+            Button12 = new Button();
+            SuspendLayout();
             // 
-            // Button10
+            // label5
             // 
-            this.Button10.Location = new System.Drawing.Point(130, 84);
-            this.Button10.Name = "Button10";
-            this.Button10.Size = new System.Drawing.Size(73, 41);
-            this.Button10.TabIndex = 20;
-            this.Button10.Text = "Hair";
-            this.Button10.UseVisualStyleBackColor = true;
+            label5.AutoSize = true;
+            label5.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(116, 9);
+            label5.Name = "label5";
+            label5.Size = new Size(132, 25);
+            label5.TabIndex = 37;
+            label5.Text = "CC Colours";
             // 
-            // Button9
+            // Button14
             // 
-            this.Button9.Location = new System.Drawing.Point(130, 37);
-            this.Button9.Name = "Button9";
-            this.Button9.Size = new System.Drawing.Size(73, 41);
-            this.Button9.TabIndex = 19;
-            this.Button9.Text = "Head";
-            this.Button9.UseVisualStyleBackColor = true;
-            // 
-            // Button8
-            // 
-            this.Button8.Location = new System.Drawing.Point(209, 84);
-            this.Button8.Name = "Button8";
-            this.Button8.Size = new System.Drawing.Size(73, 41);
-            this.Button8.TabIndex = 18;
-            this.Button8.Text = "Beard";
-            this.Button8.UseVisualStyleBackColor = true;
+            Button14.Location = new Point(39, 50);
+            Button14.Name = "Button14";
+            Button14.Size = new Size(150, 41);
+            Button14.TabIndex = 36;
+            Button14.Text = "Makeup Colour";
+            Button14.UseVisualStyleBackColor = true;
             // 
             // Button7
             // 
-            this.Button7.Location = new System.Drawing.Point(209, 37);
-            this.Button7.Name = "Button7";
-            this.Button7.Size = new System.Drawing.Size(73, 41);
-            this.Button7.TabIndex = 17;
-            this.Button7.Text = "Skin";
-            this.Button7.UseVisualStyleBackColor = true;
+            Button7.Location = new Point(39, 97);
+            Button7.Name = "Button7";
+            Button7.Size = new Size(150, 41);
+            Button7.TabIndex = 38;
+            Button7.Text = "Skin";
+            Button7.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // Button8
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(89, 9);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(193, 25);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Customise NPC\'s";
+            Button8.Location = new Point(195, 50);
+            Button8.Name = "Button8";
+            Button8.Size = new Size(150, 41);
+            Button8.TabIndex = 39;
+            Button8.Text = "Tattoo Colour";
+            Button8.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // Button9
             // 
-            this.button1.Location = new System.Drawing.Point(288, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 41);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Horns";
-            this.button1.UseVisualStyleBackColor = true;
+            Button9.Location = new Point(195, 97);
+            Button9.Name = "Button9";
+            Button9.Size = new Size(150, 41);
+            Button9.TabIndex = 40;
+            Button9.Text = "Eye Colour";
+            Button9.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // Button10
             // 
-            this.button2.Location = new System.Drawing.Point(25, 37);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 41);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Eye Colour";
-            this.button2.UseVisualStyleBackColor = true;
+            Button10.Location = new Point(39, 144);
+            Button10.Name = "Button10";
+            Button10.Size = new Size(150, 41);
+            Button10.TabIndex = 41;
+            Button10.Text = "Hair Colour";
+            Button10.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // Button11
             // 
-            this.button3.Location = new System.Drawing.Point(25, 84);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 41);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Hair Colour";
-            this.button3.UseVisualStyleBackColor = true;
+            Button11.Location = new Point(195, 144);
+            Button11.Name = "Button11";
+            Button11.Size = new Size(150, 41);
+            Button11.TabIndex = 42;
+            Button11.Text = "Highlight Colour";
+            Button11.UseVisualStyleBackColor = true;
+            // 
+            // Button12
+            // 
+            Button12.Location = new Point(116, 191);
+            Button12.Name = "Button12";
+            Button12.Size = new Size(150, 41);
+            Button12.TabIndex = 43;
+            Button12.Text = "Greying Colour";
+            Button12.UseVisualStyleBackColor = true;
             // 
             // Form7
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.ClientSize = new System.Drawing.Size(384, 141);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.Button10);
-            this.Controls.Add(this.Button9);
-            this.Controls.Add(this.Button8);
-            this.Controls.Add(this.Button7);
-            this.Controls.Add(this.label2);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form7";
-            this.Text = "Customise NPC\'s";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form7_FormClosing);
-            this.Load += new System.EventHandler(this.Form7_Load);
-            this.Resize += new System.EventHandler(this.Form7_Resize);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonShadow;
+            ClientSize = new Size(384, 254);
+            Controls.Add(Button12);
+            Controls.Add(Button11);
+            Controls.Add(Button10);
+            Controls.Add(Button9);
+            Controls.Add(Button8);
+            Controls.Add(Button7);
+            Controls.Add(label5);
+            Controls.Add(Button14);
+            Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "Form7";
+            Text = "CC Colours";
+            FormClosing += Form7_FormClosing;
+            Load += Form7_Load;
+            Resize += Form7_Resize;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private System.Windows.Forms.Button Button10;
-        private System.Windows.Forms.Button Button9;
-        private System.Windows.Forms.Button Button8;
-        private System.Windows.Forms.Button Button7;
-        private System.Windows.Forms.Label label2;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Label label5;
+        private Button Button14;
+        private Button Button7;
+        private Button Button8;
+        private Button Button9;
+        private Button Button10;
+        private Button Button11;
+        private Button Button12;
     }
 }

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <RootNamespace>BG3_Mini_Tool</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
@@ -10,6 +10,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <PackageIcon>Padme Logo_Frosty.png</PackageIcon>
     <ApplicationIcon>Padme4000 Logo.ico</ApplicationIcon>
+    <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+    <DpiUnawareGdiScaled>true</DpiUnawareGdiScaled>
+    <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,9 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Form12.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="Form12.cs" />
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

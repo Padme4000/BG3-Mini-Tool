@@ -37,6 +37,7 @@
             buttonNM = new Button();
             button5 = new Button();
             label8 = new Label();
+            lazy_link = new LinkLabel();
             SuspendLayout();
             // 
             // label2
@@ -133,12 +134,24 @@
             label8.TabIndex = 183;
             label8.Text = "MSK";
             // 
+            // lazy_link
+            // 
+            lazy_link.AutoSize = true;
+            lazy_link.Location = new Point(102, 304);
+            lazy_link.Name = "lazy_link";
+            lazy_link.Size = new Size(292, 20);
+            lazy_link.TabIndex = 186;
+            lazy_link.TabStop = true;
+            lazy_link.Text = "Link to LazyIcarus's Batch Python Script";
+            lazy_link.LinkClicked += lazy_link_LinkClicked;
+            // 
             // TextureSeams
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(460, 273);
+            ClientSize = new Size(460, 367);
+            Controls.Add(lazy_link);
             Controls.Add(button5);
             Controls.Add(label8);
             Controls.Add(buttonNM);
@@ -166,5 +179,6 @@
         private Button buttonNM;
         private Button button5;
         private Label label8;
+        private LinkLabel lazy_link;
     }
 }

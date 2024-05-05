@@ -39,6 +39,7 @@ namespace BG3_Mini_Tool
             Button4 = new Button();
             label5 = new Label();
             button5 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -106,9 +107,9 @@ namespace BG3_Mini_Tool
             // Button4
             // 
             Button4.AutoSize = true;
-            Button4.Location = new Point(96, 373);
+            Button4.Location = new Point(91, 369);
             Button4.Name = "Button4";
-            Button4.Size = new Size(121, 41);
+            Button4.Size = new Size(131, 41);
             Button4.TabIndex = 29;
             Button4.Text = "Extra Tools";
             Button4.UseVisualStyleBackColor = true;
@@ -118,7 +119,7 @@ namespace BG3_Mini_Tool
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(59, 345);
+            label5.Location = new Point(64, 341);
             label5.Name = "label5";
             label5.Size = new Size(185, 25);
             label5.TabIndex = 30;
@@ -127,7 +128,7 @@ namespace BG3_Mini_Tool
             // button5
             // 
             button5.AutoSize = true;
-            button5.Location = new Point(54, 265);
+            button5.Location = new Point(54, 416);
             button5.Name = "button5";
             button5.Size = new Size(205, 65);
             button5.TabIndex = 33;
@@ -135,12 +136,24 @@ namespace BG3_Mini_Tool
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
+            // button2
+            // 
+            button2.AutoSize = true;
+            button2.Location = new Point(54, 265);
+            button2.Name = "button2";
+            button2.Size = new Size(207, 65);
+            button2.TabIndex = 34;
+            button2.Text = "CharacterCreation Colours";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(316, 437);
+            ClientSize = new Size(316, 489);
+            Controls.Add(button2);
             Controls.Add(button5);
             Controls.Add(label5);
             Controls.Add(Button4);
@@ -155,7 +168,6 @@ namespace BG3_Mini_Tool
             Name = "Form1";
             Text = "BG3 Mini Tool Home Page";
             Load += Form1_Load;
-            Resize += Form1_Resize;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -171,5 +183,6 @@ namespace BG3_Mini_Tool
         private Button Button4;
         private Label label5;
         private Button button5;
+        private Button button2;
     }
 }
