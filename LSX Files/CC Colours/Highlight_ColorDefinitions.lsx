@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="0" build="49"/>
+    <region id="ColorDefinitions">
+        <node id="root">
+            <children>
+                <node id="ColorDefinition">
+                    <attribute id="Color" type="LSString" value="#FF000000"/>
+                    <attribute id="DisplayName" type="TranslatedString" handle="ha0922de9ga1f8g4cefgac3fg45b0a16d85a5" version="1"/>
+                    <attribute id="Name" type="FixedString" value="Hair_Highlight_"/>
+                    <attribute id="UUID" type="guid" value="fe6cd59e-5153-4993-8d87-cc15a547e5d3"/> 
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

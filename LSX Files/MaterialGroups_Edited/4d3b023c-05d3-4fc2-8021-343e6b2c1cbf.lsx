@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<save>
+  <version major="4" minor="0" revision="8" build="613" />
+  <region id="AnimationSourceId">
+    <node id="root">
+      <attribute id="MaterialResourceID" type="guid" value="219bb155-5d45-9861-bd62-1dbe5cbba892" />
+      <attribute id="Name" type="FixedString" value="VFX_Mouth_FX_Test_02" />
+      <children>
+        <node id="strMaterialReference">
+          <attribute id="Key" type="guid" value="f5c2c660-fdaa-431b-8ad9-6ce66b3ecf4a" />
+          <attribute id="SlotIndex" type="int32" value="1" />
+          <attribute id="VisualResourceID" type="guid" value="782c5a18-2ff3-c380-e41c-a4e4651d7b24" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

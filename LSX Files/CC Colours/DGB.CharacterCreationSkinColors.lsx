@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="0" build="50"/>
+    <region id="CharacterCreationSkinColors">
+        <node id="root">
+            <children>
+                <node id="CharacterCreationSkinColor">
+                    <attribute id="DisplayName" type="TranslatedString" handle="h19c46e44g0ba4g462bgb603g9bacb4d3d578" version="1"/> <!-- Generate a Unique Handle with Multi-tool and add it to Localization\English\custom_name_here.xml and write what name you would like to be shown in CC -->
+                    <attribute id="MaterialPresetUUID" type="guid" value="133caa6f-1987-4826-8f65-b34c8d15c79f"/> <!--This needs to match the ID in the _merged.lsf entry in Public\Shared\Content\Assets\Characters\Character Editor Presets\Hair Color Presets -->
+                    <attribute id="Name" type="FixedString" value="Scales_Red"/> <!-- Name it clearly just for your own reference -->
+                    <attribute id="SkinType" type="FixedString" value="Dragonborn"/> Do not Change
+                    <attribute id="UIColor" type="LSString" value="#FF880000"/> <!-- AARRGGBB what does this mean? Alpha, Red, Green, Blue Copy your Hex value after the first two values this will be the colour of the icon in Character Creation-->
+                    <attribute id="UUID" type="guid" value="60778424-b071-4da7-a3a1-2af9da757170"/> <!--This has to match the guid value in Races.lsx Hair Colour-->
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

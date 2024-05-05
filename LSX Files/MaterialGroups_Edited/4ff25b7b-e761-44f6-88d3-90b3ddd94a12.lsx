@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="322" />
+  <region id="AnimationSourceId">
+    <node id="root">
+      <attribute id="IsReplacement" type="bool" value="true" />
+      <attribute id="MaterialResourceID" type="guid" value="7ca23e87-caf6-8731-d46a-79070ebe3fcf" />
+      <children>
+        <node id="strMaterialReference">
+          <attribute id="Key" type="guid" value="617c4f89-e574-41a9-b0ee-2c61cf815725" />
+          <attribute id="SlotIndex" type="int32" value="2" />
+          <attribute id="VisualResourceID" type="guid" value="dde369c9-2163-4860-8ec3-4672ef89ee0c" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

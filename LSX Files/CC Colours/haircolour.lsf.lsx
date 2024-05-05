@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="4" build="602" />
+	<region id="MaterialPresetBank">
+		<node id="MaterialPresetBank">
+			<children>
+			<!-- So this is where we choose what we want our Hair Colour to do. We can just edit the Hair_Color value and leave the rest or make the rest different or make Beard, Scalp, Eyebrow and that all the same colour 
+			
+			How to work out your values
+			
+			Now conversion of your Hex/HTML code to sRGB can give a bit of a different outcome than you expect so
+			so I suggest using the UI hex we use in CharacterCreationHairColors as your base and then choose a darker shade before converting to sRGB 
+			
+			I personally use this website https://www.easyrgb.com/en/convert.php#inputFORM 
+			
+			Type in your hex code without the FF and click convert
+			
+			we want the data sRGB   0-1.0
+			
+			I also made a Hex to sRGB generator in my bg3 mini tool here https://www.nexusmods.com/baldursgate3/mods/502 -->
+				<node id="Resource">
+					<attribute id="ID" type="FixedString" value="a1120c4b-f901-43ba-992e-56d39fdfb963" />
+					<attribute id="Localized" type="bool" value="False" />
+					<attribute id="Name" type="LSString" value="HAIR_Color_BlondePink" />
+					<attribute id="_OriginalFileVersion_" type="int64" value="144115188075855919" />
+					<children>
+						<node id="Presets">
+							<attribute id="MaterialResource" type="FixedString" value="" />
+							<children>
+								<node id="ColorPreset">
+									<attribute id="ForcePresetValues" type="bool" value="True" />
+									<attribute id="GroupName" type="FixedString" value="" />
+									<attribute id="MaterialPresetResource" type="FixedString" value="" />
+								</node>
+								<node id="MaterialPresets" />
+								<node id="Vector3Parameters">
+									<attribute id="Color" type="bool" value="True" />
+									<attribute id="Custom" type="bool" value="False" />
+									<attribute id="Enabled" type="bool" value="True" />
+									<attribute id="Parameter" type="FixedString" value="Scalp_HueShiftColorWeight" />
+									<attribute id="Value" type="fvec3" value="0.1767128 0 0.01715354" />
+								</node>
+								<node id="Vector3Parameters">
+									<attribute id="Color" type="bool" value="True" />
+									<attribute id="Custom" type="bool" value="False" />
+									<attribute id="Enabled" type="bool" value="True" />
+									<attribute id="Parameter" type="FixedString" value="Beard_Color" />
+									<attribute id="Value" type="fvec3" value="0.05133 0.00438 -0.00634" />
+									<!-- For example my Beard_Color, Beard_Scalp_Color, Eyebrow_Color and Body_Hair_Color all use the same darker colour here -->
+								</node>
+								<node id="Vector3Parameters">
+									<attribute id="Color" type="bool" value="True" />
+									<attribute id="Custom" type="bool" value="False" />
+									<attribute id="Enabled" type="bool" value="True" />
+									<attribute id="Parameter" type="FixedString" value="Beard_Scalp_Color" />
+									<attribute id="Value" type="fvec3" value="0.05133 0.00438 -0.00634" />
+								</node>
+								<node id="Vector3Parameters">
+									<attribute id="Color" type="bool" value="True" />
+									<attribute id="Custom" type="bool" value="False" />
+									<attribute id="Enabled" type="bool" value="True" />
+									<attribute id="Parameter" type="FixedString" value="Eyebrow_Color" />
+									<attribute id="Value" type="fvec3" value="0.05133 0.00438 -0.00634" />
+								</node>
+								<node id="Vector3Parameters">
+									<attribute id="Color" type="bool" value="True" />
+									<attribute id="Custom" type="bool" value="False" />
+									<attribute id="Enabled" type="bool" value="True" />
+									<attribute id="Parameter" type="FixedString" value="Eyelashes_Color" />
+									<attribute id="Value" type="fvec3" value="0 0 0" />
+									<!-- You can also change the eyelashes color here personally I leave it at Black but changing to match the hair could also make for some nice combinations -->
+								</node>
+								<node id="Vector3Parameters">
+									<attribute id="Color" type="bool" value="True" />
+									<attribute id="Custom" type="bool" value="False" />
+									<attribute id="Enabled" type="bool" value="True" />
+									<attribute id="Parameter" type="FixedString" value="Hair_Color" />
+									<attribute id="Value" type="fvec3" value="0.81485 0.2812882 0.2327903" />
+								</node>
+								<!-- So if only making the hair colour different I will make this and Hair_Scalp_Color match but you could also offer other options where every colour matches or one where the eyelashes match the hair but the rest is dark or vice versa -->
+								<node id="Vector3Parameters">
+									<attribute id="Color" type="bool" value="True" />
+									<attribute id="Custom" type="bool" value="False" />
+									<attribute id="Enabled" type="bool" value="True" />
+									<attribute id="Parameter" type="FixedString" value="Hair_Scalp_Color" />
+									<attribute id="Value" type="fvec3" value="0.81485 0.2812882 0.2327903" />
+								</node>
+								<node id="Vector3Parameters">
+									<attribute id="Color" type="bool" value="True" />
+									<attribute id="Custom" type="bool" value="False" />
+									<attribute id="Enabled" type="bool" value="True" />
+									<attribute id="Parameter" type="FixedString" value="Body_Hair_Color" />
+									<attribute id="Value" type="fvec3" value="0.05133 0.00438 -0.00634" />
+								</node>
+							</children>
+						</node>
+					</children>
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

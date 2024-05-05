@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="0" build="50"/>
+    <region id="CharacterCreationHairColors">
+        <node id="root">
+            <children>
+                <node id="CharacterCreationHairColor">
+                    <attribute id="DisplayName" type="TranslatedString" handle="h3780cd29g2ec1g494egbd9fgbf86990489e9" version="1"/> <!-- Generate a Unique Handle with Multi-tool and add it to Localization\English\custom_name_here.xml and write what name you would like to be shown in CC -->
+                    <attribute id="MaterialPresetUUID" type="guid" value="a1120c4b-f901-43ba-992e-56d39fdfb963"/> <!--This needs to match the ID in the _merged.lsf entry in Public\Shared\Content\Assets\Characters\Character Editor Presets\Hair Color Presets -->
+                    <attribute id="Name" type="FixedString" value="HAIR_Color_BlondePink"/> <!-- Name it clearly just for your own reference -->
+                    <attribute id="UIColor" type="LSString" value="#FFEFC6BF"/> <!-- AARRGGBB what does this mean? Alpha, Red, Green, Blue Copy your Hex value after the first two values this will be the colour of the icon in Character Creation-->
+                    <attribute id="UUID" type="guid" value="ac78879a-5e2e-4706-953e-626c023c02ad"/> <!--This has to match the guid value in Races.lsx Hair Colour-->
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

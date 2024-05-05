@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<save>
+	<version major="4" minor="0" revision="9" build="319" />
+	<region id="Templates">
+		<node id="Templates">
+			<children>
+		<!-- Can use this break to break up each new entry -->
+				<node id="GameObjects">
+					<attribute id="ColorPreset" type="guid" value="ee4bc508-2a49-4ae2-9a72-5fc13b9dcb19" /> Same as your UUID for DyeColorPresetResource in ItemCombos.txt as well as your ID in your lsx/lsf in Content\Assets\Characters\[PAK]_DYE_Colors
+					<attribute id="DisplayName" type="TranslatedString" handle="h31faa053gfb84g4ed3ga5fcg329680dd6efa" version="3" /> Localization\English
+					<attribute id="Description" type="TranslatedString" handle="hd202c927g54b5g4035g83d2gfe1c3984ec54" version="2" /> Localization\English
+					<attribute id="Icon" type="FixedString" value="Item_LOOT_Dye_BlackBlue_01" />
+					<attribute id="LevelName" type="FixedString" value="" />
+					<attribute id="MapKey" type="FixedString" value="bde43ba3-bf07-4aab-af2c-f349f37768a4" /> same as UUID in Objects.txt
+					<attribute id="Name" type="LSString" value="Loot_Dye_Template" /> Custom Name
+					<attribute id="ParentTemplateId" type="FixedString" value="1a750a66-e5c2-40be-9f62-0a4bf3ddb403" /> is the Parent for Dyes don't change
+					<attribute id="Stats" type="FixedString" value="OBJ_Dye_Template" /> Name in your Objects.txt, ItemCombos.txt and TreasureTable.txt add I_ in front for TreasureTable
+					<attribute id="Type" type="FixedString" value="item" />
+					Extra note in ItemCombos.txt if you want your Dye to disappear after use, change Transform from None to Consume, if you want infinite uses leave it at none. Thanks to Loktide for working out the none value
+				</node>
+			</children>
+		</node>
+	</region>
+</save>

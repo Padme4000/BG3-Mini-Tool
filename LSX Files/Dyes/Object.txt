@@ -1,0 +1,5 @@
+new entry "OBJ_Dye_Template"
+type "Object"
+using "_Dye_Rare"
+data "RootTemplate" "bde43ba3-bf07-4aab-af2c-f349f37768a4"
+data "Priority" "1"

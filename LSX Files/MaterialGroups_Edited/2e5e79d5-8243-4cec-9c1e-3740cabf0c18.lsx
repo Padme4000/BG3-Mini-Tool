@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="328" />
+  <region id="AnimationSourceId">
+    <node id="root">
+      <attribute id="MaterialResourceID" type="guid" value="63fe60f6-b287-ec9d-e194-bcb69b673781" />
+      <attribute id="Name" type="FixedString" value="VFX_Cinematic_Overlay_CHAR_WISP_Fire_EVIL_01" />
+      <children>
+        <node id="strMaterialReference">
+          <attribute id="Key" type="guid" value="efd71dd5-6ee0-4405-9799-e986e45481fb" />
+          <attribute id="VisualResourceID" type="guid" value="dde369c9-2163-4860-8ec3-4672ef89ee0c" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

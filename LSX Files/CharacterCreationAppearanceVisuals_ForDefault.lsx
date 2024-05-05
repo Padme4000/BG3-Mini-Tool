@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<save>
+  <version major="4" minor="0" revision="8" build="503" />
+  <region id="CharacterCreationAppearanceVisuals">
+    <node id="root">
+      <children>
+        <!-- Masc "Hello" -->
+        <!-- Tiefling -->
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="0" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h41d5a64a3b924bcead27d1db1e6f96e5" version="1" />
+          <attribute id="RaceUUID" type="guid" value="b6dccbed-30f3-424b-a181-c4540cf38197" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="731f9e6e-bde7-4516-8a52-cfa6fbd6b9a5" />
+          <attribute id="VisualResource" type="guid" value="00000000-0000-0000-0000-000000000000" />
+        </node>
+        <!-- Human -->
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="0" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h41d5a64a3b924bcead27d1db1e6f96e5" version="1" />
+          <attribute id="RaceUUID" type="guid" value="0eb594cb-8820-4be6-a58d-8be7a1a98fba" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="a1699f3a-e172-4bcc-9c2c-d72691a7cb78" />
+          <attribute id="VisualResource" type="guid" value="00000000-0000-0000-0000-000000000000" />
+        </node>
+        <!-- HalfElf/Drow -->
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="0" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h41d5a64a3b924bcead27d1db1e6f96e5" version="1" />
+          <attribute id="RaceUUID" type="guid" value="45f4ac10-3c89-4fb2-b37d-f973bb9110c0" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="97514591-9c2e-4792-94f8-5606c2ddc120" />
+          <attribute id="VisualResource" type="guid" value="00000000-0000-0000-0000-000000000000" />
+        </node>
+        <!-- Githyanki -->
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="0" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h41d5a64a3b924bcead27d1db1e6f96e5" version="1" />
+          <attribute id="RaceUUID" type="guid" value="bdf9b779-002c-4077-b377-8ea7c1faa795" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="9ae9bba6-30bd-4bf0-806b-dbb181bf039c" />
+          <attribute id="VisualResource" type="guid" value="00000000-0000-0000-0000-000000000000" />
+        </node>
+        <!-- Elf -->
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="0" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h41d5a64a3b924bcead27d1db1e6f96e5" version="1" />
+          <attribute id="RaceUUID" type="guid" value="6c038dcb-7eb5-431d-84f8-cecfaf1c0c5a" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="7568e25a-2d97-4733-ba89-48348c40cb05" />
+          <attribute id="VisualResource" type="guid" value="00000000-0000-0000-0000-000000000000" />
+        </node>
+        <!-- Drow -->
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="0" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h41d5a64a3b924bcead27d1db1e6f96e5" version="1" />
+          <attribute id="RaceUUID" type="guid" value="4f5d1434-5175-4fa9-b7dc-ab24fba37929" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="cded40f9-674f-42f5-9a37-aa165891d84e" />
+          <attribute id="VisualResource" type="guid" value="00000000-0000-0000-0000-000000000000" />
+        </node>
+        <!-- Fem "Hello" -->
+        <!-- Tiefling -->
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="1" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h41d5a64a3b924bcead27d1db1e6f96e5" version="1" />
+          <attribute id="RaceUUID" type="guid" value="b6dccbed-30f3-424b-a181-c4540cf38197" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="efc849fc-d2f3-4995-9c2e-8962b149ef76" />
+          <attribute id="VisualResource" type="guid" value="00000000-0000-0000-0000-000000000000" />
+        </node>
+        <!-- Human -->
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="1" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h41d5a64a3b924bcead27d1db1e6f96e5" version="1" />
+          <attribute id="RaceUUID" type="guid" value="0eb594cb-8820-4be6-a58d-8be7a1a98fba" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="2f074a48-6414-48f7-8dee-99d4b0ef05f6" />
+          <attribute id="VisualResource" type="guid" value="00000000-0000-0000-0000-000000000000" />
+        </node>
+        <!-- HalfElf/Drow -->
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="1" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h41d5a64a3b924bcead27d1db1e6f96e5" version="1" />
+          <attribute id="RaceUUID" type="guid" value="45f4ac10-3c89-4fb2-b37d-f973bb9110c0" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="b8431cca-7d78-48e8-af03-e0c5b4fb0b2c" />
+          <attribute id="VisualResource" type="guid" value="00000000-0000-0000-0000-000000000000" />
+        </node>
+        <!-- Githyanki -->
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="1" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h41d5a64a3b924bcead27d1db1e6f96e5" version="1" />
+          <attribute id="RaceUUID" type="guid" value="bdf9b779-002c-4077-b377-8ea7c1faa795" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="3fcdf006-b6ee-47cc-a692-3e06e493a4b4" />
+          <attribute id="VisualResource" type="guid" value="00000000-0000-0000-0000-000000000000" />
+        </node>
+        <!-- Elf -->
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="1" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h41d5a64a3b924bcead27d1db1e6f96e5" version="1" />
+          <attribute id="RaceUUID" type="guid" value="6c038dcb-7eb5-431d-84f8-cecfaf1c0c5a" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="05378d2d-e797-4d86-ac9b-ad05db1dc5fe" />
+          <attribute id="VisualResource" type="guid" value="00000000-0000-0000-0000-000000000000" />
+        </node>
+        <!-- Drow -->
+        <node id="CharacterCreationAppearanceVisual">
+          <attribute id="BodyShape" type="uint8" value="0" />
+          <attribute id="BodyType" type="uint8" value="1" />
+          <attribute id="DisplayName" type="TranslatedString" handle="h41d5a64a3b924bcead27d1db1e6f96e5" version="1" />
+          <attribute id="RaceUUID" type="guid" value="4f5d1434-5175-4fa9-b7dc-ab24fba37929" />
+          <attribute id="SlotName" type="FixedString" value="Hair" />
+          <attribute id="UUID" type="guid" value="57983d50-384a-43ef-96f8-3c8e282ab63d" />
+          <attribute id="VisualResource" type="guid" value="00000000-0000-0000-0000-000000000000" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<save>
+  <version major="4" minor="0" revision="8" build="602" />
+  <region id="AnimationSourceId">
+    <node id="root">
+      <attribute id="MaterialResourceID" type="guid" value="233a10e9-85d1-7645-722e-484d2e4ecf8b" />
+      <children>
+        <node id="strMaterialReference">
+          <attribute id="Key" type="guid" value="d7e7372a-90b3-493a-aaae-f093c40b205c" />
+          <attribute id="VisualResourceID" type="guid" value="f4622f79-7e15-588b-a3b8-f11778faa3b7" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

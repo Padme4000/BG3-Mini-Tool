@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="328" />
+  <region id="AnimationSourceId">
+    <node id="root">
+      <attribute id="MaterialResourceID" type="guid" value="6297c563-7a62-b359-3222-8717512ba984" />
+      <attribute id="Name" type="FixedString" value="VFX_OverlayMaterial_Cinematic_EyeStab_Blood_02" />
+      <children>
+        <node id="strMaterialReference">
+          <attribute id="Key" type="guid" value="df95b661-0138-45a3-88aa-45ab4345909d" />
+          <attribute id="VisualResourceID" type="guid" value="dde369c9-2163-4860-8ec3-4672ef89ee0c" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

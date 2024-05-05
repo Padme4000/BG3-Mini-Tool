@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="328" />
+  <region id="AnimationSourceId">
+    <node id="root">
+      <attribute id="MaterialResourceID" type="guid" value="f5d5cee7-a66b-bce2-3ab8-b51cb13bb7d9" />
+      <attribute id="Name" type="FixedString" value="VFX_Cinematic_Overlay_CHAR_WISP_Fire_GOOD_01" />
+      <children>
+        <node id="strMaterialReference">
+          <attribute id="Key" type="guid" value="7887dad3-394a-4e45-8049-b5c3739c48a6" />
+          <attribute id="VisualResourceID" type="guid" value="dde369c9-2163-4860-8ec3-4672ef89ee0c" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="0" build="47"/>
+    <region id="CharacterCreationEyeColors">
+        <node id="root">
+            <children>
+                <node id="CharacterCreationEyeColor">
+                    <attribute id="DisplayName" type="TranslatedString" handle="h53fa0dfcg318dg4ff8g88f0gb2e8948af876" version="1"/> <!-- Generate a Unique Handle with Multi-tool and add it to Localization\English\custom_name_here.xml and write what name you would like to be shown in CC -->
+                    <attribute id="MaterialPresetUUID" type="guid" value="2791d564-fc34-4333-83b1-99af6bea7ec4"/>
+					<!-- ^ This needs to match the ID in the _merged.lsf entry in Public\Shared\Content\Assets\Characters\Character Editor Presets\Eye Color Presets -->
+                    <attribute id="Name" type="FixedString" value="Bright_Green"/>
+                    <attribute id="UIColor" type="LSString" value="#FF00D226"/>
+					<!-- ^_AARRGGBB what does this mean?_Alpha, Red, Green, Blue Copy your Hex value_After the first two values-->
+                    <attribute id="UUID" type="guid" value="3a3610bf-ae2e-4146-a06c-ef29856fbcdd"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

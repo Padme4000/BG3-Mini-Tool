@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="328" />
+  <region id="AnimationSourceId">
+    <node id="root">
+      <attribute id="MaterialResourceID" type="guid" value="8a538ded-ae8c-edf1-5183-7249a3b242e7" />
+      <attribute id="Name" type="FixedString" value="VFX_Cinematic_Overlay_CHAR_Karlach_Fire_01" />
+      <children>
+        <node id="strMaterialReference">
+          <attribute id="Key" type="guid" value="624e0c63-4a82-4f66-8fab-b4b8699a53e9" />
+          <attribute id="VisualResourceID" type="guid" value="a1292048-0f09-89e2-2fd6-42d8afe3ef02" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="4" build="213"/>
+    <region id="Races">
+        <node id="root">
+            <children>
+                   <node id="Race">
+                    <attribute id="Description" type="TranslatedString" handle="h36d60f5ag4377g4776g8f6bg6ad33f03c8f0" version="1"/>
+                    <attribute id="DisplayName" type="TranslatedString" handle="h36d60f5ag4377g4776g8f6bg6ad33f03c8f0" version="1"/>
+                    <attribute id="Name" type="FixedString" value="FR_MakeupTattoo_Template"/>
+					<!-- Change this name to something Unique -->
+                    <attribute id="ParentGuid" type="guid" value="899d275e-9893-490a-9cd5-be856794929f"/>
+					<!-- Don't change this UUID -->
+                    <attribute id="UUID" type="guid" value="7a92b86d-462a-468e-9675-8696e82715cb"/>
+					<!-- Unique UUID -->
+                    <children>
+                        <node id="Tags">
+                            <attribute id="Object" type="guid" value="7fbed0d4-cabc-4a9d-804e-12ca6088a0a8"/>
+							<!-- Don't touch this tag. (it is tag for Humanoid) -->
+							</node>
+<!--Tattoo's Colours-->
+                        <node id="TattooColors">
+                            <attribute id="Object" type="guid" value="b3ab27ce-bcee-47f0-bed0-f5f37386baa8"/> 
+							<!--This needs to match the UUID guid value in the ColorDefinitions entry-->
+                        </node>
+<!--Makeup's Colours-->
+                        <node id="MakeupColors">
+                            <attribute id="Object" type="guid" value="b3ab27ce-bcee-47f0-bed0-f5f37386baa8"/> 
+							<!--This needs to match the UUID guid value in the ColorDefinitions entry-->
+                        </node>
+                    </children>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="0" build="64"/>
+    <region id="CharacterCreationSkinColors">
+        <node id="root">
+            <children>
+                <node id="CharacterCreationSkinColor">
+                    <attribute id="DisplayName" type="TranslatedString" handle="h01660b55ga826g44c6gbc9ag09201c8f16ad" version="1"/>
+                    <attribute id="MaterialPresetUUID" type="guid" value="46b3d194-7c8d-4dad-b409-8fdfb5d4650e"/>
+                    <attribute id="Name" type="FixedString" value="Test_02"/>
+                    <attribute id="UIColor" type="LSString" value="#FFF0BDE6"/>
+                    <attribute id="UUID" type="guid" value="48a806bf-3509-4051-ab3f-23f6d7080d2b"/>
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

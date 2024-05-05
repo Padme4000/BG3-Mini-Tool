@@ -1,0 +1,11 @@
+new ItemCombination "OBJ_Dye_Template"
+data "Type 1" "Object"
+data "Object 1" "OBJ_Dye_Template"
+data "Transform 1" "None"
+data "Type 2" "Category"
+data "Object 2" "DyableArmor"
+data "Transform 2" "Dye"
+data "DyeColorPresetResource" "ee4bc508-2a49-4ae2-9a72-5fc13b9dcb19"
+
+new ItemCombinationResult "OBJ_Dye_Template_1"
+data "ResultAmount 1" "1"

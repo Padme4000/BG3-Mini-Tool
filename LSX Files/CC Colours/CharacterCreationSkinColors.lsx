@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save>
+    <version major="4" minor="0" revision="0" build="64"/>
+    <region id="CharacterCreationSkinColors">
+        <node id="root">
+            <children>
+                <node id="CharacterCreationSkinColor">
+                    <attribute id="DisplayName" type="TranslatedString" handle="h9fc6e30bg5a83g41e1g924fg5861d6b5367c" version="1"/>
+                    <attribute id="MaterialPresetUUID" type="guid" value="c1b89d97-2c66-45fb-8769-e9404e07a524"/> <!--This needs to match the ID in the _merged.lsf entry in Public\Shared\Content\Assets\Characters\Character Editor Presets\Skin Color Presets -->
+                    <attribute id="Name" type="FixedString" value="Test"/>
+                    <attribute id="UIColor" type="LSString" value="#FFA9A9A9"/> <!-- AARRGGBB what does this mean? Alpha, Red, Green, Blue Copy your Hex value after the first two values-->
+                    <attribute id="UUID" type="guid" value="f1034956-8cd2-47d1-ae77-eb0c01df4613"/> <!-- needs to be unique -->
+                </node>
+            </children>
+        </node>
+    </region>
+</save>

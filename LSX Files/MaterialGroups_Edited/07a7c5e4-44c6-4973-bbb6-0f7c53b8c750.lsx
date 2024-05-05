@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="320" />
+  <region id="AnimationSourceId">
+    <node id="root">
+      <attribute id="MaterialResourceID" type="guid" value="3a5aee4f-437f-893d-0610-31af40879444" />
+      <attribute id="Name" type="FixedString" value="VFX_OverlayMaterial_Cinematic_KarsusCompulsion_EyeFX_01" />
+      <children>
+        <node id="strMaterialReference">
+          <attribute id="Key" type="guid" value="e75b46b0-d1df-419d-9742-c2f5f7ab9a93" />
+          <attribute id="SlotIndex" type="int32" value="2" />
+          <attribute id="VisualResourceID" type="guid" value="dde369c9-2163-4860-8ec3-4672ef89ee0c" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

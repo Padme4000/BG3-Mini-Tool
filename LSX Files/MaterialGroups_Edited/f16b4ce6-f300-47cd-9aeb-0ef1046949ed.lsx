@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="319" />
+  <region id="AnimationSourceId">
+    <node id="root">
+      <attribute id="MaterialResourceID" type="guid" value="08400582-6da7-555c-633b-c53c579d0075" />
+      <attribute id="Name" type="FixedString" value="VFX_Cinematic_OverlayMaterial_AlphaBlend_DefaultLit_UVDistortion_Emissive_Ansur_Posession" />
+      <children>
+        <node id="strMaterialReference">
+          <attribute id="Key" type="guid" value="50f7a95b-2da5-4f96-8863-51caf9fed35e" />
+          <attribute id="VisualResourceID" type="guid" value="f4622f79-7e15-588b-a3b8-f11778faa3b7" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<save>
+  <version major="4" minor="0" revision="9" build="330" />
+  <region id="AnimationSourceId">
+    <node id="root">
+      <attribute id="IsReplacement" type="bool" value="true" />
+      <attribute id="MaterialResourceID" type="guid" value="bbf6c0b3-36ef-3543-4953-91969f46652b" />
+      <attribute id="Name" type="FixedString" value="VFX_OverlayMaterial_Cinematic_SwD_EyeFX_01" />
+      <children>
+        <node id="strMaterialReference">
+          <attribute id="Key" type="guid" value="73efde7f-9793-4713-ae12-dad94782abab" />
+          <attribute id="SlotIndex" type="int32" value="2" />
+          <attribute id="VisualResourceID" type="guid" value="dde369c9-2163-4860-8ec3-4672ef89ee0c" />
+        </node>
+      </children>
+    </node>
+  </region>
+</save>
